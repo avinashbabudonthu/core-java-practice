@@ -22,6 +22,7 @@
 	<modules>
 		<module>strings-practice</module>
     <module>multi-threading-practice</module>
+    <module>date-api-practice</module>
   </modules>
 
 	<build>
