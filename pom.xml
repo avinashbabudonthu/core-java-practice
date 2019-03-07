@@ -23,6 +23,8 @@
 		<module>strings-practice</module>
     <module>multi-threading-practice</module>
     <module>date-api-practice</module>
+    <module>file-io</module>
+    <module>collections</module>
   </modules>
 
 	<build>
