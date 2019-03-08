@@ -25,6 +25,7 @@
     <module>date-api-practice</module>
     <module>file-io</module>
     <module>collections</module>
+    <module>regex</module>
   </modules>
 
 	<build>

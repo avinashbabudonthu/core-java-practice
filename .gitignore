@@ -68,7 +68,6 @@ $RECYCLE.BIN/
 *.css
 /build/resources/main/*.txt
 folder1
-test
 *.MF
 *.zip
 taskArtifacts

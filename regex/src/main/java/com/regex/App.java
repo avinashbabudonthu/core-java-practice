@@ -1,4 +1,4 @@
-package com.string.practice;
+package com.regex;
 
 /**
  * Hello world!
