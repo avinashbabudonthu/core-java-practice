@@ -5,8 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CreateThread {
 
+	private static CreateThread createThread = new CreateThread();
+
 	public static void main(String[] args) {
-		CreateThread createThread = new CreateThread();
 		//createThread.method1();
 		createThread.illegalStateException();
 		//createThread.implementsRunnable();

@@ -4,8 +4,9 @@ import lombok.SneakyThrows;
 
 public class StopThread {
 
+	private static StopThread stopThread = new StopThread();
+
 	public static void main(String[] args) {
-		StopThread stopThread = new StopThread();
 		//stopThread.stopThreadWithSignal();
 		stopThread.sleep();
 	}

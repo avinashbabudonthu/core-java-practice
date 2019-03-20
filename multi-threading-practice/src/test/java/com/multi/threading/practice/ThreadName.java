@@ -5,8 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ThreadName {
 
+	private static ThreadName threadName = new ThreadName();
+
 	public static void main(String[] args) {
-		ThreadName threadName = new ThreadName();
 		//threadName.withThread();
 		threadName.withThread2();
 		//threadName.withRunnable();
