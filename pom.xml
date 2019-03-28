@@ -53,6 +53,7 @@
 		<module>file-io</module>
 		<module>collections</module>
 		<module>regex</module>
+		<module>streams</module>
 	</modules>
 
 	<build>

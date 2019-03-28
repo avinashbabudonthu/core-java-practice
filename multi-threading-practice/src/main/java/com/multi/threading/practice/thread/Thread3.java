@@ -1,4 +1,4 @@
-package com.multi.threading.practice;
+package com.multi.threading.practice.thread;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,6 +11,6 @@ public class Thread3 extends Thread {
 
 	@Override
 	public void run() {
-		log.info("Thread name1={}, name2={}", getName(), Thread.currentThread().getName());
+		log.info("name1={}, name2={}", getName(), Thread.currentThread().getName());
 	}
 }

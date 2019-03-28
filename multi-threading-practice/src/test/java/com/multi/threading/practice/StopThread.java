@@ -1,10 +1,13 @@
 package com.multi.threading.practice;
 
+import com.multi.threading.practice.thread.Thread4;
+import com.multi.threading.practice.thread.Thread5;
+
 import lombok.SneakyThrows;
 
 public class StopThread {
 
-	private static StopThread stopThread = new StopThread();
+	private static final StopThread stopThread = new StopThread();
 
 	public static void main(String[] args) {
 		//stopThread.stopThreadWithSignal();

@@ -1,4 +1,4 @@
-package com.multi.threading.practice;
+package com.multi.threading.practice.thread;
 
 import lombok.extern.slf4j.Slf4j;
 

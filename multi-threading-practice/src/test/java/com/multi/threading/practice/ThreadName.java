@@ -1,16 +1,18 @@
 package com.multi.threading.practice;
 
+import com.multi.threading.practice.thread.Thread3;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ThreadName {
 
-	private static ThreadName threadName = new ThreadName();
+	private static final ThreadName threadName = new ThreadName();
 
 	public static void main(String[] args) {
 		//threadName.withThread();
-		threadName.withThread2();
-		//threadName.withRunnable();
+		//threadName.withThread2();
+		threadName.withRunnable();
 	}
 
 	public void withThread() {
@@ -26,11 +28,9 @@ public class ThreadName {
 	}
 
 	public void withRunnable() {
-		Runnable runnable = () -> {
-			log.info("name={}", Thread.currentThread().getName());
-		};
+		Runnable runnable = () -> log.info("name={}", Thread.currentThread().getName());
 		Thread thread = new Thread(runnable, "app-thread-2");
 		thread.start();
-		log.info("name={}", thread.getName());
+		log.info("main thread name={}", Thread.currentThread().getName());
 	}
 }

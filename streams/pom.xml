@@ -9,10 +9,10 @@
     <version>1.0</version>
   </parent>
   
-  <groupId>com.multi.threading.practice</groupId>
-  <artifactId>multi-threading-practice</artifactId>
+  <groupId>com.collection.streams</groupId>
+  <artifactId>streams</artifactId>
   
-  <name>multi-threading-practice</name>
+  <name>streams</name>
   <url>http://maven.apache.org</url>
   
   <dependencies>

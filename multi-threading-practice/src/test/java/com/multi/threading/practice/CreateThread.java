@@ -1,17 +1,23 @@
 package com.multi.threading.practice;
 
+import java.util.stream.IntStream;
+
+import com.multi.threading.practice.thread.Thread1;
+import com.multi.threading.practice.thread.Thread2;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CreateThread {
 
-	private static CreateThread createThread = new CreateThread();
+	private static final CreateThread createThread = new CreateThread();
 
 	public static void main(String[] args) {
 		//createThread.method1();
-		createThread.illegalStateException();
+		//createThread.illegalStateException();
 		//createThread.implementsRunnable();
 		//createThread.anonymousInnerClassWithThread();
+		createThread.callStartOnAnonymousInnerClassWithThread();
 		//createThread.anonymousInnerClassWithRunnable();
 		//createThread.withLambda();
 	}
@@ -27,7 +33,7 @@ public class CreateThread {
 			thread.start();
 			thread.start();
 		} catch (Exception e) {
-			log.info("Error", e);
+			log.info("Exception on starting thread twice", e);
 		}
 	}
 
@@ -49,9 +55,17 @@ public class CreateThread {
 		thread.start();
 	}
 
+	public void callStartOnAnonymousInnerClassWithThread() {
+		new Thread() {
+			@Override
+			public void run() {
+				IntStream.range(1, 11).forEach((i) -> log.info("i={}", i));
+			}
+		}.start();
+	}
+
 	public void anonymousInnerClassWithRunnable() {
 		Runnable runnable = new Runnable() {
-
 			@Override
 			public void run() {
 				for (int i = 0; i < 10; i++) {
