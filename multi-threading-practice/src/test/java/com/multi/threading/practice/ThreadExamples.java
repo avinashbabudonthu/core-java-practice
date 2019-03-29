@@ -1,18 +1,21 @@
 package com.multi.threading.practice;
 
 import com.multi.threading.practice.thread.Thread3;
+import com.multi.threading.practice.thread.Thread6;
 
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ThreadName {
+public class ThreadExamples {
 
-	private static final ThreadName threadName = new ThreadName();
+	private static final ThreadExamples object = new ThreadExamples();
 
 	public static void main(String[] args) {
 		//threadName.withThread();
 		//threadName.withThread2();
-		threadName.withRunnable();
+		//threadName.withRunnable();
+		object.threadClassMethods();
 	}
 
 	public void withThread() {
@@ -32,5 +35,18 @@ public class ThreadName {
 		Thread thread = new Thread(runnable, "app-thread-2");
 		thread.start();
 		log.info("main thread name={}", Thread.currentThread().getName());
+	}
+
+	@SneakyThrows
+	public void threadClassMethods() {
+		Thread6 t1 = new Thread6("thread-6");
+		t1.setDaemon(true);
+
+		log.info("{} thread is starting t1", Thread.currentThread().getName());
+		t1.start();
+
+		t1.join();
+
+		log.info("t1 execution completed");
 	}
 }
