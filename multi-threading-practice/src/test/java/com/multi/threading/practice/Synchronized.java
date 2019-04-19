@@ -33,7 +33,7 @@ public final class Synchronized {
 	 * If output of code varies depending on the order of threads executing that code 
 	 * then that code is called critical section
 	 * 
-	 * After the execution of t1, t1
+	 * After the execution of t1, t2
 	 * Expected count value = 2,000,000
 	 * Actual value can/cannot be the expected value
 	 * 
@@ -127,7 +127,8 @@ public final class Synchronized {
 		t1.join();
 		t2.join();
 
-		log.info("threads execution completed. counter1={}, counter2={}", model.getCounter1(), model.getCounter2());
+		log.info("threads execution completed. counter1={}, counter2={}", model.getCounter1(),
+				model.getCounter2());
 	}
 
 	@SneakyThrows
@@ -154,7 +155,8 @@ public final class Synchronized {
 		t1.join();
 		t2.join();
 
-		log.info("threads execution completed. counter1={}, counter2={}", model.getCounter1(), model.getCounter2());
+		log.info("threads execution completed. counter1={}, counter2={}", model.getCounter1(),
+				model.getCounter2());
 	}
 
 	/**

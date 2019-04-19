@@ -39,14 +39,14 @@ public class ThreadExamples {
 
 	@SneakyThrows
 	public void threadClassMethods() {
-		Thread6 t1 = new Thread6("thread-6");
+		Thread t1 = new Thread6("thread-6");
 		t1.setDaemon(true);
 
-		log.info("{} thread is starting t1", Thread.currentThread().getName());
+		log.info("{} thread is starting {}", Thread.currentThread().getName(), t1.getName());
 		t1.start();
 
 		t1.join();
 
-		log.info("t1 execution completed");
+		log.info("{} execution completed", t1.getName());
 	}
 }

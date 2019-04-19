@@ -38,15 +38,16 @@ public final class Volatile {
 			for (int i = 0; i < 1000000; i++) {
 				model.increment();
 			}
-		});
+		}, "thread-1");
 
 		Thread t2 = new Thread(() -> {
 			for (int i = 0; i < 1000000; i++) {
 				model.increment();
 			}
-		});
+		}, "thread-2");
 
-		log.info("{} thread is starting t1, t2", Thread.currentThread().getName());
+		log.info("{} thread is starting {}, {}", Thread.currentThread().getName(), t1.getName(),
+				t2.getName());
 
 		t1.start();
 		t2.start();
@@ -54,6 +55,6 @@ public final class Volatile {
 		t1.join();
 		t2.join();
 
-		log.info("t1, t1 execution completed. count={}", model.getCount());
+		log.info("{}, {} execution completed. count={}", t1.getName(), t2.getName(), model.getCount());
 	}
 }

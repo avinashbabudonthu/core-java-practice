@@ -16,7 +16,8 @@ public class Thread8 implements Runnable {
 		log.info("setting value");
 		synchronized (model) {
 			model.setName("jack");
-			model.notify(); // throw IllegalMonitorException if current thread is not owner of monitor lock
+			log.info("value is set");
+			model.notify(); // throws IllegalMonitorException if current thread is not owner of monitor lock
 		}
 	}
 }

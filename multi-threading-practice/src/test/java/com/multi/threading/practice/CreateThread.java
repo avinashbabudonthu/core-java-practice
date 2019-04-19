@@ -13,7 +13,7 @@ public class CreateThread {
 	private static final CreateThread createThread = new CreateThread();
 
 	public static void main(String[] args) {
-		//createThread.method1();
+		//createThread.extendsThread();
 		//createThread.illegalStateException();
 		//createThread.implementsRunnable();
 		//createThread.anonymousInnerClassWithThread();
@@ -46,9 +46,7 @@ public class CreateThread {
 		Thread thread = new Thread() {
 			@Override
 			public void run() {
-				for (int i = 0; i < 10; i++) {
-					log.info("i={}", i);
-				}
+				IntStream.range(1, 11).forEach(i -> log.info("i= {}", i));
 			}
 		};
 
@@ -59,7 +57,7 @@ public class CreateThread {
 		new Thread() {
 			@Override
 			public void run() {
-				IntStream.range(1, 11).forEach((i) -> log.info("i={}", i));
+				IntStream.range(1, 11).forEach(i -> log.info("i={}", i));
 			}
 		}.start();
 	}

@@ -3,7 +3,7 @@ package com.multi.threading.practice.model;
 import lombok.Getter;
 
 /**
- * Model to repicate critical section
+ * Model to replicate critical section
  * @see Synchronized#criticalSectionExample()
  *
  */

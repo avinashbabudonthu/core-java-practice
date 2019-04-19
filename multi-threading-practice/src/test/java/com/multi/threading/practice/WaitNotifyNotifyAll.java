@@ -19,15 +19,15 @@ public class WaitNotifyNotifyAll {
 	@SneakyThrows
 	public void readIfNameIsSetElseWait() {
 		Model12 model = new Model12();
-		Thread readingThread = new Thread(Thread7.builder().model(model).build());
-		Thread writingThread = new Thread(Thread8.builder().model(model).build());
+		Thread readingThread = new Thread(Thread7.builder().model(model).build(), "reading-thread");
+		Thread writingThread = new Thread(Thread8.builder().model(model).build(), "writing-thread");
 
 		readingThread.start();
 		writingThread.start();
 
-		/*		readingThread.join();
-				writingThread.join();
-		
-				log.info("treads execution completed");*/
+		readingThread.join();
+		writingThread.join();
+
+		log.info("{}, {} execution completed", readingThread.getName(), writingThread.getName());
 	}
 }

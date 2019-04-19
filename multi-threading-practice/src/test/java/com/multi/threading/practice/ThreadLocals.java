@@ -18,10 +18,10 @@ public class ThreadLocals {
 	private static final ThreadLocals object = new ThreadLocals();
 
 	public static void main(String[] args) {
-		//object.putValuesToThreadLocal();
+		object.putValuesToThreadLocal();
 		//object.threadLocalWithGenericString();
 		//object.threadLocalWithGenericMap();
-		object.threadLocalInitialValue();
+		//object.threadLocalInitialValue();
 	}
 
 	@SneakyThrows
@@ -98,7 +98,7 @@ public class ThreadLocals {
 
 				Map<String, Object> map = new HashMap<>();
 				map.put("1", "one");
-				map.put("two", 2);
+				map.put("2", "two");
 				Model10.put(map);
 
 				Thread.sleep(1000 * 2);
@@ -114,7 +114,7 @@ public class ThreadLocals {
 
 				Map<String, Object> map = new HashMap<>();
 				map.put("3", "three");
-				map.put("four", 4);
+				map.put("4", "four");
 				Model10.put(map);
 
 				Thread.sleep(1000 * 2);
