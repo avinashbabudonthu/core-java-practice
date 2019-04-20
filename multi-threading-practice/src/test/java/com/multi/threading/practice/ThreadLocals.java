@@ -12,7 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
 @Slf4j
-public class ThreadLocals {
+public final class ThreadLocals {
+
+	private ThreadLocals() {
+	}
 
 	private static final ThreadLocal threadLocal = new ThreadLocal();
 	private static final ThreadLocals object = new ThreadLocals();

@@ -101,7 +101,7 @@ public final class Synchronized {
 	 * 
 	 * Solution is have 2 locks, one for each variable
 	 * use synchronized blocks in the method with respective lock
-	 * @see #solutionToSynchronizedMethodsProblem()
+	 * @see {@link #solutionToSynchronizedMethodsProblem()}
 	 */
 	@SneakyThrows
 	public void problemWithSynchronizedMethods() {
