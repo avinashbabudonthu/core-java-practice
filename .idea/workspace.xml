@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64b290b7-7fa6-438e-9c71-b16960532a21" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/list/CopyOnWriteArrayListPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/list/LinkedListPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/map/HashMapPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/map/TreeMapPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/queue/ArrayDeQueuePractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/queue/PriorityQueuePractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/set/CopyOnWriteArraySetPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/set/EnumSetPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/utils/ArraysPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collections/src/test/java/com/utils/CollectionsPractice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/src/main/java/com/collections/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/main/java/com/collections/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/src/test/java/com/collections/AppTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="64b290b7-7fa6-438e-9c71-b16960532a21" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/file-io/target/" />
     <ignored path="$PROJECT_DIR$/date-api-practice/target/" />
@@ -40,89 +22,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/queue/PriorityQueuePractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/queue/ArrayDeQueuePractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/map/HashMapPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/map/TreeMapPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/CopyOnWriteArraySetPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/EnumSetPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/utils/CollectionsPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -298,6 +198,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RunDashboard">
@@ -387,7 +288,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.260574" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -513,17 +413,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/EnumSetPractice.java">
+    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/utils/CollectionsPractice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/utils/CollectionsPractice.java">
+    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/EnumSetPractice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
