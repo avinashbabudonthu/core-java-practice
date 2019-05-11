@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64b290b7-7fa6-438e-9c71-b16960532a21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/src/test/java/com/utils/HashCodes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/src/test/java/com/utils/UniqueValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/src/test/java/com/list/LinkedListPractice.java" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/test/java/com/list/LinkedListPractice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/file-io/target/" />
@@ -17,6 +21,7 @@
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/collections/target/" />
     <ignored path="$PROJECT_DIR$/multi-threading-practice/target/" />
+    <ignored path="$PROJECT_DIR$/utils/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,72 +51,40 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
-          <entry key="properties" value="1" />
+          <entry key="java" value="11" />
+          <entry key="properties" value="3" />
+          <entry key="txt" value="1" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
-          <entry key="Properties" value="1" />
+          <entry key="JAVA" value="11" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2594" />
+          <entry key="dummy" value="5" />
+          <entry key="java" value="3544" />
           <entry key="properties" value="14" />
+          <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2594" />
+          <entry key="JAVA" value="3544" />
+          <entry key="PLAIN_TEXT" value="5" />
           <entry key="Properties" value="14" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="136" column="80" selection-start-line="136" selection-start-column="80" selection-end-line="136" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#add#0;class#ArrayListPractice#0" />
-                <element signature="method#addAll#0;class#ArrayListPractice#0" />
-                <element signature="method#remove#0;class#ArrayListPractice#0" />
-                <element signature="method#removeAll#0;class#ArrayListPractice#0" />
-                <element signature="method#subList#0;class#ArrayListPractice#0" />
-                <element signature="method#iterate#0;class#ArrayListPractice#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/list/LinkedListPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collections/src/main/resources/log4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="93" selection-start-line="6" selection-start-column="93" selection-end-line="6" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,6 +105,11 @@
         <option value="$PROJECT_DIR$/collections/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/collections/src/test/java/com/list/LinkedListPractice.java" />
         <option value="$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java" />
+        <option value="$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java" />
+        <option value="$PROJECT_DIR$/utils/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/utils/src/test/java/com/utils/UniqueValue.java" />
+        <option value="$PROJECT_DIR$/utils/src/test/java/com/utils/HashCodes.java" />
       </list>
     </option>
   </component>
@@ -177,92 +155,6 @@
               <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
               <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="list" type="462c0819:PsiDirectoryNode" />
-              <item name="ArrayListPractice" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -274,9 +166,15 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="log4j.prop&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/main/resources/log4j.properties&#10;arraylist&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/list/ArrayListPractice.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557575300674" />
+    <property name="SearchEverywhereHistoryKey" value="hashset&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/set/HashSetPractice.java&#10;log4j.prop&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/main/resources/log4j.properties&#10;arraylist&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/list/ArrayListPractice.java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557577076592" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils/src/main/resources" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\study\practiceProjects\preparation\core-java-practice\utils\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -290,7 +188,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArrayListPractice.toArray">
+  <component name="RunManager" selected="JUnit.HashCodes.floatHashCode">
     <configuration name="ArrayListPractice.createArrayList" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
@@ -323,38 +221,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListPractice.removeAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="collections" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.list" />
-      <option name="MAIN_CLASS_NAME" value="com.list.ArrayListPractice" />
-      <option name="METHOD_NAME" value="removeAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArrayListPractice.subList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="collections" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.list" />
-      <option name="MAIN_CLASS_NAME" value="com.list.ArrayListPractice" />
-      <option name="METHOD_NAME" value="subList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ArrayListPractice.toArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
@@ -371,17 +237,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListPractice.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="collections" />
+    <configuration name="HashCodes.floatHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="utils" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.list.*" />
+          <option name="PATTERN" value="com.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.list" />
-      <option name="MAIN_CLASS_NAME" value="com.list.LinkedListPractice" />
-      <option name="METHOD_NAME" value="add" />
+      <option name="PACKAGE_NAME" value="com.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.utils.HashCodes" />
+      <option name="METHOD_NAME" value="floatHashCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashCodes.hashCodeFromArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.utils.HashCodes" />
+      <option name="METHOD_NAME" value="hashCodeFromArray" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashCodes.longHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.utils.HashCodes" />
+      <option name="METHOD_NAME" value="longHashCode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -390,18 +288,18 @@
     <list>
       <item itemvalue="JUnit.ArrayListPractice.createArrayList" />
       <item itemvalue="JUnit.ArrayListPractice.iterate" />
-      <item itemvalue="JUnit.ArrayListPractice.removeAll" />
-      <item itemvalue="JUnit.ArrayListPractice.subList" />
-      <item itemvalue="JUnit.LinkedListPractice.add" />
       <item itemvalue="JUnit.ArrayListPractice.toArray" />
+      <item itemvalue="JUnit.HashCodes.hashCodeFromArray" />
+      <item itemvalue="JUnit.HashCodes.longHashCode" />
+      <item itemvalue="JUnit.HashCodes.floatHashCode" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ArrayListPractice.toArray" />
-        <item itemvalue="JUnit.LinkedListPractice.add" />
-        <item itemvalue="JUnit.ArrayListPractice.subList" />
-        <item itemvalue="JUnit.ArrayListPractice.removeAll" />
+        <item itemvalue="JUnit.HashCodes.floatHashCode" />
+        <item itemvalue="JUnit.HashCodes.longHashCode" />
+        <item itemvalue="JUnit.HashCodes.hashCodeFromArray" />
         <item itemvalue="JUnit.ArrayListPractice.iterate" />
+        <item itemvalue="JUnit.ArrayListPractice.toArray" />
       </list>
     </recent_temporary>
   </component>
@@ -419,27 +317,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArrayListPractice_removeAll - 2019.05.11 at 16h 28m 00s.xml">
-      <configuration name="ArrayListPractice.removeAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayListPractice_subList - 2019.05.11 at 16h 37m 08s.xml">
-      <configuration name="ArrayListPractice.subList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayListPractice_subList - 2019.05.11 at 16h 43m 03s.xml">
-      <configuration name="ArrayListPractice.subList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayListPractice_subList - 2019.05.11 at 16h 43m 36s.xml">
-      <configuration name="ArrayListPractice.subList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayListPractice_subList - 2019.05.11 at 16h 45m 20s.xml">
-      <configuration name="ArrayListPractice.subList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayListPractice_subList - 2019.05.11 at 16h 45m 44s.xml">
-      <configuration name="ArrayListPractice.subList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArrayListPractice_subList - 2019.05.11 at 16h 46m 07s.xml">
-      <configuration name="ArrayListPractice.subList" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LinkedListPractice_add - 2019.05.11 at 17h 09m 00s.xml">
       <configuration name="LinkedListPractice.add" configurationId="JUnit" />
     </history-entry>
@@ -448,6 +325,27 @@
     </history-entry>
     <history-entry file="ArrayListPractice_toArray - 2019.05.11 at 17h 16m 41s.xml">
       <configuration name="ArrayListPractice.toArray" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArrayListPractice_iterate - 2019.05.11 at 17h 24m 42s.xml">
+      <configuration name="ArrayListPractice.iterate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArrayListPractice_iterate - 2019.05.11 at 17h 25m 05s.xml">
+      <configuration name="ArrayListPractice.iterate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HashCodes_hashCodeFromArray - 2019.05.11 at 17h 39m 44s.xml">
+      <configuration name="HashCodes.hashCodeFromArray" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HashCodes_hashCodeFromArray - 2019.05.11 at 17h 42m 16s.xml">
+      <configuration name="HashCodes.hashCodeFromArray" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HashCodes_hashCodeFromArray - 2019.05.11 at 17h 44m 17s.xml">
+      <configuration name="HashCodes.hashCodeFromArray" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HashCodes_longHashCode - 2019.05.11 at 17h 45m 54s.xml">
+      <configuration name="HashCodes.longHashCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HashCodes_floatHashCode - 2019.05.11 at 17h 47m 02s.xml">
+      <configuration name="HashCodes.floatHashCode" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -461,9 +359,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27248323" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27248323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -473,7 +370,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32624114" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39716312" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39716312" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
@@ -511,24 +408,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/utils/ArraysPractice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/list/CopyOnWriteArrayListPractice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -588,13 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collections/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="93" selection-start-line="6" selection-start-column="93" selection-end-line="6" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/list/LinkedListPractice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -605,10 +481,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/utils/ArraysPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="136" column="80" selection-start-line="136" selection-start-column="80" selection-end-line="136" selection-end-column="80" />
+        <state relative-caret-position="142">
+          <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#add#0;class#ArrayListPractice#0" />
@@ -616,8 +499,87 @@
             <element signature="method#remove#0;class#ArrayListPractice#0" />
             <element signature="method#removeAll#0;class#ArrayListPractice#0" />
             <element signature="method#subList#0;class#ArrayListPractice#0" />
-            <element signature="method#iterate#0;class#ArrayListPractice#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collections/mvn.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" selection-end-column="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/src/test/java/com/utils/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/src/test/java/com/utils/UniqueValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collections/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="93" selection-start-line="6" selection-start-column="93" selection-end-line="6" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/src/test/java/com/utils/HashCodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#hashCodeFromArray#0;class#HashCodes#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strings-practice/src/test/java/com/string/practice/StringFormatPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
         </state>
       </provider>
     </entry>

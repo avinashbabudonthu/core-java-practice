@@ -15,6 +15,7 @@
         <module name="regex" />
         <module name="streams" />
         <module name="strings-practice" />
+        <module name="utils" />
       </profile>
     </annotationProcessing>
   </component>
@@ -29,6 +30,7 @@
       <module name="regex" options="-Xlint:all" />
       <module name="streams" options="-Xlint:all" />
       <module name="strings-practice" options="-Xlint:all" />
+      <module name="utils" options="-Xlint:all" />
     </option>
   </component>
 </project>

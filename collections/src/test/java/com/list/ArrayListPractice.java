@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -106,6 +107,12 @@ public class ArrayListPractice {
         list1.add("3");
         list1.add("4");
         list1.add("5");
+
+        // using iterator
+        Iterator<String> list1Iterator = list1.iterator();
+        while(list1Iterator.hasNext()){
+            log.info("iterator.element={}", list1Iterator.next());
+        }
 
         // using for loop
         for(int i=0;i<list1.size();i++){
