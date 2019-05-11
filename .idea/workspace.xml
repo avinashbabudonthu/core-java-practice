@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64b290b7-7fa6-438e-9c71-b16960532a21" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/test/java/com/utils/HashCodes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/test/java/com/utils/UniqueValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collections/src/main/java/com/set/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/test/java/com/list/ArrayListPractice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/test/java/com/set/HashSetPractice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java" beforeDir="false" afterPath="$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/file-io/target/" />
@@ -27,6 +22,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/core_java_practice$ArrayListPractice_createArrayList.ic" NAME="ArrayListPractice.createArrayList Coverage Results" MODIFIED="1557570142286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -51,7 +49,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="11" />
+          <entry key="java" value="16" />
           <entry key="properties" value="3" />
           <entry key="txt" value="1" />
           <entry key="xml" value="2" />
@@ -59,7 +57,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="16" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="2" />
@@ -68,14 +66,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="java" value="3544" />
+          <entry key="java" value="5630" />
           <entry key="properties" value="14" />
           <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3544" />
+          <entry key="JAVA" value="5630" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Properties" value="14" />
           <entry key="XML" value="7" />
@@ -84,7 +82,53 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="26" column="96" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/EnumSetPractice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/collections/src/main/java/com/set/Employee.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#198#199#0" expanded="true" />
+                <element signature="e#254#255#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Objects.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2134">
+              <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+              <folding>
+                <element signature="e#3914#3915#0" expanded="true" />
+                <element signature="e#3960#3961#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,6 +154,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/utils/src/test/java/com/utils/UniqueValue.java" />
         <option value="$PROJECT_DIR$/utils/src/test/java/com/utils/HashCodes.java" />
+        <option value="$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java" />
+        <option value="$PROJECT_DIR$/collections/src/main/java/com/set/Employee.java" />
       </list>
     </option>
   </component>
@@ -155,6 +201,115 @@
               <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
               <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="set" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="set" type="462c0819:PsiDirectoryNode" />
+              <item name="Employee" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="set" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="core-java-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="set" type="462c0819:PsiDirectoryNode" />
+              <item name="TreeSetPractice" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; JDK-1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; JDK-1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; JDK-1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="core-java-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; JDK-1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Objects" type="1a9f42e2:ClassTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -166,10 +321,10 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="hashset&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/set/HashSetPractice.java&#10;log4j.prop&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/main/resources/log4j.properties&#10;arraylist&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/list/ArrayListPractice.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557577076592" />
+    <property name="SearchEverywhereHistoryKey" value="java.util.Obje&#9;PSI&#9;JAVA://java.util.Objects&#10;enumsetpr&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/set/EnumSetPractice.java&#10;Treesetprac&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/set/TreeSetPractice.java&#10;hashset&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/set/HashSetPractice.java&#10;log4j.prop&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/main/resources/log4j.properties&#10;arraylist&#9;FILE&#9;file://C:/study/practiceProjects/preparation/core-java-practice/collections/src/test/java/com/list/ArrayListPractice.java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557591659769" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/utils/src/main/resources" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -188,7 +343,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HashCodes.floatHashCode">
+  <component name="RunManager" selected="JUnit.TreeSetPractice.customClassInTreeSet">
     <configuration name="ArrayListPractice.createArrayList" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
@@ -205,81 +360,81 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListPractice.iterate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TreeSetPractice.customClassInTreeSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.list.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.list" />
-      <option name="MAIN_CLASS_NAME" value="com.list.ArrayListPractice" />
-      <option name="METHOD_NAME" value="iterate" />
+      <option name="PACKAGE_NAME" value="com.set" />
+      <option name="MAIN_CLASS_NAME" value="com.set.TreeSetPractice" />
+      <option name="METHOD_NAME" value="customClassInTreeSet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListPractice.toArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TreeSetPractice.first" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.list.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.list" />
-      <option name="MAIN_CLASS_NAME" value="com.list.ArrayListPractice" />
-      <option name="METHOD_NAME" value="toArray" />
+      <option name="PACKAGE_NAME" value="com.set" />
+      <option name="MAIN_CLASS_NAME" value="com.set.TreeSetPractice" />
+      <option name="METHOD_NAME" value="first" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashCodes.floatHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="utils" />
+    <configuration name="TreeSetPractice.last" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.utils.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.utils.HashCodes" />
-      <option name="METHOD_NAME" value="floatHashCode" />
+      <option name="PACKAGE_NAME" value="com.set" />
+      <option name="MAIN_CLASS_NAME" value="com.set.TreeSetPractice" />
+      <option name="METHOD_NAME" value="last" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashCodes.hashCodeFromArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="utils" />
+    <configuration name="TreeSetPractice.subSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.utils.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.utils.HashCodes" />
-      <option name="METHOD_NAME" value="hashCodeFromArray" />
+      <option name="PACKAGE_NAME" value="com.set" />
+      <option name="MAIN_CLASS_NAME" value="com.set.TreeSetPractice" />
+      <option name="METHOD_NAME" value="subSet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashCodes.longHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="utils" />
+    <configuration name="TreeSetPractice.tailSet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.utils.*" />
+          <option name="PATTERN" value="com.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.utils.HashCodes" />
-      <option name="METHOD_NAME" value="longHashCode" />
+      <option name="PACKAGE_NAME" value="com.set" />
+      <option name="MAIN_CLASS_NAME" value="com.set.TreeSetPractice" />
+      <option name="METHOD_NAME" value="tailSet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -287,19 +442,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ArrayListPractice.createArrayList" />
-      <item itemvalue="JUnit.ArrayListPractice.iterate" />
-      <item itemvalue="JUnit.ArrayListPractice.toArray" />
-      <item itemvalue="JUnit.HashCodes.hashCodeFromArray" />
-      <item itemvalue="JUnit.HashCodes.longHashCode" />
-      <item itemvalue="JUnit.HashCodes.floatHashCode" />
+      <item itemvalue="JUnit.TreeSetPractice.first" />
+      <item itemvalue="JUnit.TreeSetPractice.last" />
+      <item itemvalue="JUnit.TreeSetPractice.subSet" />
+      <item itemvalue="JUnit.TreeSetPractice.tailSet" />
+      <item itemvalue="JUnit.TreeSetPractice.customClassInTreeSet" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HashCodes.floatHashCode" />
-        <item itemvalue="JUnit.HashCodes.longHashCode" />
-        <item itemvalue="JUnit.HashCodes.hashCodeFromArray" />
-        <item itemvalue="JUnit.ArrayListPractice.iterate" />
-        <item itemvalue="JUnit.ArrayListPractice.toArray" />
+        <item itemvalue="JUnit.TreeSetPractice.customClassInTreeSet" />
+        <item itemvalue="JUnit.TreeSetPractice.tailSet" />
+        <item itemvalue="JUnit.TreeSetPractice.subSet" />
+        <item itemvalue="JUnit.TreeSetPractice.last" />
+        <item itemvalue="JUnit.TreeSetPractice.first" />
       </list>
     </recent_temporary>
   </component>
@@ -317,35 +472,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LinkedListPractice_add - 2019.05.11 at 17h 09m 00s.xml">
-      <configuration name="LinkedListPractice.add" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_iterate - 2019.05.11 at 20h 58m 39s.xml">
+      <configuration name="TreeSetPractice.iterate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArrayListPractice_toArray - 2019.05.11 at 17h 15m 21s.xml">
-      <configuration name="ArrayListPractice.toArray" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_iterate - 2019.05.11 at 20h 59m 35s.xml">
+      <configuration name="TreeSetPractice.iterate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArrayListPractice_toArray - 2019.05.11 at 17h 16m 41s.xml">
-      <configuration name="ArrayListPractice.toArray" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_iterate - 2019.05.11 at 21h 34m 34s.xml">
+      <configuration name="TreeSetPractice.iterate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArrayListPractice_iterate - 2019.05.11 at 17h 24m 42s.xml">
-      <configuration name="ArrayListPractice.iterate" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_iterate - 2019.05.11 at 21h 34m 49s.xml">
+      <configuration name="TreeSetPractice.iterate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArrayListPractice_iterate - 2019.05.11 at 17h 25m 05s.xml">
-      <configuration name="ArrayListPractice.iterate" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_first - 2019.05.11 at 21h 37m 53s.xml">
+      <configuration name="TreeSetPractice.first" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HashCodes_hashCodeFromArray - 2019.05.11 at 17h 39m 44s.xml">
-      <configuration name="HashCodes.hashCodeFromArray" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_first - 2019.05.11 at 21h 38m 50s.xml">
+      <configuration name="TreeSetPractice.first" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HashCodes_hashCodeFromArray - 2019.05.11 at 17h 42m 16s.xml">
-      <configuration name="HashCodes.hashCodeFromArray" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_last - 2019.05.11 at 21h 39m 37s.xml">
+      <configuration name="TreeSetPractice.last" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HashCodes_hashCodeFromArray - 2019.05.11 at 17h 44m 17s.xml">
-      <configuration name="HashCodes.hashCodeFromArray" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_subSet - 2019.05.11 at 21h 41m 20s.xml">
+      <configuration name="TreeSetPractice.subSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HashCodes_longHashCode - 2019.05.11 at 17h 45m 54s.xml">
-      <configuration name="HashCodes.longHashCode" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_tailSet - 2019.05.11 at 21h 45m 11s.xml">
+      <configuration name="TreeSetPractice.tailSet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HashCodes_floatHashCode - 2019.05.11 at 17h 47m 02s.xml">
-      <configuration name="HashCodes.floatHashCode" configurationId="JUnit" />
+    <history-entry file="TreeSetPractice_customClassInTreeSet - 2019.05.11 at 21h 48m 21s.xml">
+      <configuration name="TreeSetPractice.customClassInTreeSet" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -359,8 +514,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27248323" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27248323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -370,7 +526,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32624114" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39716312" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39716312" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
@@ -415,13 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/queue/PriorityQueuePractice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -458,13 +607,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/utils/CollectionsPractice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/EnumSetPractice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
@@ -580,6 +722,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1451">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/EnumSetPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+          <folding>
+            <element signature="e#3914#3915#0" expanded="true" />
+            <element signature="e#3960#3961#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collections/src/test/java/com/set/TreeSetPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="26" column="96" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collections/src/main/java/com/set/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
