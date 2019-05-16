@@ -98,6 +98,16 @@ public class TreeSetPractice {
 
     @Test
     public void headSet(){
+        Set<String> set = new TreeSet<>();
+        set.add("3");
+        set.add("1");
+        set.add("5");
+        set.add("4");
+        set.add("7");
+        set.add("6");
+        log.info("set={}", set);
+
+        Set<String> headSet1 = ((TreeSet<String>)set).headSet("4");
 
     }
 

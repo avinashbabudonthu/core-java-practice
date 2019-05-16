@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Employee implements  Comparable{
+public class Employee implements  Comparable<Employee>{
     private String name;
     private String designation;
 
@@ -24,11 +24,7 @@ public class Employee implements  Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        if(o instanceof  Employee){
-            Employee that = (Employee) o;
-            return  this.getDesignation().compareTo(that.getDesignation());
-        }
-        return 0;
+    public int compareTo(Employee that) {
+        return  this.getDesignation().compareTo(that.getDesignation());
     }
 }
