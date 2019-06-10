@@ -3,10 +3,7 @@ package com.list;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 @Slf4j
@@ -143,4 +140,7 @@ public class ArrayListPractice {
         String[] stringArray = list1.toArray(new String[list1.size()]);
         Stream.of(stringArray).forEach(element -> log.info("element={}", element));
     }
+
+
+
 }

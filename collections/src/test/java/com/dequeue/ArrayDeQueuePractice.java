@@ -1,4 +1,4 @@
-package com.queue;
+package com.dequeue;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
