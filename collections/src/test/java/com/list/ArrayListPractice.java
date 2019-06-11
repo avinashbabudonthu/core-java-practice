@@ -153,6 +153,56 @@ public class ArrayListPractice {
         Stream.of(stringArray2).forEach(element -> log.info("element={}", element));
     }
 
+    @Test
+    public void sortUsingComparable(){
+        Student student1 = Student.builder().name("jim").grade(3.12).build();
+        Student student2 = Student.builder().name("jack").grade(3.25).build();
+        Student student3 = Student.builder().name("john").grade(3.10).build();
+        Student student4 = Student.builder().name("jane").grade(3.35).build();
+        Student student5 = Student.builder().name("jill").grade(3.05).build();
 
+        List<Student> students = new ArrayList<>();
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+        students.add(student5);
+
+        log.info("-- before sort --");
+        log.info("students={}", students);
+
+        Collections.sort(students);
+        log.info("-- after sort --");
+        log.info("students={}", students);
+    }
+
+    @Test
+    public void sortUsingComparator(){
+        Student student1 = Student.builder().name("jim").grade(3.12).build();
+        Student student2 = Student.builder().name("jack").grade(3.25).build();
+        Student student3 = Student.builder().name("john").grade(3.10).build();
+        Student student4 = Student.builder().name("jane").grade(3.35).build();
+        Student student5 = Student.builder().name("jill").grade(3.05).build();
+
+        List<Student> students = new ArrayList<>();
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+        students.add(student5);
+
+        log.info("-- before sort --");
+        log.info("students={}", students);
+
+        Comparator<Student> nameComparator = (s1, s2) -> s1.getName().compareTo(s2.getName());
+        log.info("-- sort by name --");
+        students.sort(nameComparator);
+        log.info("students={}", students);
+
+        Comparator<Student> gradeComparator = (s1, s2) -> s2.getGrade().compareTo(s1.getGrade());
+        log.info("-- sort by grade desc --");
+        students.sort(gradeComparator);
+        log.info("students={}", students);
+    }
 
 }
