@@ -15,7 +15,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -54,6 +53,7 @@
 		<module>streams</module>
 		<module>java-util-concurrent</module>
 		<module>utils</module>
+    	<module>kafka</module>
   </modules>
 
 	<build>
