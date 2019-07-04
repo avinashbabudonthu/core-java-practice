@@ -205,4 +205,45 @@ public class ArrayListPractice {
         log.info("students={}", students);
     }
 
+
+    /**
+     * 1. list of student objects
+     * 2. remove duplicates in list by student name
+     */
+    @Test
+    public void removeDuplicatesInListByStudentName(){
+        Student jack1 = Student.builder().name("jack").grade(3.12).build();
+        Student tim1 = Student.builder().name("tim").grade(3.15).build();
+        Student jim = Student.builder().name("jim").grade(3.13).build();
+        Student jill = Student.builder().name("jill").grade(3.14).build();
+        Student jack2 = Student.builder().name("jack").grade(3.16).build();
+        Student tim2 = Student.builder().name("tim").grade(3.17).build();
+
+        List<Student> studentsList = new ArrayList<>();
+        studentsList.add(jack1);
+        studentsList.add(tim1);
+        studentsList.add(jim);
+        studentsList.add(jill);
+        studentsList.add(jack2);
+        studentsList.add(tim2);
+
+        log.info("actual list - size={}", studentsList.size());
+        studentsList.stream().forEach(student -> log.info("{}", student));
+
+        List<Student> uniqueStudentsList = new ArrayList<>();
+        Set<String> studentNamesSet = new HashSet<>();
+
+        for(Student student : studentsList){
+            if(studentNamesSet.add(student.getName())){
+                uniqueStudentsList.add(student);
+            }
+        }
+
+        log.info("unique names, size={}", studentNamesSet.size());
+        studentNamesSet.stream().forEach(name -> log.info("{}", name));
+
+        log.info("unique students list, size={}", uniqueStudentsList.size());
+        uniqueStudentsList.stream().forEach(student -> log.info("{}", student));
+    }
+
 }
