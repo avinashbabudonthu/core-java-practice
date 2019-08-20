@@ -1,0 +1,10 @@
+# List of Projects
+* [Collections](collections)
+* [Date Time API](date-api-practice)
+* [File IO](file-io)
+* [Java Util Concurrent](java-util-concurrent)
+* [Multi Threading Core](multi-threading-practice)
+* [Regex](regex)
+* [Streams](streams)
+* [Strings](strings-practice)
+* [Utils](utils)
