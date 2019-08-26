@@ -2,6 +2,7 @@
 * [Annotations](annotations)
 * [Collections](collections)
 * [Date Time API](date-api-practice)
+* [Enum](enums)
 * [File IO](file-io)
 * [Java Util Concurrent](java-util-concurrent)
 * [Multi Threading Core](multi-threading-practice)
