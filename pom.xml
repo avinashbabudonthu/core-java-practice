@@ -53,6 +53,8 @@
 		<module>streams</module>
 		<module>java-util-concurrent</module>
 		<module>utils</module>
+    <module>annotations</module>
+    <module>reflection</module>
   </modules>
 
 	<build>

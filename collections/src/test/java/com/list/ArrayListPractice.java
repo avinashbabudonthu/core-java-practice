@@ -246,4 +246,27 @@ public class ArrayListPractice {
         uniqueStudentsList.stream().forEach(student -> log.info("{}", student));
     }
 
+    /**
+     * Remove null objects from list
+     */
+    @Test
+    public void removeNullsFromList(){
+        List<String> names = new ArrayList<>();
+        names.add("jack");
+        names.add(null);
+        names.add("jill");
+        names.add(null);
+        names.add("jim");
+        names.add(null);
+        names.add("tim");
+
+        log.info("names={}", names);
+
+        Set<?> nullSet = Collections.singleton(null);
+
+        names.removeAll(nullSet);
+
+        log.info("names={}", names);
+    }
+
 }
