@@ -247,6 +247,31 @@ public class ArrayListPractice {
     }
 
     /**
+     * If we do not type cast - remove(index) will be called
+     * If we type cast - remove(Object) will be called
+     */
+    @Test
+    public void removeIntegerByValueFromIntegerList(){
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        log.info("numbers={}", numbers);
+        numbers.remove((Integer) 5);
+        log.info("numbers={}", numbers);
+
+        Integer number = 4;
+        numbers.remove(number);
+        log.info("numbers={}", numbers);
+
+        numbers.remove((Object) 3);
+        log.info("numbers={}", numbers);
+    }
+
+}    /**
      * Remove null objects from list
      */
     @Test
