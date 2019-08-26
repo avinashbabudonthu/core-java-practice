@@ -55,6 +55,7 @@
 		<module>utils</module>
     <module>annotations</module>
     <module>reflection</module>
+    <module>enums</module>
   </modules>
 
 	<build>
