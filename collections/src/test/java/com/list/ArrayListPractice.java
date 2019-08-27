@@ -271,7 +271,7 @@ public class ArrayListPractice {
         log.info("numbers={}", numbers);
     }
 
-}    /**
+    /**
      * Remove null objects from list
      */
     @Test

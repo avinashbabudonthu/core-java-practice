@@ -13,8 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 public class Student {
 
-    private String name;
+    public String name;
     private String[] courses;
-    private Date joiningDate;
+    public Date joiningDate;
     private Double grade;
 }
