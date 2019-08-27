@@ -57,6 +57,8 @@
     <module>reflection</module>
     <module>enums</module>
     <module>basics</module>
+    <module>internationalization</module>
+    <module>serialization</module>
   </modules>
 
 	<build>

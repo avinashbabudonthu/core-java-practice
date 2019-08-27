@@ -1,4 +1,4 @@
-package com.basics;
+package com.serialization;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.core.java.practice</groupId>
+    <artifactId>core-java-practice</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <groupId>com.serialization</groupId>
+  <artifactId>serialization</artifactId>
+
+  <name>serialization</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+  </dependencies>
+</project>
