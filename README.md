@@ -1,5 +1,6 @@
 # List of Projects
 * [Annotations](annotations)
+* [Basics](basics)
 * [Collections](collections)
 * [Date Time API](date-api-practice)
 * [Enum](enums)
