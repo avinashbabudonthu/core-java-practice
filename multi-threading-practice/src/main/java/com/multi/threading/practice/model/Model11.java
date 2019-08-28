@@ -6,7 +6,7 @@ public class Model11 {
 		@Override
 		protected String initialValue() {
 			return "thread local initial value";
-		};
+		}
 	};
 
 	public static void put(String value) {
