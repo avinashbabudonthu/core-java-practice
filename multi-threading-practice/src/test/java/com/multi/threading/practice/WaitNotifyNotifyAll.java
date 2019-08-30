@@ -7,6 +7,10 @@ import com.multi.threading.practice.thread.Thread8;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 1. Thread class wait() on any object becomes inactive until another thread calls notify() on same object
+ *
+ */
 @Slf4j
 public class WaitNotifyNotifyAll {
 
