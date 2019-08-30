@@ -12,25 +12,25 @@ public class ThreadExamples {
 	private static final ThreadExamples object = new ThreadExamples();
 
 	public static void main(String[] args) {
-		//threadName.withThread();
-		//threadName.withThread2();
-		//threadName.withRunnable();
+		//object.threadNameByThreadSubClass();
+		//object.threadNameByThreadSubClass2();
+        //object.threadNameWithRunnable();
 		object.threadClassMethods();
 	}
 
-	public void withThread() {
+	public void threadNameByThreadSubClass() {
 		Thread thread = new Thread3("app-thread-1");
 		thread.start();
 	}
 
-	public void withThread2() {
+	public void threadNameByThreadSubClass2() {
 		for (int i = 0; i < 10; i++) {
 			Thread thread = new Thread3(String.format("app-thread-%d", i));
 			thread.start();
 		}
 	}
 
-	public void withRunnable() {
+	public void threadNameWithRunnable() {
 		Runnable runnable = () -> log.info("name={}", Thread.currentThread().getName());
 		Thread thread = new Thread(runnable, "app-thread-2");
 		thread.start();

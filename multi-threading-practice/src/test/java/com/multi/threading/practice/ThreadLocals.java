@@ -34,7 +34,7 @@ public final class ThreadLocals {
 				log.info("executing t1");
 				threadLocal.set("thread1");
 				Thread.sleep(1000 * 2);
-				log.info("t1.threadlocal={}", threadLocal.get());
+				log.info("t1 - thread local={}", threadLocal.get());
 			} catch (InterruptedException e) {
 				log.error("Exception", e);
 			}
@@ -45,7 +45,7 @@ public final class ThreadLocals {
 				log.info("executing t2");
 				threadLocal.set("thread2");
 				Thread.sleep(1000 * 3);
-				log.info("t2.threadlocal={}", threadLocal.get());
+				log.info("t2 - thread local={}", threadLocal.get());
 			} catch (InterruptedException e) {
 				log.error("Exception", e);
 			}
@@ -67,7 +67,7 @@ public final class ThreadLocals {
 				log.info("executing t1");
 				Model9.put("thread1");
 				Thread.sleep(1000 * 2);
-				log.info("t1.threadLocal={}", Model9.get());
+				log.info("t1 - thread local={}", Model9.get());
 			} catch (Exception e) {
 				log.error("Exception", e);
 			}
@@ -78,7 +78,7 @@ public final class ThreadLocals {
 				log.info("executing t2");
 				Model9.put("thread2");
 				Thread.sleep(1000 * 3);
-				log.info("t2.threadLocal={}", Model9.get());
+				log.info("t2 - thread local={}", Model9.get());
 			} catch (Exception e) {
 				log.error("Exception", e);
 			}
@@ -105,7 +105,7 @@ public final class ThreadLocals {
 				Model10.put(map);
 
 				Thread.sleep(1000 * 2);
-				log.info("t1.threadLocal={}", Model10.get());
+				log.info("t1 - thread local map={}", Model10.get());
 			} catch (Exception e) {
 				log.error("Exception", e);
 			}
@@ -121,7 +121,7 @@ public final class ThreadLocals {
 				Model10.put(map);
 
 				Thread.sleep(1000 * 2);
-				log.info("t2.threadLocal={}", Model10.get());
+				log.info("t2 - thread local map={}", Model10.get());
 			} catch (Exception e) {
 				log.error("Exception", e);
 			}
@@ -143,7 +143,7 @@ public final class ThreadLocals {
 				log.info("executing t1");
 				Model11.put("thread1");
 				Thread.sleep(1000 * 3);
-				log.info("t1.threadLocal={}", Model11.get());
+				log.info("t1- thread local={}", Model11.get());
 			} catch (Exception e) {
 				log.error("Exception", e);
 			}
@@ -153,7 +153,7 @@ public final class ThreadLocals {
 			try {
 				log.info("executing t2");
 				Thread.sleep(1000 * 2);
-				log.info("t2.threadLocal={}", Model11.get());
+				log.info("t2 - thread local={}", Model11.get());
 			} catch (Exception e) {
 				log.error("Exception", e);
 			}

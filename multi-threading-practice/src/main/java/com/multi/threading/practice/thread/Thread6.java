@@ -29,6 +29,6 @@ public class Thread6 extends Thread {
 		log.info("current-thread-group-name={}", threadGroup.getName());
 		log.info("current-thread-group-max-priority={}", threadGroup.getMaxPriority());
 		log.info("current-thread-group-parent={}", threadGroup.getParent());
-		log.info("current-thread-group-uncaught-expcetion-handler={}", currentThread.getUncaughtExceptionHandler());
+		log.info("current-thread-group-uncaught-exception-handler={}", currentThread.getUncaughtExceptionHandler());
 	}
 }

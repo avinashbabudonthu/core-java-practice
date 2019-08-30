@@ -17,9 +17,9 @@ public class CreateThread {
 		//createThread.illegalStateException();
 		//createThread.implementsRunnable();
 		//createThread.anonymousInnerClassWithThread();
-		createThread.callStartOnAnonymousInnerClassWithThread();
+		//createThread.callStartOnAnonymousInnerClassWithThread();
 		//createThread.anonymousInnerClassWithRunnable();
-		//createThread.withLambda();
+		createThread.withLambda();
 	}
 
 	public void extendsThread() {
@@ -76,12 +76,13 @@ public class CreateThread {
 	}
 
 	public void withLambda() {
-		Runnable runnable = () -> {
-			for (int i = 0; i < 10; i++) {
-				log.info("i={}", i);
-			}
-		};
+		Runnable runnable = () -> IntStream.range(1, 11).forEach(i -> log.info("i={}", i));
 		new Thread(runnable).start();
+
+		Runnable runnable2 = () -> {
+		    IntStream.range(11, 21).forEach(i -> log.info("i={}", i));
+        };
+		new Thread(runnable2).start();
 	}
 
 }
