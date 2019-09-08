@@ -59,6 +59,7 @@
     <module>basics</module>
     <module>internationalization</module>
     <module>serialization</module>
+    <module>jaxb</module>
   </modules>
 
 	<build>
