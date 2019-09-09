@@ -7,6 +7,7 @@
 * [File IO](file-io)
 * [Internationalization](internationalization)
 * [Java Util Concurrent Package](java-util-concurrent)
+* [JAXB](jaxb)
 * [Multi Threading Core](multi-threading-practice)
 * [Reflection](reflection)
 * [Regex](regex)
