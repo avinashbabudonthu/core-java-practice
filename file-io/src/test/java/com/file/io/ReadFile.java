@@ -12,7 +12,6 @@ import org.junit.Test;
 
 public class ReadFile {
 
-    @Ignore
     @Test
     public void readFileUsingBufferedReaderAndRelativePath() throws IOException{
         try (BufferedReader bufferedReader = Files
@@ -21,7 +20,6 @@ public class ReadFile {
         }
     }
 
-    @Ignore
     @Test
     public void readFileUsingFileSystemsAndRelativePath() throws  IOException{
         try (BufferedReader bufferedReader = Files
@@ -30,7 +28,6 @@ public class ReadFile {
         }
     }
 
-    @Ignore
     @Test
     public void readFileUsingFilesAndRelativePath() throws IOException{
         List<String> allLines = Files.readAllLines(Paths.get("src/main/resources/file3.txt"));
