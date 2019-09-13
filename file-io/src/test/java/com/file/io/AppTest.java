@@ -11,10 +11,12 @@ import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class AppTest {
 
+    @Ignore
 	@Test
 	public void paths() {
 		// read 1 file
@@ -28,6 +30,7 @@ public class AppTest {
 		System.out.println(paths.toAbsolutePath().toString());
 	}
 
+	@Ignore
 	@Test
 	public void copyToZip() throws URISyntaxException {
 		Map<String, String> properties = new HashMap<>();

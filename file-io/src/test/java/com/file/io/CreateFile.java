@@ -16,6 +16,7 @@ import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,7 @@ public class CreateFile {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
+	@Ignore
 	@Test
 	public void writeToFile() {
 		try (BufferedWriter bufferedWriter = Files
@@ -37,6 +39,7 @@ public class CreateFile {
 		}
 	}
 
+    @Ignore
 	@Test
 	public void createZipFile() throws IOException, URISyntaxException {
 		Map<String, String> properties = new HashMap<>();
@@ -49,6 +52,7 @@ public class CreateFile {
 		}
 	}
 
+    @Ignore
 	@Test
 	public void writeToFileInZip1() throws URISyntaxException {
 		Map<String, String> properties = new HashMap<>();
