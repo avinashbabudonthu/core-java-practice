@@ -5,6 +5,7 @@
 * [Date Time API](date-api-practice)
 * [Enum](enums)
 * [File IO](file-io)
+* [Generics](generics)
 * [Internationalization](internationalization)
 * [Java Util Concurrent Package](java-util-concurrent)
 * [JAXB](jaxb)
