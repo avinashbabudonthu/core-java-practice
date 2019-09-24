@@ -60,6 +60,7 @@
     <module>internationalization</module>
     <module>serialization</module>
     <module>jaxb</module>
+    <module>generics</module>
   </modules>
 
 	<build>
