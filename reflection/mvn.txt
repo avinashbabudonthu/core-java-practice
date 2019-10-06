@@ -1,1 +1,0 @@
-mvn archetype:generate -DgroupId=com.reflection -DartifactId=reflection -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
