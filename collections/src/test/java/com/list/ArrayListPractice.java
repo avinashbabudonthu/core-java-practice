@@ -1,297 +1,528 @@
 package com.list;
 
-import lombok.extern.slf4j.Slf4j;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.ConcurrentMap;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.junit.Test;
 
-import java.util.*;
-import java.util.stream.Stream;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ArrayListPractice {
 
-    @Test
-    public void add(){
-        log.info("---- method 1 ---");
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        list1.add("3");
-        log.info("list1={}", list1);
+	@Test
+	public void add() {
+		log.info("---- method 1 ---");
+		List<String> list1 = new ArrayList<>();
+		list1.add("1");
+		list1.add("2");
+		list1.add("3");
+		log.info("list1={}", list1);
 
-        log.info("---  method 2 ---");
-        List<String> list2 = Arrays.asList("4","5","6");
-        log.info("list={}", list2);
-    }
+		log.info("---  method 2 ---");
+		List<String> list2 = Arrays.asList("4", "5", "6");
+		log.info("list={}", list2);
+	}
 
-    @Test
-    public void addAll(){
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        log.info("before list1={}", list1);
+	@Test
+	public void addAll() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("1");
+		list1.add("2");
+		log.info("before list1={}", list1);
 
-        List<String> list2 = new ArrayList<>();
-        list2.add("3");
-        list2.add("4");
-        log.info("before list2={}", list2);
+		List<String> list2 = new ArrayList<>();
+		list2.add("3");
+		list2.add("4");
+		log.info("before list2={}", list2);
 
-        list1.addAll(list2);
-        log.info("after list1={}", list1);
-    }
+		list1.addAll(list2);
+		log.info("after list1={}", list1);
+	}
 
-    @Test
-    public void remove(){
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        list1.add("3");
-        list1.add("4");
-        log.info("original - list1={}", list1);
+	@Test
+	public void remove() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("1");
+		list1.add("2");
+		list1.add("3");
+		list1.add("4");
+		log.info("original - list1={}", list1);
 
-        list1.remove("1");
-        log.info("remove element 1 - list1={}", list1);
+		list1.remove("1");
+		log.info("remove element 1 - list1={}", list1);
 
-        list1.remove(2);
-        log.info("remove element by index - list1={}", list1);
-    }
+		list1.remove(2);
+		log.info("remove element by index - list1={}", list1);
+	}
 
-    @Test
-    public void removeAll(){
-        List<String> list1 = new ArrayList<>();
-        list1.add("a");
-        list1.add("b");
-        list1.add("c");
-        list1.add("d");
-        log.info("list1 before={}", list1);
+	@Test
+	public void removeAll() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("a");
+		list1.add("b");
+		list1.add("c");
+		list1.add("d");
+		log.info("list1 before={}", list1);
 
-        List<String> list2 = new ArrayList<>();
-        list2.add("c");
-        log.info("list2={}", list2);
+		List<String> list2 = new ArrayList<>();
+		list2.add("c");
+		log.info("list2={}", list2);
 
-        list1.removeAll(list2);
-        log.info("list1 after={}", list1);
-    }
+		list1.removeAll(list2);
+		log.info("list1 after={}", list1);
+	}
 
-    @Test
-    public void subList(){
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        list1.add("3");
-        list1.add("4");
-        list1.add("5");
-        log.info("before list1={}", list1);
+	@Test
+	public void subList() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("1");
+		list1.add("2");
+		list1.add("3");
+		list1.add("4");
+		list1.add("5");
+		log.info("before list1={}", list1);
 
-        List<String> subList = list1.subList(1, 3);
-        log.info("sublist(1, 3)={}", subList);
+		List<String> subList = list1.subList(1, 3);
+		log.info("sublist(1, 3)={}", subList);
 
-        // adding element to subList will reflect in actual list
-        log.info("-- add element 6 to sublist --");
-        subList.add("6");
-        log.info("subList={}", subList);
-        log.info("list1={}", list1);
+		// adding element to subList will reflect in actual list
+		log.info("-- add element 6 to sublist --");
+		subList.add("6");
+		log.info("subList={}", subList);
+		log.info("list1={}", list1);
 
-        // deleting element from subList will reflect in actual list
-        log.info("-- remove element 3 from sublist --");
-        subList.remove("3");
-        log.info("subList={}", subList);
-        log.info("list1={}", list1);
-    }
+		// deleting element from subList will reflect in actual list
+		log.info("-- remove element 3 from sublist --");
+		subList.remove("3");
+		log.info("subList={}", subList);
+		log.info("list1={}", list1);
+	}
 
-    @Test
-    public void iterate(){
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        list1.add("3");
-        list1.add("4");
-        list1.add("5");
+	@Test
+	public void iterate() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("1");
+		list1.add("2");
+		list1.add("3");
+		list1.add("4");
+		list1.add("5");
 
-        // using iterator
-        log.info("-- iterate using iterator --");
-        Iterator<String> list1Iterator = list1.iterator();
-        while(list1Iterator.hasNext()){
-            log.info("iterator.element={}", list1Iterator.next());
-        }
+		// using iterator
+		log.info("-- iterate using iterator --");
+		Iterator<String> list1Iterator = list1.iterator();
+		while (list1Iterator.hasNext()) {
+			log.info("iterator.element={}", list1Iterator.next());
+		}
 
-        // using for loop
-        log.info("-- iterate using for loop --");
-        for(int i=0;i<list1.size();i++){
-            log.info("list1[{}]={}", i, list1.get(i));
-        }
+		// using for loop
+		log.info("-- iterate using for loop --");
+		for (int i = 0; i < list1.size(); i++) {
+			log.info("list1[{}]={}", i, list1.get(i));
+		}
 
-        // for each
-        log.info("-- iterate using for each loop --");
-        for(String element : list1){
-            log.info("element={}", element);
-        }
+		// for each
+		log.info("-- iterate using for each loop --");
+		for (String element : list1) {
+			log.info("element={}", element);
+		}
 
-        // stream
-        log.info("-- iterate using stream --");
-        list1.stream().forEach(element -> log.info("element={}", element));
-    }
+		// stream
+		log.info("-- iterate using stream --");
+		list1.stream().forEach(element -> log.info("element={}", element));
+	}
 
-    @Test
-    public void toArray() {
-        List<String> list1 = new ArrayList<>();
-        list1.add("1");
-        list1.add("2");
-        list1.add("3");
+	@Test
+	public void toArray() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("1");
+		list1.add("2");
+		list1.add("3");
 
-        // to object array
-        log.info("-- to Object array : Object[] --");
-        Object[] objectArray = list1.toArray();
-        Stream.of(objectArray).forEach(element -> log.info("element={}", element));
+		// to object array
+		log.info("-- to Object array : Object[] --");
+		Object[] objectArray = list1.toArray();
+		Stream.of(objectArray).forEach(element -> log.info("element={}", element));
 
-        // to String array
-        log.info("-- to String array, passing array size: String[] --");
-        String[] stringArray = list1.toArray(new String[list1.size()]);
-        Stream.of(stringArray).forEach(element -> log.info("element={}", element));
+		// to String array
+		log.info("-- to String array, passing array size: String[] --");
+		String[] stringArray = list1.toArray(new String[list1.size()]);
+		Stream.of(stringArray).forEach(element -> log.info("element={}", element));
 
-        log.info("-- to String array without passing array size : String[] ");
-        String[] stringArray2 = list1.toArray(new String[]{});
-        Stream.of(stringArray2).forEach(element -> log.info("element={}", element));
-    }
+		log.info("-- to String array without passing array size : String[] ");
+		String[] stringArray2 = list1.toArray(new String[] {});
+		Stream.of(stringArray2).forEach(element -> log.info("element={}", element));
+	}
 
-    @Test
-    public void sortUsingComparable(){
-        Student student1 = Student.builder().name("jim").grade(3.12).build();
-        Student student2 = Student.builder().name("jack").grade(3.25).build();
-        Student student3 = Student.builder().name("john").grade(3.10).build();
-        Student student4 = Student.builder().name("jane").grade(3.35).build();
-        Student student5 = Student.builder().name("jill").grade(3.05).build();
+	@Test
+	public void sortUsingComparable() {
+		Student student1 = Student.builder().name("jim").grade(3.12).build();
+		Student student2 = Student.builder().name("jack").grade(3.25).build();
+		Student student3 = Student.builder().name("john").grade(3.10).build();
+		Student student4 = Student.builder().name("jane").grade(3.35).build();
+		Student student5 = Student.builder().name("jill").grade(3.05).build();
 
-        List<Student> students = new ArrayList<>();
-        students.add(student1);
-        students.add(student2);
-        students.add(student3);
-        students.add(student4);
-        students.add(student5);
+		List<Student> students = new ArrayList<>();
+		students.add(student1);
+		students.add(student2);
+		students.add(student3);
+		students.add(student4);
+		students.add(student5);
 
-        log.info("-- before sort --");
-        log.info("students={}", students);
+		log.info("-- before sort --");
+		log.info("students={}", students);
 
-        Collections.sort(students);
-        log.info("-- after sort --");
-        log.info("students={}", students);
-    }
+		Collections.sort(students);
+		log.info("-- after sort --");
+		log.info("students={}", students);
+	}
 
-    @Test
-    public void sortUsingComparator(){
-        Student student1 = Student.builder().name("jim").grade(3.12).build();
-        Student student2 = Student.builder().name("jack").grade(3.25).build();
-        Student student3 = Student.builder().name("john").grade(3.10).build();
-        Student student4 = Student.builder().name("jane").grade(3.35).build();
-        Student student5 = Student.builder().name("jill").grade(3.05).build();
+	@Test
+	public void sortUsingComparator() {
+		Student student1 = Student.builder().name("jim").grade(3.12).build();
+		Student student2 = Student.builder().name("jack").grade(3.25).build();
+		Student student3 = Student.builder().name("john").grade(3.10).build();
+		Student student4 = Student.builder().name("jane").grade(3.35).build();
+		Student student5 = Student.builder().name("jill").grade(3.05).build();
 
-        List<Student> students = new ArrayList<>();
-        students.add(student1);
-        students.add(student2);
-        students.add(student3);
-        students.add(student4);
-        students.add(student5);
+		List<Student> students = new ArrayList<>();
+		students.add(student1);
+		students.add(student2);
+		students.add(student3);
+		students.add(student4);
+		students.add(student5);
 
-        log.info("-- before sort --");
-        log.info("students={}", students);
+		log.info("-- before sort --");
+		log.info("students={}", students);
 
-        Comparator<Student> nameComparator = (s1, s2) -> s1.getName().compareTo(s2.getName());
-        log.info("-- sort by name --");
-        students.sort(nameComparator);
-        log.info("students={}", students);
+		Comparator<Student> nameComparator = (s1, s2) -> s1.getName().compareTo(s2.getName());
+		log.info("-- sort by name --");
+		students.sort(nameComparator);
+		log.info("students={}", students);
 
-        Comparator<Student> gradeComparator = (s1, s2) -> s2.getGrade().compareTo(s1.getGrade());
-        log.info("-- sort by grade desc --");
-        students.sort(gradeComparator);
-        log.info("students={}", students);
-    }
+		Comparator<Student> gradeComparator = (s1, s2) -> s2.getGrade().compareTo(s1.getGrade());
+		log.info("-- sort by grade desc --");
+		students.sort(gradeComparator);
+		log.info("students={}", students);
+	}
 
+	/**
+	 * 1. list of student objects
+	 * 2. remove duplicates in list by student name
+	 */
+	@Test
+	public void removeDuplicatesInListByStudentName() {
+		Student jack1 = Student.builder().name("jack").grade(3.12).build();
+		Student tim1 = Student.builder().name("tim").grade(3.15).build();
+		Student jim = Student.builder().name("jim").grade(3.13).build();
+		Student jill = Student.builder().name("jill").grade(3.14).build();
+		Student jack2 = Student.builder().name("jack").grade(3.16).build();
+		Student tim2 = Student.builder().name("tim").grade(3.17).build();
 
-    /**
-     * 1. list of student objects
-     * 2. remove duplicates in list by student name
-     */
-    @Test
-    public void removeDuplicatesInListByStudentName(){
-        Student jack1 = Student.builder().name("jack").grade(3.12).build();
-        Student tim1 = Student.builder().name("tim").grade(3.15).build();
-        Student jim = Student.builder().name("jim").grade(3.13).build();
-        Student jill = Student.builder().name("jill").grade(3.14).build();
-        Student jack2 = Student.builder().name("jack").grade(3.16).build();
-        Student tim2 = Student.builder().name("tim").grade(3.17).build();
+		List<Student> studentsList = new ArrayList<>();
+		studentsList.add(jack1);
+		studentsList.add(tim1);
+		studentsList.add(jim);
+		studentsList.add(jill);
+		studentsList.add(jack2);
+		studentsList.add(tim2);
 
-        List<Student> studentsList = new ArrayList<>();
-        studentsList.add(jack1);
-        studentsList.add(tim1);
-        studentsList.add(jim);
-        studentsList.add(jill);
-        studentsList.add(jack2);
-        studentsList.add(tim2);
+		log.info("actual list - size={}", studentsList.size());
+		studentsList.stream().forEach(student -> log.info("{}", student));
 
-        log.info("actual list - size={}", studentsList.size());
-        studentsList.stream().forEach(student -> log.info("{}", student));
+		List<Student> uniqueStudentsList = new ArrayList<>();
+		Set<String> studentNamesSet = new HashSet<>();
 
-        List<Student> uniqueStudentsList = new ArrayList<>();
-        Set<String> studentNamesSet = new HashSet<>();
+		for (Student student : studentsList) {
+			if (studentNamesSet.add(student.getName())) {
+				uniqueStudentsList.add(student);
+			}
+		}
 
-        for(Student student : studentsList){
-            if(studentNamesSet.add(student.getName())){
-                uniqueStudentsList.add(student);
-            }
-        }
+		log.info("unique names, size={}", studentNamesSet.size());
+		studentNamesSet.stream().forEach(name -> log.info("{}", name));
 
-        log.info("unique names, size={}", studentNamesSet.size());
-        studentNamesSet.stream().forEach(name -> log.info("{}", name));
+		log.info("unique students list, size={}", uniqueStudentsList.size());
+		uniqueStudentsList.stream().forEach(student -> log.info("{}", student));
+	}
 
-        log.info("unique students list, size={}", uniqueStudentsList.size());
-        uniqueStudentsList.stream().forEach(student -> log.info("{}", student));
-    }
+	/**
+	 * If we do not type cast - remove(index) will be called
+	 * If we type cast - remove(Object) will be called
+	 */
+	@Test
+	public void removeIntegerByValueFromIntegerList() {
+		List<Integer> numbers = new ArrayList<>();
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		numbers.add(4);
+		numbers.add(5);
 
-    /**
-     * If we do not type cast - remove(index) will be called
-     * If we type cast - remove(Object) will be called
-     */
-    @Test
-    public void removeIntegerByValueFromIntegerList(){
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        numbers.add(5);
+		log.info("numbers={}", numbers);
+		numbers.remove((Integer) 5);
+		log.info("numbers={}", numbers);
 
-        log.info("numbers={}", numbers);
-        numbers.remove((Integer) 5);
-        log.info("numbers={}", numbers);
+		Integer number = 4;
+		numbers.remove(number);
+		log.info("numbers={}", numbers);
 
-        Integer number = 4;
-        numbers.remove(number);
-        log.info("numbers={}", numbers);
+		numbers.remove((Object) 3);
+		log.info("numbers={}", numbers);
+	}
 
-        numbers.remove((Object) 3);
-        log.info("numbers={}", numbers);
-    }
+	/**
+	 * Remove null objects from list
+	 */
+	@Test
+	public void removeNullsFromList() {
+		List<String> names = new ArrayList<>();
+		names.add("jack");
+		names.add(null);
+		names.add("jill");
+		names.add(null);
+		names.add("jim");
+		names.add(null);
+		names.add("tim");
 
-    /**
-     * Remove null objects from list
-     */
-    @Test
-    public void removeNullsFromList(){
-        List<String> names = new ArrayList<>();
-        names.add("jack");
-        names.add(null);
-        names.add("jill");
-        names.add(null);
-        names.add("jim");
-        names.add(null);
-        names.add("tim");
+		log.info("names={}", names);
 
-        log.info("names={}", names);
+		Set<?> nullSet = Collections.singleton(null);
 
-        Set<?> nullSet = Collections.singleton(null);
+		names.removeAll(nullSet);
 
-        names.removeAll(nullSet);
+		log.info("names={}", names);
+	}
 
-        log.info("names={}", names);
-    }
+	@Test
+	public void min() {
+		List<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
 
+		Optional<Integer> minNumber = list.stream().min(Integer::compareTo);
+		log.info("minNumber={}", minNumber);
+	}
+
+	@Test
+	public void forEach() {
+		List<String> list = new ArrayList<>();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.add("4");
+
+		list.stream().forEach(value -> log.info("value={}", value));
+	}
+
+	/**
+	 * 1. Order is not maintained on using parallelStream
+	 */
+	@Test
+	public void forEachUsingParallelStream() {
+		List<String> list = new ArrayList<>();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.add("4");
+
+		list.parallelStream().forEach(value -> log.info("value={}", value));
+	}
+
+	@Test
+	public void filter() {
+	}
+
+	@Test
+	public void filterAndMin() {
+
+	}
+
+	@Test
+	public void filterAndMax() {
+
+	}
+
+	@Test
+	public void filterAndSum() {
+
+	}
+
+	@Test
+	public void filterAndCount() {
+
+	}
+
+	@Test
+	public void averageOfInt() {
+
+	}
+
+	@Test
+	public void averageOfDouble() {
+
+	}
+
+	@Test
+	public void max() {
+
+	}
+
+	@Test
+	public void sum() {
+
+	}
+
+	@Test
+	public void count() {
+
+	}
+
+	@Test
+	public void reduce() {
+
+	}
+
+	@Test
+	public void collect() {
+
+	}
+
+	@Test
+	public void groupByUsingParallelStream() {
+		List<Employee> employeeList = new ArrayList<>();
+		employeeList.add(Employee.builder().name("jim").gender("M").build());
+		employeeList.add(Employee.builder().name("jane").gender("F").build());
+		employeeList.add(Employee.builder().name("john").gender("M").build());
+		employeeList.add(Employee.builder().name("Ani").gender("F").build());
+
+		ConcurrentMap<String, List<Employee>> groupByGender = employeeList.parallelStream()
+				.collect(Collectors.groupingByConcurrent(Employee::getGender));
+		log.info("groupByGender={}", groupByGender);
+	}
+
+	@Test
+	public void convertListToMap() {
+		List<Employee> employeesList = new ArrayList<>();
+		employeesList
+				.add(Employee.builder().id(1).name("jack").gender("M").salary(1001L).department("accounts").build());
+		employeesList.add(Employee.builder().id(2).name("jill").gender("F").salary(1002L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(3).name("jim").gender("M").salary(1003L).department("transport").build());
+		employeesList
+				.add(Employee.builder().id(4).name("josh").gender("M").salary(1004L).department("accounts").build());
+		employeesList
+				.add(Employee.builder().id(5).name("jane").gender("F").salary(1005L).department("transport").build());
+		employeesList.add(Employee.builder().id(6).name("Ana").gender("F").salary(1006L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(7).name("john").gender("F").salary(1007L).department("accounts").build());
+
+		// key == id, value == name
+		Map<Integer, String> idToNameMap = employeesList.stream()
+				.collect(Collectors.toMap(Employee::getId, Employee::getName));
+		log.info("id-to-name-map={}", idToNameMap);
+
+		// key == name, value == salary
+		Map<String, Long> nameToSalaryMap = employeesList.stream()
+				.collect(Collectors.toMap(Employee::getName, Employee::getSalary));
+		log.info("name-to-salary-map={}", nameToSalaryMap);
+
+		// key == department, value == name. Without 3rd argument we will get exception
+		/*
+		 * java.lang.IllegalStateException: Duplicate key jack
+			at java.util.stream.Collectors.lambda$throwingMerger$0(Collectors.java:133)
+			at java.util.HashMap.merge(HashMap.java:1253)
+		 */
+		Map<String, String> departmentToNameMap = employeesList.stream().collect(Collectors
+				.toMap(Employee::getDepartment, Employee::getName, (oldValue, newValue) -> oldValue + ", " + newValue));
+		log.info("department-to-name-map={}", departmentToNameMap);
+
+		// key == name, value == employee object itself - using lambda
+		Map<String, Employee> nameToEmployeeMap = employeesList.stream()
+				.collect(Collectors.toMap(Employee::getName, emp -> emp));
+		log.info("name-to-employee-map={}", nameToEmployeeMap);
+
+		// key == name, value == employee object itself - using Function.identity()
+		Map<String, Employee> nameToEmployeeMap2 = employeesList.stream()
+				.collect(Collectors.toMap(Employee::getName, Function.identity()));
+		log.info("name-to-employee-map={}", nameToEmployeeMap2);
+	}
+
+	@Test
+	public void listToSortedMap() {
+		List<Employee> employeesList = new ArrayList<>();
+		employeesList.add(Employee.builder().id(2).name("jill").gender("F").salary(1002L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(4).name("josh").gender("M").salary(1004L).department("accounts").build());
+		employeesList
+				.add(Employee.builder().id(7).name("john").gender("F").salary(1007L).department("accounts").build());
+		employeesList
+				.add(Employee.builder().id(3).name("jim").gender("M").salary(1003L).department("transport").build());
+
+		employeesList
+				.add(Employee.builder().id(5).name("jane").gender("F").salary(1005L).department("transport").build());
+		employeesList.add(Employee.builder().id(6).name("Ana").gender("F").salary(1006L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(1).name("jack").gender("M").salary(1001L).department("accounts").build());
+
+		// @formatter:off
+		Map<String, Long> ascendingOrderOfNames = employeesList.stream().sorted(Comparator.comparing(Employee::getName))
+				.collect(Collectors.toMap(
+							Employee::getName,  // key == name
+							Employee::getSalary,  // value == salary
+							(oldValue, newValue) -> newValue, // keep new value
+							LinkedHashMap::new // return LinkedHashMap, for insertion order
+							) 
+						);
+		// @formatter:on
+		log.info("asending order by name map={}", ascendingOrderOfNames);
+
+		// @formatter:off
+		Map<String, Long> descendingOrderOfSalary = employeesList.stream()
+				.sorted(Comparator.comparingLong(Employee::getSalary).reversed())
+				.collect(Collectors.toMap(
+						Employee::getName,  // key == name
+						Employee::getSalary,  // value == salary
+						(oldValue, newValue) -> newValue, // keep new value
+						LinkedHashMap::new // return LinkedHashMap, for insertion order
+						) 
+					);
+		// @formatter:on
+		log.info("descending order of salary={}", descendingOrderOfSalary);
+
+	}
+
+	@Test
+	public void splitList() {
+		List<Integer> srcList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		System.out.println(splitList(srcList, 2));
+		System.out.println(splitList(srcList, 3));
+		System.out.println(splitList(srcList, 4));
+		System.out.println(splitList(srcList, 5));
+		System.out.println(splitList(srcList, 10));
+		System.out.println(splitList(srcList, 15));
+	}
+
+	private <T> List<List<T>> splitList(List<T> srcList, final int lengthOfSubList) {
+		List<List<T>> splits = new ArrayList<>();
+		final int size = srcList.size();
+		for (int i = 0; i < size; i = i + lengthOfSubList) {
+			splits.add(new ArrayList<T>(srcList.subList(i, Math.min(size, i + lengthOfSubList))));
+		}
+		return splits;
+	}
 }

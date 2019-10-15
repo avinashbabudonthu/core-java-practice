@@ -1,8 +1,12 @@
 package com.list;
 
-import lombok.*;
-
 import java.time.LocalDate;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
@@ -11,7 +15,10 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 public class Employee {
 
-    private String name;
-    private LocalDate joiningDate;
-    private String gender;
+	private Integer id;
+	private String name;
+	private LocalDate joiningDate;
+	private String gender;
+	private Long salary;
+	private String department;
 }

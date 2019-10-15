@@ -1,8 +1,10 @@
 package com.list;
 
-import lombok.*;
-
-import java.util.Comparator;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
@@ -11,12 +13,12 @@ import java.util.Comparator;
 @EqualsAndHashCode
 public class Student implements Comparable<Student> {
 
-    private String name;
-    private Double grade;
+	private String name;
+	private Double grade;
 
-    // sorted order of grade
-    @Override
-    public int compareTo(Student that) {
-        return this.grade.compareTo(that.getGrade());
-    }
+	// sorted order of grade
+	@Override
+	public int compareTo(Student that) {
+		return this.grade.compareTo(that.getGrade());
+	}
 }
