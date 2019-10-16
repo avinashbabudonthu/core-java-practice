@@ -525,4 +525,145 @@ public class ArrayListPractice {
 		}
 		return splits;
 	}
+
+	// new methods
+	@Test
+	public void convertArrayToList() {
+		String[] stringArray = new String[] { "A", "B", "C", "D" };
+
+		// method 1
+		List<String> stringList = Arrays.asList(stringArray);
+		System.out.println("stringList: " + stringList);
+
+		// method 2
+		List<String> stringList2 = new ArrayList<>(Arrays.asList(stringArray));
+		System.out.println("stringList2: " + stringList2);
+
+		// method 3
+		int[] numbersArray1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		List<Integer> numbersList1 = new ArrayList<>();
+		for (int number : numbersArray1) {
+			numbersList1.add(number);
+		}
+		System.out.println("numbersList1: " + numbersList1);
+
+		// method 4
+		Integer[] numbersArray3 = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		List<Integer> numbersList3 = Arrays.asList(numbersArray3);
+		System.out.println("numbersList3: " + numbersList3);
+
+		// from java 8
+		int[] numbersArray2 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		List<Integer> numbersList2 = Arrays.stream(numbersArray2).boxed().collect(Collectors.toList());
+		System.out.println("numbersList2: " + numbersList2);
+	}
+
+	@Test
+	public void convertListToArray() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("A");
+		list1.add("B");
+		list1.add("C");
+		System.out.println("list1: " + list1);
+
+		String[] list1Array = list1.toArray(new String[list1.size()]);
+		for (String value : list1Array) {
+			System.out.print(value + ",");
+		}
+	}
+
+	@Test
+	public void convertListToCommaSeparatedString() {
+		List<String> list = Arrays.asList("A", "B", "C", "D", "E");
+
+		//method 1
+		StringBuffer listToString1 = new StringBuffer(list.toString());
+		listToString1.deleteCharAt(0);
+		listToString1.deleteCharAt(listToString1.length() - 1);
+		String destString = listToString1.toString().replace(" ", "");
+		System.out.println("listToString1: " + destString);
+
+		// method 2
+		Iterator<String> iterator = list.iterator();
+		StringBuffer listToString2 = new StringBuffer();
+		for (;;) {
+			listToString2.append(iterator.next());
+			if (!iterator.hasNext())
+				break;
+			listToString2.append(",");
+		}
+		System.out.println("listToString2: " + listToString2);
+
+		// method 3
+		StringBuffer listToString3 = new StringBuffer("[");
+		for (Iterator<String> iterator2 = list.iterator(); iterator2.hasNext();) {
+			listToString3.append(iterator2.next());
+			if (iterator2.hasNext()) {
+				listToString3.append(",");
+			}
+		}
+		listToString3.append("]");
+		System.out.println("listToString3: " + listToString3.toString());
+
+		// method 4
+		String listToString4 = String.join("-", list);
+		System.out.println("listToString4: " + listToString4);
+
+		// method 5
+		Integer[] intArray = new Integer[] { 1, 2, 3, 4, 5, 6, 7 };
+		List<String> stringList = Arrays.stream(intArray).map(String::valueOf).collect(Collectors.toList());
+		String listToString5 = String.join("-", stringList);
+		System.out.println("listToString5: " + listToString5);
+	}
+
+	/**
+	 * list1 = {a,b,c,d,e}
+	 * list2 = {a,b,c,f,g,h}
+	 * output = {a,b,c,d,e,f,g,h}
+	 */
+	@Test
+	public void prepareNewListWithUniqueValues() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("a");
+		list1.add("b");
+		list1.add("c");
+		list1.add("d");
+		list1.add("e");
+
+		List<String> list2 = new ArrayList<>();
+		list2.add("a");
+		list2.add("b");
+		list2.add("c");
+		list2.add("f");
+		list2.add("g");
+		list2.add("h");
+
+		List<String> commonElementsList = new ArrayList<>(list2);
+		commonElementsList.retainAll(list1);
+		list2.removeAll(commonElementsList);
+		list1.addAll(list2);
+		System.out.println(list1);
+	}
+
+	/**
+	 * Create immutable list
+	 */
+	@Test
+	public void immutableList() {
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+
+		System.out.println("list: " + list);
+		List<String> immutableList = Collections.unmodifiableList(list);
+		System.out.println("immutableList: " + immutableList);
+
+		try {
+			immutableList.add("d");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }
