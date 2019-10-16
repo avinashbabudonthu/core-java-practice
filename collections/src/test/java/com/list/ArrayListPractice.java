@@ -526,7 +526,6 @@ public class ArrayListPractice {
 		return splits;
 	}
 
-	// new methods
 	@Test
 	public void convertArrayToList() {
 		String[] stringArray = new String[] { "A", "B", "C", "D" };
