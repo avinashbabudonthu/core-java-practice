@@ -613,6 +613,11 @@ public class ArrayListPractice {
 		List<String> stringList = Arrays.stream(intArray).map(String::valueOf).collect(Collectors.toList());
 		String listToString5 = String.join("-", stringList);
 		System.out.println("listToString5: " + listToString5);
+
+		// method 6
+		List<String> list2 = Arrays.asList("jack", "john", "jim", "jane");
+		String str = list2.stream().map(x -> x).collect(Collectors.joining(","));
+		System.out.println("str:" + str);
 	}
 
 	/**

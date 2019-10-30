@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 public class StringFormatPractice {
 
 	@Test
-	public void stringFormat() {
+	public void stringFormatConventionsAndFlags() {
 		String str1 = String.format("Welcome to number %d, %d, %d and %d", 1, 2, 3, 4);
 		log.info("str1={}", str1); // str1=Welcome to number 1, 2, 3 and 4
 
@@ -61,5 +61,14 @@ public class StringFormatPractice {
 		log.info("s19={}", s19); // s19=123
 		log.info("s20={}", s20); // s20=(123)
 		log.info("s21={}", s21); // s21= 123
+	}
+
+	@Test
+	public void stringFormat() {
+		String str = "Welcome to %s. Visit %s (URL - %s) for more details.";
+		String finalString = String.format(str, "Java world", "Cerebro", "https://cerebroap.herokuapp.com/");
+
+		// finalString: Welcome to Java world. Visit Cerebro (URL - https://cerebroap.herokuapp.com/) for more details.
+		System.out.println("finalString: " + finalString);
 	}
 }
