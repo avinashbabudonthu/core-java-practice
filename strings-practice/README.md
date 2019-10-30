@@ -6,3 +6,4 @@ mvn archetype:generate -DgroupId=com.string.practice -DartifactId=strings-practi
 ```
 
 ## Examples
+* [String Examples](src/test/java/com/string/practice/StringPractice.java)
