@@ -6,32 +6,35 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Stream;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ReadFile {
 
-    @Test
-    public void readFileUsingBufferedReaderAndRelativePath() throws IOException{
-        try (BufferedReader bufferedReader = Files
-                .newBufferedReader(Paths.get("src/main/resources/file1.txt").toAbsolutePath())) {
-            System.out.println(bufferedReader.readLine());
-        }
-    }
+	@Test
+	public void readFileUsingBufferedReaderAndRelativePath() throws IOException {
+		try (BufferedReader bufferedReader = Files
+				.newBufferedReader(Paths.get("src/main/resources/file1.txt").toAbsolutePath())) {
 
-    @Test
-    public void readFileUsingFileSystemsAndRelativePath() throws  IOException{
-        try (BufferedReader bufferedReader = Files
-                .newBufferedReader(FileSystems.getDefault().getPath("src/main/resources/file1.txt"))) {
-            System.out.println(bufferedReader.readLine());
-        }
-    }
+			Stream<String> lines = bufferedReader.lines();
+			lines.forEach(System.out::println);
+		}
+	}
 
-    @Test
-    public void readFileUsingFilesAndRelativePath() throws IOException{
-        List<String> allLines = Files.readAllLines(Paths.get("src/main/resources/file3.txt"));
-        allLines.stream().forEach(System.out::println);
-    }
+	@Test
+	public void readFileUsingFileSystemsAndRelativePath() throws IOException {
+		try (BufferedReader bufferedReader = Files
+				.newBufferedReader(FileSystems.getDefault().getPath("src/main/resources/file1.txt"))) {
+			Stream<String> lines = bufferedReader.lines();
+			lines.forEach(System.out::println);
+		}
+	}
+
+	@Test
+	public void readFileUsingFilesAndRelativePath() throws IOException {
+		List<String> allLines = Files.readAllLines(Paths.get("src/main/resources/file3.txt"));
+		allLines.stream().forEach(System.out::println);
+	}
 
 }
