@@ -6,3 +6,7 @@ mvn archetype:generate -DgroupId=com.reflection -DartifactId=reflection -Dversio
 ```
 
 ## Examples
+
+## Materials
+### Pluralsight
+* Java Fundamentals: The Java Reflection API Method Handles
