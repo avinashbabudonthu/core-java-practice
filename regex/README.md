@@ -6,3 +6,7 @@ mvn archetype:generate -DgroupId=com.regex -DartifactId=regex -Dversion=1.0 -Dar
 ```
 
 ## Examples
+
+## Materials
+### Pluralsight
+* Java Fundamentals: The Regular Expressions Playbook
