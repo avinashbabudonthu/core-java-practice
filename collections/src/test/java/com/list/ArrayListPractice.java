@@ -463,50 +463,6 @@ public class ArrayListPractice {
 	}
 
 	@Test
-	public void listToSortedMap() {
-		List<Employee> employeesList = new ArrayList<>();
-		employeesList.add(Employee.builder().id(2).name("jill").gender("F").salary(1002L).department("hr").build());
-		employeesList
-				.add(Employee.builder().id(4).name("josh").gender("M").salary(1004L).department("accounts").build());
-		employeesList
-				.add(Employee.builder().id(7).name("john").gender("F").salary(1007L).department("accounts").build());
-		employeesList
-				.add(Employee.builder().id(3).name("jim").gender("M").salary(1003L).department("transport").build());
-
-		employeesList
-				.add(Employee.builder().id(5).name("jane").gender("F").salary(1005L).department("transport").build());
-		employeesList.add(Employee.builder().id(6).name("Ana").gender("F").salary(1006L).department("hr").build());
-		employeesList
-				.add(Employee.builder().id(1).name("jack").gender("M").salary(1001L).department("accounts").build());
-
-		// @formatter:off
-		Map<String, Long> ascendingOrderOfNames = employeesList.stream().sorted(Comparator.comparing(Employee::getName))
-				.collect(Collectors.toMap(
-							Employee::getName,  // key == name
-							Employee::getSalary,  // value == salary
-							(oldValue, newValue) -> newValue, // keep new value
-							LinkedHashMap::new // return LinkedHashMap, for insertion order
-							) 
-						);
-		// @formatter:on
-		log.info("asending order by name map={}", ascendingOrderOfNames);
-
-		// @formatter:off
-		Map<String, Long> descendingOrderOfSalary = employeesList.stream()
-				.sorted(Comparator.comparingLong(Employee::getSalary).reversed())
-				.collect(Collectors.toMap(
-						Employee::getName,  // key == name
-						Employee::getSalary,  // value == salary
-						(oldValue, newValue) -> newValue, // keep new value
-						LinkedHashMap::new // return LinkedHashMap, for insertion order
-						) 
-					);
-		// @formatter:on
-		log.info("descending order of salary={}", descendingOrderOfSalary);
-
-	}
-
-	@Test
 	public void splitList() {
 		List<Integer> srcList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 		System.out.println(splitList(srcList, 2));
@@ -670,4 +626,98 @@ public class ArrayListPractice {
 		}
 	}
 
+	/**
+	 * Sort list of student by grade. If grade is equal sort by name
+	 */
+	@Test
+	public void sortByGradeAndName() {
+		Student student1 = Student.builder().name("john").grade(3.12).build();
+		Student student2 = Student.builder().name("jane").grade(3.25).build();
+		Student student3 = Student.builder().name("jim").grade(3.12).build();
+		Student student4 = Student.builder().name("jack").grade(3.25).build();
+		Student student5 = Student.builder().name("jill").grade(3.45).build();
+
+		List<Student> students = new ArrayList<>();
+		students.add(student1);
+		students.add(student2);
+		students.add(student3);
+		students.add(student4);
+		students.add(student5);
+
+		log.info("before sort, students={}", students);
+
+		Comparator<Student> gradeAndNameComparator = (s1, s2) -> {
+			int result = s1.getGrade().compareTo(s2.getGrade());
+			if (0 == result) {
+				result = s1.getName().compareTo(s2.getName());
+			}
+			return result;
+		};
+
+		students.sort(gradeAndNameComparator);
+		log.info("sort by grade and name , students={}", students);
+	}
+
+	@Test
+	public void listToSortedMapByKey() {
+		List<Employee> employeesList = new ArrayList<>();
+		employeesList.add(Employee.builder().id(2).name("jill").gender("F").salary(1002L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(4).name("josh").gender("M").salary(1004L).department("accounts").build());
+		employeesList
+				.add(Employee.builder().id(7).name("john").gender("F").salary(1007L).department("accounts").build());
+		employeesList
+				.add(Employee.builder().id(3).name("jim").gender("M").salary(1003L).department("transport").build());
+
+		employeesList
+				.add(Employee.builder().id(5).name("jane").gender("F").salary(1005L).department("transport").build());
+		employeesList.add(Employee.builder().id(6).name("Ana").gender("F").salary(1006L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(1).name("jack").gender("M").salary(1001L).department("accounts").build());
+
+		// @formatter:off
+		Map<String, Long> ascendingOrderOfNames = employeesList.stream()
+				.sorted(Comparator.comparing(Employee::getName))
+				.collect(Collectors.toMap(
+							Employee::getName,  // key == name
+							Employee::getSalary,  // value == salary
+							(oldValue, newValue) -> newValue, // keep new value
+							LinkedHashMap::new // return LinkedHashMap, for insertion order
+							) 
+						);
+		// @formatter:on
+		log.info("asending order by name map={}", ascendingOrderOfNames);
+	}
+
+	@Test
+	public void listToSortedMapByValue() {
+		List<Employee> employeesList = new ArrayList<>();
+		employeesList.add(Employee.builder().id(2).name("jill").gender("F").salary(1002L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(4).name("josh").gender("M").salary(1004L).department("accounts").build());
+		employeesList
+				.add(Employee.builder().id(7).name("john").gender("F").salary(1007L).department("accounts").build());
+		employeesList
+				.add(Employee.builder().id(3).name("jim").gender("M").salary(1003L).department("transport").build());
+
+		employeesList
+				.add(Employee.builder().id(5).name("jane").gender("F").salary(1005L).department("transport").build());
+		employeesList.add(Employee.builder().id(6).name("Ana").gender("F").salary(1006L).department("hr").build());
+		employeesList
+				.add(Employee.builder().id(1).name("jack").gender("M").salary(1001L).department("accounts").build());
+
+		// @formatter:off
+		Map<String, Long> descendingOrderOfSalary = employeesList.stream()
+				.sorted(Comparator.comparingLong(Employee::getSalary).reversed())
+				.collect(Collectors.toMap(
+						Employee::getName,  // key == name
+						Employee::getSalary,  // value == salary
+						(oldValue, newValue) -> newValue, // keep new value
+						LinkedHashMap::new // return LinkedHashMap, for insertion order
+						) 
+					);
+		// @formatter:on
+		log.info("descending order of salary={}", descendingOrderOfSalary);
+
+	}
 }
