@@ -1,8 +1,14 @@
-# Core Java String Examples
+# Multi Threading Examples
+* YTD
 
-## Create project using maven
-```
-mvn archetype:generate -DgroupId=com.multi.threading.practice -DartifactId=multi-threading-practice -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-```
+## Materials
+### Pluralsight
+* Applying Concurrency and Multi-threading to Common Java Patterns [Course]
+* Scaling Java Applications Through Concurrency [Course]
+* Java Fundamentals - Concurrency with Multithreading [Course]
 
-## Examples
+### Others
+* [http://tutorials.jenkov.com/java-concurrency/index.html](http://tutorials.jenkov.com/java-concurrency/index.html)
+* [http://tutorials.jenkov.com/java-util-concurrent/index.html](http://tutorials.jenkov.com/java-util-concurrent/index.html)
+* [https://www.baeldung.com/lmax-disruptor-concurrency](https://www.baeldung.com/lmax-disruptor-concurrency)
+* [https://plumbr.io/blog/locked-threads/how-to-shoot-yourself-in-foot-with-threadlocals](https://plumbr.io/blog/locked-threads/how-to-shoot-yourself-in-foot-with-threadlocals)
