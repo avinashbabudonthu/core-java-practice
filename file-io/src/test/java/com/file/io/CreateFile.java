@@ -2,7 +2,6 @@ package com.file.io;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.lang.invoke.MethodHandles;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
@@ -19,12 +18,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CreateFile {
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
 	@Test
 	public void writeToFile() {
@@ -34,7 +32,7 @@ public class CreateFile {
 			bufferedWriter.newLine();
 			formatter.format("core java %s %s", "file io", "practice");
 		} catch (Exception e) {
-			LOGGER.error("Error while creating file={}", "src/main/resources/file4.txt");
+			log.error("Error while creating file={}", "src/main/resources/file4.txt");
 		}
 	}
 
@@ -44,9 +42,9 @@ public class CreateFile {
 		properties.put("create", "true");
 		URI zipURI = new URI("jar:file", Paths.get("src/main/resources/empty.zip").toUri().getPath(), null);
 		try (FileSystem zipFileSystem = FileSystems.newFileSystem(zipURI, properties)) {
-			System.out.println("zip file created");
+			log.info("zip file created");
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("exception", e);
 		}
 	}
 
@@ -63,11 +61,11 @@ public class CreateFile {
 				bufferedWriter.newLine();
 			}
 
-			System.out.println("-- using Files --");
+			log.info("-- using Files --");
 			Files.write(zipFileSystem.getPath("file2-copy.txt"), Arrays.asList(data), Charset.defaultCharset(),
 					StandardOpenOption.CREATE);
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("exception", e);
 		}
 	}
 
@@ -81,7 +79,7 @@ public class CreateFile {
 			Path destinationFile = zipFileSystem.getPath("/file1-copy.txt");
 			Files.copy(file1, destinationFile, StandardCopyOption.REPLACE_EXISTING);
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("exception", e);
 		}
 	}
 }

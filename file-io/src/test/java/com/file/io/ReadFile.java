@@ -1,7 +1,15 @@
 package com.file.io;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.channels.FileChannel;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,8 +17,12 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ReadFile {
 
 	@Test
@@ -42,13 +54,143 @@ public class ReadFile {
 	public void paths() {
 		// read 1 file
 		Path path = Paths.get("file1.txt");
-		System.out.println(path.toString());
-		System.out.println(path.toAbsolutePath().toString());
+		log.info("file-name={}, absolute-path={}", path.toString(), path.toAbsolutePath().toString());
 
-		System.out.println("-- reading multiple files ---");
+		log.info("-- reading multiple files ---");
 		Path paths = Paths.get("file1.txt", "file2.txt");
-		System.out.println(paths.toString());
-		System.out.println(paths.toAbsolutePath().toString());
+		paths.forEach(eachPath -> {
+			log.info("file-name={}, absolute-path={}", eachPath.toString(), eachPath.toAbsolutePath().toString());
+		});
+
+	}
+
+	@Test
+	public void readFileByteByByteUsingFileInputStream() throws FileNotFoundException, IOException {
+		// read each byte
+		File file = new File(Paths.get("src/main/resources/file1.txt").toAbsolutePath().toString());
+		try (InputStream insInputStream = new FileInputStream(file)) {
+			int intValue = -1;
+			StringBuffer fileContent = new StringBuffer();
+			while ((intValue = insInputStream.read()) >= 0) {
+				char charValue = (char) intValue;
+				fileContent.append(charValue);
+			}
+
+			log.info("file-content={}", fileContent);
+		}
+	}
+
+	@Test
+	public void readFileByByteArrayUsingFileInputStream() throws FileNotFoundException, IOException {
+		File file = new File(Paths.get("src/main/resources/file1.txt").toAbsolutePath().toString());
+		try (InputStream insInputStream = new FileInputStream(file)) {
+			int length;
+			byte[] byteBuffer = new byte[20];
+			StringBuffer fileContent = new StringBuffer();
+			while ((length = insInputStream.read(byteBuffer)) >= 0) {
+				for (int i = 0; i < length; i++) {
+					char value = (char) byteBuffer[i];
+					fileContent.append(value);
+				}
+			}
+
+			log.info("file-content={}", fileContent);
+		}
+	}
+
+	@Test
+	public void readFileCharByCharUsingInputStreamReader() throws FileNotFoundException, IOException {
+		File file = new File(Paths.get("src/main/resources/file1.txt").toAbsolutePath().toString());
+		try (InputStream inputStream = new FileInputStream(file); Reader reader = new InputStreamReader(inputStream)) {
+			int intValue;
+			StringBuffer fileContent = new StringBuffer();
+			while ((intValue = reader.read()) >= 0) {
+				char value = (char) intValue;
+				fileContent.append(value);
+			}
+			log.info("file-content={}", fileContent);
+		}
+	}
+
+	@Test
+	public void readFileByCharUsingInputStreamReader() throws FileNotFoundException, IOException {
+		File file = new File(Paths.get("src/main/resources/file1.txt").toAbsolutePath().toString());
+		try (InputStream inputStream = new FileInputStream(file); Reader reader = new InputStreamReader(inputStream)) {
+			int length;
+			char[] charBuffer = new char[10];
+			StringBuffer fileContent = new StringBuffer();
+			while ((length = reader.read(charBuffer)) >= 0) {
+				for (int i = 0; i < length; i++) {
+					fileContent.append(charBuffer[i]);
+				}
+			}
+			log.info("file-content={}", fileContent);
+		}
+	}
+
+	@Test
+	public void copyFileUsingFileStreams() throws IOException {
+		log.info("------- using FileStreams ----------");
+		File srcFile2 = new File(Paths.get("src/main/resources/file1.txt").toAbsolutePath().toString());
+		File destFile2 = new File(Paths.get("src/main/resources/file-" + System.currentTimeMillis() + ".txt")
+				.toAbsolutePath().toString());
+		try (FileInputStream input = new FileInputStream(srcFile2);
+				FileOutputStream output = new FileOutputStream(destFile2)) {
+			byte[] buf = new byte[1024];
+			int bytesRead;
+
+			while ((bytesRead = input.read(buf)) > 0) {
+				output.write(buf, 0, bytesRead);
+			}
+		}
+		log.info("------- files copied using FileStreams ----------");
+
+	}
+
+	@Test
+	public void copyFileUsingFiles() throws IOException, FileNotFoundException {
+		log.info("----- using java.nio.file.Files.copy() ---------");
+		Path source = Paths.get("src/main/resources/file1.txt");
+		Path out = Paths.get("src/main/resources/file-" + System.currentTimeMillis() + ".txt");
+		log.info("\n source={}, \n out={}", source, out);
+		Files.copy(source, out);
+		log.info("------ file copied successfully using java.nio.file.Files ---------");
+
+		log.info("------ using java.nio.channels.FileChannel.transferTo() --------");
+		File sourceFile = new File(Paths.get("src/main/resources/file1.txt").toAbsolutePath().toString());
+		File destinationFile = new File(Paths.get("src/main/resources/file-" + System.currentTimeMillis() + ".txt")
+				.toAbsolutePath().toString());
+		try (FileInputStream sourceFileInputStream = new FileInputStream(sourceFile);
+				FileOutputStream destinationFileInputStream = new FileOutputStream(destinationFile);) {
+			FileChannel sourceFileChannel = sourceFileInputStream.getChannel();
+			FileChannel destinationFileChannel = destinationFileInputStream.getChannel();
+			sourceFileChannel.transferTo(0, sourceFile.length(), destinationFileChannel);
+		}
+		log.info("------ files copied using java.nio.channels.FileChannel.transferTo() --------");
+	}
+
+	@Test
+	public void copyFileUsingApacheCommons() throws IOException {
+		log.info("-------- using apache commons ----------");
+		File srcFile = new File(Paths.get("src/main/resources/file1.txt").toAbsolutePath().toString());
+		File destFile = new File(Paths.get("src/main/resources/file-" + System.currentTimeMillis() + ".txt")
+				.toAbsolutePath().toString());
+
+		log.info("\n srcFile={}, \n destFile={}", srcFile, destFile);
+		FileUtils.copyFile(srcFile, destFile);
+		// use above or below
+		//IOUtils.copy(new FileInputStream(srcFile), new FileOutputStream(destFile));
+		log.info("----- file copied successfully using apache commons --------");
+	}
+
+	@Test
+	public void deleteFile() {
+		File file = new File(Paths.get("src/main/resources/file2.txt").toAbsolutePath().toString());
+		if (file.delete()) {
+			log.info("{} deleted", file.getName());
+		} else {
+			log.info("{} deletion failed", file.getName());
+		}
 	}
 
 }

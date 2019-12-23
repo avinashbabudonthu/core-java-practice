@@ -4,3 +4,7 @@
 
 group = 'com.file.io'
 description = 'file-io'
+
+dependencies{
+	compile "commons-io:commons-io:2.6"
+}
