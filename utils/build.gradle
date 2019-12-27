@@ -4,3 +4,8 @@
 
 group = 'com.utils'
 description = 'utils'
+
+dependencies{
+	compile 'org.apache.logging.log4j:log4j-core:2.13.0'
+	
+}
