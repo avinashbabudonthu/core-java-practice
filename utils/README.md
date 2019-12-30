@@ -9,3 +9,4 @@ mvn archetype:generate -DgroupId=com.utils -DartifactId=utils -Dversion=1.0 -Dar
 * [Hashcode generation](src/test/java/com/utils/HashCodes.java)
 * [Unique Id Generation For Transaction Id](src/test/java/com/utils/RequestUUIDGenerator.java)
 * [Generate Authorization Header For Basic Authentication Credentials - createBasicAuthHeader()](src/test/java/com/utils/Utils.java)
+* [Base64 Encoding Decoding](src/test/java/com/utils/Base64EncodeDecodePractice.java)
