@@ -14,7 +14,7 @@ public class LocalTimePractice {
 	 * java.time.LocalTime practice. This class will have only time part without date
 	 */
 	@Test
-	public void createLlocalTime() {
+	public void createLocalTime() {
 		LocalTime localTime1 = LocalTime.now();
 		log.info("localTime1={}", localTime1);
 
