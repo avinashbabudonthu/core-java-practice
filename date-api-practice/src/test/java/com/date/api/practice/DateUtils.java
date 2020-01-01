@@ -18,7 +18,7 @@ public class DateUtils {
 	 * @throws ParseException 
 	 */
 	@Test
-	public void converDateFormat1() throws ParseException {
+	public void convertDateFormat1() throws ParseException {
 		/*convert date from yyyy-mm-dd to mm/dd/yyyy*/
 		DateFormat fromFormat1 = new SimpleDateFormat("yyyy-mm-dd");
 		DateFormat toFormat1 = new SimpleDateFormat("mm/dd/yyyy");
