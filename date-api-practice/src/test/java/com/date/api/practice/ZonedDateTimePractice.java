@@ -3,6 +3,7 @@ package com.date.api.practice;
 import java.time.Clock;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Date;
 
 import org.junit.Test;
 
@@ -25,5 +26,15 @@ public class ZonedDateTimePractice {
 
 		ZonedDateTime zonedDateTime3 = ZonedDateTime.now(ZoneId.of("Asia/Calcutta"));
 		log.info("zonedDateTime3={}", zonedDateTime3);
+	}
+
+	@Test
+	public void convertZonedDateTimeToUtilDate() {
+		Clock clock = Clock.systemDefaultZone();
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(clock);
+		log.info("convertZonedDateTimeToUtilDate() zonedDateTime: {}", zonedDateTime);
+
+		Date date = Date.from(zonedDateTime.toInstant());
+		log.info("convertZonedDateTimeToUtilDate() date: {}", date);
 	}
 }

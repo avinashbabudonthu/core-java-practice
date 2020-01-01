@@ -1,7 +1,11 @@
 package com.date.api.practice;
 
+import java.sql.Timestamp;
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Date;
 
 import org.junit.Test;
 
@@ -16,15 +20,45 @@ public class LocalDateTimePractice {
 	@Test
 	public void createLocalDateTime() {
 		LocalDateTime localDateTime1 = LocalDateTime.now();
-		System.out.println("localDateTime1: " + localDateTime1);
+		log.info("localDateTime1: {}", localDateTime1);
 
 		Clock clock1 = Clock.systemUTC();
 		LocalDateTime localDateTime2 = LocalDateTime.now(clock1);
-		System.out.println("localDateTime2: " + localDateTime2);
+		log.info("localDateTime2: {}", localDateTime2);
 
 		Clock clock2 = Clock.systemDefaultZone();
 		LocalDateTime localDateTime3 = LocalDateTime.now(clock2);
-		System.out.println("localDateTime3: " + localDateTime3);
+		log.info("localDateTime3: {}", localDateTime3);
+	}
+
+	@Test
+	public void convertLocalDateTimeToUtilDate() {
+		Clock clock = Clock.systemDefaultZone();
+		LocalDateTime localDateTime = LocalDateTime.now(clock);
+		log.info("convertLocalDateTimeToUtilDate() localDateTime: {}", localDateTime);
+
+		ZoneId zoneId = ZoneId.systemDefault();
+		Date date = Date.from(localDateTime.atZone(zoneId).toInstant());
+		log.info("convertLocalDateTimeToUtilDate() date: {}", date);
+	}
+
+	@Test
+	public void convertLocalDateTimeToZonedDateTime() {
+		Clock clock = Clock.systemDefaultZone();
+		LocalDateTime localDateTime = LocalDateTime.now(clock);
+		log.info("convertLocalDateTimeToZonedDateTime() localDateTime: {}", localDateTime);
+
+		ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.systemDefault());
+		log.info("convertLocalDateTimeToZonedDateTime() zonedDateTime: {}", zonedDateTime);
+	}
+
+	@Test
+	public void convertLocalDateTimeToStringTimeStamp() {
+		LocalDateTime localDateTime = LocalDateTime.now();
+		Timestamp timestamp = Timestamp.valueOf(localDateTime);
+		long time = timestamp.getTime();
+		String timeStampAsString = String.valueOf(time);
+		log.info("timeStampAsString: {}", timeStampAsString);
 	}
 
 }

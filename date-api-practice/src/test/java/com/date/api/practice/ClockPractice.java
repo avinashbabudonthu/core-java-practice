@@ -22,10 +22,10 @@ public class ClockPractice {
 	 * java.time.Clock practice
 	 */
 	@Test
-	public void clock() {
+	public void clockMethods() {
 		Clock clock = Clock.systemUTC();
-		System.out.println("clock.instant(): " + clock.instant());
-		System.out.println("clock.millis(): " + clock.millis());
-		System.out.println("clock.getZone(): " + clock.getZone());
+		log.info("clock.instant(): {}", clock.instant());
+		log.info("clock.millis(): {}", clock.millis());
+		log.info("clock.getZone(): {}", clock.getZone());
 	}
 }
