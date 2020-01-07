@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -193,4 +195,81 @@ public class ReadFile {
 		}
 	}
 
+	/**
+	 * Method to iterate list of files in directories and sub directories
+	 * @param directory
+	 */
+	@Test
+	public void listFilesAndDirectories() {
+		File directory = new File("E:/Backup/JavaPrep/practiceProjects/images");
+		listFilesAndDirectories(directory);
+	}
+
+	private void listFilesAndDirectories(File directory) {
+		File[] listOfFiles = directory.listFiles();
+		for (File file : listOfFiles) {
+			if (file.isDirectory())
+				listFilesAndDirectories(file);
+			System.out.println(file.getPath() + "\\" + file.getName());
+		}
+	}
+
+	/**
+	 * Read file using relative path
+	 */
+	@Test
+	public void readFileWithRelativePath() throws IOException {
+		URL url = getClass().getClassLoader().getResource("file1.txt");
+		File file = new File(url.getPath());
+		System.out.println("readFileWithRelativePath() -> file.getAbsolutePath(): " + file.getAbsolutePath());
+
+		System.out.println("-----------------method 1 - reading content--------------------------");
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));) {
+			String line = "";
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+			}
+		}
+
+		System.out.println("-----------------method 2 - reading content--------------------------");
+		try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("file1.txt");
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
+			String line = "";
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+			}
+		}
+	}
+
+	/**
+	 * Read file with relative path from static method
+	 * 
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static void readFileWithRelativePathFromStaticMethod() throws FileNotFoundException, IOException {
+
+		URL url = ReadFile.class.getClassLoader().getResource("file1.txt");
+		File file = new File(url.getPath());
+		System.out.println(
+				"readFileWithRelativePathFromStaticMethod() -> file.getAbsolutePath(): " + file.getAbsolutePath());
+
+		System.out.println("-----------------method 1 - reading content--------------------------");
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));) {
+			String line = "";
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+			}
+		}
+
+		System.out.println("-----------------method 2 - reading content--------------------------");
+		try (InputStream inputStream = ReadFile.class.getClassLoader().getResourceAsStream("file1.txt");
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
+			String line = "";
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+			}
+		}
+
+	}
 }
