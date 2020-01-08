@@ -720,4 +720,17 @@ public class ArrayListPractice {
 		log.info("descending order of salary={}", descendingOrderOfSalary);
 
 	}
+
+	@Test
+	public void reverseList() {
+		List<String> names = new ArrayList<>();
+		names.add("jack");
+		names.add("jill");
+		names.add("jim");
+		names.add("jane");
+		log.info("before, names={}", names);
+
+		Collections.reverse(names);
+		log.info("after, names={}", names);
+	}
 }
