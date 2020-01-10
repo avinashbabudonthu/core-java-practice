@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.channels.FileChannel;
@@ -272,4 +273,20 @@ public class ReadFile {
 		}
 
 	}
+
+	// new methods to cerebro
+	@Test
+	public void lineNumberReader() throws IOException {
+		URL url = getClass().getClassLoader().getResource("file1.txt");
+		File file = new File(url.getPath());
+
+		Reader reader = new FileReader(file);
+		try (LineNumberReader lineNumberReader = new LineNumberReader(reader)) {
+
+			String line;
+			while (null != (line = lineNumberReader.readLine()))
+				System.out.println(lineNumberReader.getLineNumber() + ": " + line);
+		}
+	}
+
 }
