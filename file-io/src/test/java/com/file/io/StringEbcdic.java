@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.LineNumberReader;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +19,7 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class Rajiv {
+public class StringEbcdic {
 
 	@Data
 	@AllArgsConstructor
@@ -38,7 +40,7 @@ public class Rajiv {
 	@SneakyThrows
 	@Test
 	public void generateBytesForChars() {
-		final URL url = ReadFile.class.getClassLoader().getResource("input-file.dat");
+		final URL url = ReadFile.class.getClassLoader().getResource("file2.txt");
 		final String filePath = url.getPath();
 		final int location = 10;
 		final File file = new File(filePath);
@@ -49,11 +51,12 @@ public class Rajiv {
 
 				String[] words = line.split("\\^\\|\\^");
 				String word = (location < words.length) ? words[location - 1] : "";
+				Charset charsetEBCDIC = Charset.forName("CP037");
+				byte[] bytes = word.getBytes(charsetEBCDIC);
 				Map<String, Byte> charToByteMap = new LinkedHashMap<>();
-				for (int i = 0; i < word.length(); i++) {
-					Byte b = (byte) word.charAt(i);
+				for (int i = 0; i < bytes.length; i++) {
 					charToByteMap.put(String.valueOf(word.charAt(i)).trim().length() == 0 ? "EMPTY_STRING"
-							: String.valueOf(word.charAt(i)), b);
+							: String.valueOf(word.charAt(i)), bytes[i]);
 				}
 				return new LineNumberBytes(lineNumberReader.getLineNumber(), charToByteMap, line, word);
 			}).collect(Collectors.toList());
@@ -73,6 +76,16 @@ public class Rajiv {
 			log.info("i={}, ch={}, b={}, ch={}", i, word.charAt(i), b, (char) b);
 		}
 
+	}
+
+	@Test
+	public void stringToEBCDIC() {
+		Charset charsetEBCDIC = Charset.forName("CP037");
+		final String word = "WHAT THE &$@  �                     ";
+		byte[] bytes = word.getBytes(charsetEBCDIC);
+
+		// [-26, -56, -63, -29, 64, -29, -56, -59, 64, 80, 91, 124, 64, 64, 63, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]
+		System.out.println(Arrays.toString(bytes));
 	}
 
 }
