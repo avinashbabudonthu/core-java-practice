@@ -1,15 +1,21 @@
 package com.repeating.annotation;
 
-import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
-import java.lang.annotation.Annotation;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class BookTest {
 
-    public static void main(String[] args) {
-        Class<Book> bookClass = Book.class;
-        Author annotations = bookClass.getAnnotation(Author.class);
-        log.info("{}", annotations);
-    }
+	@Test
+	public void classLevelRepeatableAnnotation() {
+		Class<Book> bookClass = Book.class;
+		Authors annotations = bookClass.getAnnotation(Authors.class);
+		log.info("{}", annotations);
+
+		Author[] authorAnnotationsArray = annotations.value();
+		for (Author author : authorAnnotationsArray) {
+			log.info("{}", author);
+		}
+	}
 }
