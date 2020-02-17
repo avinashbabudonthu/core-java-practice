@@ -20,20 +20,24 @@
 # Materials
 ## Pluralsight
 * Java Fundamentals: The Java Language
-* Java Fundamentals: Object-oriented Design [Course]
-* Java Fundamentals: The Core Platform [Course]
-* Java Fundamentals: Generics [Course]
-* Java Fundamentals: Collections [Course]
-* What's New in Java 8 [Course]
-* From Collections to Streams in Java 8 Using Lambda Expressions [Course]
-* Reactive Programming in Java 8 With RxJava [Course]
-* Streams, Collectors, and Optionals for Data Processing in Java 8 [Course]
+* Java Fundamentals: Object-oriented Design 
+* Java Fundamentals: The Core Platform 
+* Java Fundamentals: Generics 
+* Java Fundamentals: Collections 
+* Java Fundamentals: Asynchronous Programming Using CompletionStage
+* Java Fundamentals: Exception Handling
+* Java Fundamentals: Input/Output
+* Java Fundamentals: NIO and NIO2
+* Java Fundamentals: HttpClient
+* Java Regular Expressions
+* What's New in Java 8 
+* From Collections to Streams in Java 8 Using Lambda Expressions 
+* Reactive Programming in Java 8 With RxJava 
+* Streams, Collectors, and Optionals for Data Processing in Java 8 
 * Reactive programming in Java 8
 * Understanding and Solving Java Memory Problems
 * Understanding the Java Virtual Machine: Class Loading and Reflection
-* Understanding the Java Virtual Machine: Memory Management [Course]
-* Java Regular Expressions
-* Java Fundamentals: HttpClient
+* Understanding the Java Virtual Machine: Memory Management 
 
 ## Others
 * [Java Docs](http://docs.oracle.com/javase/tutorial/index.html)
