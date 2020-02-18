@@ -1,5 +1,6 @@
 package com.streams;
 
+import java.util.Arrays;
 import java.util.function.LongConsumer;
 import java.util.stream.LongStream;
 
@@ -22,5 +23,12 @@ public class LongStreams {
 		LongStream longStream = LongStream.rangeClosed(0, 11);
 		LongConsumer longConsumer = (long l) -> log.info("l={}", l);
 		longStream.forEach(longConsumer);
+	}
+
+	@Test
+	public void longStreamToArray() {
+		LongStream longStream = LongStream.range(0, 11);
+		long[] intArray = longStream.toArray();
+		log.info("intArray={}", Arrays.toString(intArray));
 	}
 }
