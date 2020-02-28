@@ -137,6 +137,21 @@ public class StringPractice {
 		System.out.println(charsList);
 	}
 
+	/**
+	 * Output:
+	 * 	capitalStr: HELLO WORLD
+		lowerStr: hello world
+	 */
+	@Test
+	public void convertCase() {
+		String str = "hello world";
+		String capitalStr = str.toUpperCase();
+		System.out.println("capitalStr: " + capitalStr);
+
+		String lowerStr = capitalStr.toLowerCase();
+		System.out.println("lowerStr: " + lowerStr);
+	}
+
 	@Test
 	public void capitalizeFirstChar() {
 		String hello = "hello";
@@ -206,21 +221,6 @@ public class StringPractice {
 			subStrings3.add(s.substring(i, i + 5));
 		}
 		System.out.println(subStrings3);
-	}
-
-	/**
-	 * Output:
-	 * 	capitalStr: HELLO WORLD
-		lowerStr: hello world
-	 */
-	@Test
-	public void convertCase() {
-		String str = "hello world";
-		String capitalStr = str.toUpperCase();
-		System.out.println("capitalStr: " + capitalStr);
-
-		String lowerStr = capitalStr.toLowerCase();
-		System.out.println("lowerStr: " + lowerStr);
 	}
 
 	/**

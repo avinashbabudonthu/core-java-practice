@@ -26,4 +26,17 @@ public class ArraysPractice {
 		List<String> list = Arrays.asList(stringArray);
 		log.info("list={}", list);
 	}
+
+	@Test
+	public void arrayStoreException() {
+		String[] strArray = new String[3];
+		Object[] objArray = strArray;
+		objArray[0] = "1";
+
+		try {
+			objArray[0] = 2;
+		} catch (Exception e) {
+			log.error("Exception", e);
+		}
+	}
 }
