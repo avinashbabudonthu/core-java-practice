@@ -11,4 +11,4 @@ mvn archetype:generate -DgroupId=com.serialization -DartifactId=serialization -D
 
 ## Examples
 * Serialize object - [Serialize.java](src/test/java/com/serialization/Serialize.java) - **saveEmployeeObject()**
-* Deserialize object - [Serialize.java](src/test/java/com/serialization/DeSerialize.java) - **readEmployee()**
+* Deserialize object - [DeSerialize.java](src/test/java/com/serialization/DeSerialize.java) - **readEmployee()**
