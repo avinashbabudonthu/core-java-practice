@@ -5,6 +5,8 @@
 ### Pluralsight
 * Applying Concurrency and Multi-threading to Common Java Patterns [Course]
 * Scaling Java Applications Through Concurrency [Course]
+* Java Fundementals: The Core Platform
+  * Multithreading and Concurrency
 * Java Fundamentals - Concurrency with Multithreading [Course]
 
 ### Others
