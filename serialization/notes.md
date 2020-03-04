@@ -37,4 +37,4 @@
 	* Other members other than primitives must implement Serializable interface
 
 ## Examples
-* Serialize object - [Serialize.java](src/test/java/com.serialization/Serialize.java) - **saveEmployeeObject()**
+* Serialize object - [Serialize.java](src/test/java/com/serialization/Serialize.java) - **saveEmployeeObject()**
