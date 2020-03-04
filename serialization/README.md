@@ -1,4 +1,4 @@
-# Core Java String Examples
+# Serialization
 
 ## Create project using maven
 ```
