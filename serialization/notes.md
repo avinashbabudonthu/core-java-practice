@@ -36,5 +36,38 @@
 	* Primitive types are serializable by default
 	* Other members other than primitives must implement Serializable interface
 
-## Examples
-* Serialize object - [Serialize.java](src/test/java/com/serialization/Serialize.java) - **saveEmployeeObject()**
+## If we serialize object with some parameters, changed class after serialization. How de-serialization will handle this?
+* How changes to class definition (before and after serialization) effect serialization?
+	* Serialze object with some fields
+	* Change (add, edit, delete some fields) the class
+	* Use changed class to de-serialize
+	* We will get **InvalidClassException**
+* How java identifies class format changed?
+	* Whenever we serialize object JVM calculates serial version unique identifier. This is secure hash value that identifies the structure of class
+	* When object is written to stream this serial version unique identifier will be included into stream content
+	* If we change the fields of class, before de-serialization JVM calculates serial version unique identifier again. If these 2 values does not match then throw InvalidClassException
+	* This InvalidClassException indicates that serialization version of class does not match with de-serialization version
+
+## How we can maintain class compatibility and able to make changes to class?
+* Java can calculate serial version unique identifier
+* Factors effect to calculate serial verion unique identifier
+	* Full type name
+	* Implemented interfaces
+	* Members
+* Means content of type determines compatibility
+* We can specify serial version as part of our type definition
+	* By doing this we determine type compatibility
+* We have to add field named **private static final long serialVersionUID**
+* With serialVersionUID in our class, same serialVersionUID will be used while serialization and de-serialization
+* JVM uses reflection to get serialVersionUID while serialization and de-serialization
+* Addition fields will have default values as per their type
+
+## Serialver utility
+* Claculates serial version value same way Java runtime does
+* Utility is found in jdk/bin folder
+	* IDEs provide plug-in
+* Uses class file to calculate serial version id
+* Can pass class name on command line
+	* Displays value on the console
+* Can use **-show** option
+	* This opens simple GUI
