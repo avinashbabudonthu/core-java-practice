@@ -1,6 +1,6 @@
 package com.enums;
 
-public enum Day {
+public enum DaysEnum {
 
     MONDAY,
     TUESDAY,

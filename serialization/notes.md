@@ -71,3 +71,9 @@
 	* Displays value on the console
 * Can use **-show** option
 	* This opens simple GUI
+	
+# Customizing Serialization
+* Add **writeObject** method to our serialization type for customizing serializing process
+* Add **readObject** method to our serialization type for customizing de-serializing process
+* These two methods are called through reflection
+* These methods normally marked as private

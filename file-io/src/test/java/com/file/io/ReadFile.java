@@ -49,7 +49,8 @@ public class ReadFile {
 
 	@Test
 	public void readFileUsingFilesAndRelativePath() throws IOException {
-		List<String> allLines = Files.readAllLines(Paths.get("src/main/resources/file3.txt"));
+		// method 1
+		List<String> allLines = Files.readAllLines(Paths.get("src/main/resources/file1.txt"));
 		allLines.stream().forEach(System.out::println);
 	}
 
@@ -221,6 +222,7 @@ public class ReadFile {
 	@Test
 	public void readFileWithRelativePath() throws IOException {
 		URL url = getClass().getClassLoader().getResource("file1.txt");
+
 		File file = new File(url.getPath());
 		System.out.println("readFileWithRelativePath() -> file.getAbsolutePath(): " + file.getAbsolutePath());
 
