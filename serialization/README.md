@@ -7,7 +7,8 @@ mvn archetype:generate -DgroupId=com.serialization -DartifactId=serialization -D
 
 ## Materials
 ### Pluralsight
-* Java Fundamentals: The Core Platform - **Persisting Objects with Serialization**
+* Java Fundamentals: The Core Platform
+  *Persisting Objects with Serialization
 
 ## Examples
 * Serialize object - [Serialize.java](src/test/java/com/serialization/Serialize.java) - **saveEmployeeObject()**
