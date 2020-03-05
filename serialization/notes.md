@@ -77,3 +77,23 @@
 * Add **readObject** method to our serialization type for customizing de-serializing process
 * These two methods are called through reflection
 * These methods normally marked as private
+* writeObject
+	* Return type is void
+	* Throws **IOException**
+	* Accepts **ObjectOutputStream**
+		* Can use **defaultWriteObject** method from **ObjectOutputStream**
+* readObject
+	* Return type is void
+	* Throws **IOException, ClassNotFoundException** 
+		* ClassNotFoundException because when de-serializing we may encounter classes that are not there in class path
+	* Access **ObjectInputStream**
+		* use read methods
+		* use readFields to get field name
+			* Can access values by name of field
+		* can use **defaultReadObject** method **ObjectInputStream**
+
+# Exclude some fields from serialization
+* Using **transient** key word
+* Used for fields derived from another fields. To avoid unnecessay storage
+* Restore value manually
+	* By customizing de-serialization
