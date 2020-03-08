@@ -8,7 +8,7 @@ List<String>[] - List[]
 T without bounds -> Object
 T extends Foo -> Foo
 ```
-* Compilation Error, after compilation both List<String> and List<Integer> will be converted to List as explained in Erasure
+* Compilation Error, after compilation both List&lt;String&gt; and List&lt;Integer&gt; will be converted to List as explained in Erasure
 ```
 public void print(List<String> list) { --} 
 public void print(List<Integer> list) { --} 
