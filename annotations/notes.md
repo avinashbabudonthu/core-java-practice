@@ -43,7 +43,7 @@ public class TestClass{
 	* FunctionalInterface
 * Meta annotations
 	* Annotation that apply to other annotations. 
-	* There 5 meta annotations declared in java.lang.annotation package
+	* There 5 meta annotations declared in `java.lang.annotation` package
 	* Generally used when defining custom annotations
 	* Annotations in java.lang.annotation package
 		* Documented
