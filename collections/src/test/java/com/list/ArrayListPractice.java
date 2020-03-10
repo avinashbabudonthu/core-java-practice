@@ -24,6 +24,12 @@ import lombok.extern.slf4j.Slf4j;
 public class ArrayListPractice {
 
 	@Test
+	public void createArrayList() {
+		List<String> list = new ArrayList<>();
+		log.info("list={}", list);
+	}
+
+	@Test
 	public void add() {
 		log.info("---- method 1 ---");
 		List<String> list1 = new ArrayList<>();
@@ -67,6 +73,31 @@ public class ArrayListPractice {
 
 		list1.remove(2);
 		log.info("remove element by index - list1={}", list1);
+	}
+
+	/**
+	 * If we do not type cast - remove(index) will be called
+	 * If we type cast - remove(Object) will be called
+	 */
+	@Test
+	public void removeIntegerByValueFromIntegerList() {
+		List<Integer> numbers = new ArrayList<>();
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		numbers.add(4);
+		numbers.add(5);
+
+		log.info("numbers={}", numbers);
+		numbers.remove((Integer) 5);
+		log.info("numbers={}", numbers);
+
+		Integer number = 4;
+		numbers.remove(number);
+		log.info("numbers={}", numbers);
+
+		numbers.remove((Object) 3);
+		log.info("numbers={}", numbers);
 	}
 
 	@Test
@@ -257,31 +288,6 @@ public class ArrayListPractice {
 
 		log.info("unique students list, size={}", uniqueStudentsList.size());
 		uniqueStudentsList.stream().forEach(student -> log.info("{}", student));
-	}
-
-	/**
-	 * If we do not type cast - remove(index) will be called
-	 * If we type cast - remove(Object) will be called
-	 */
-	@Test
-	public void removeIntegerByValueFromIntegerList() {
-		List<Integer> numbers = new ArrayList<>();
-		numbers.add(1);
-		numbers.add(2);
-		numbers.add(3);
-		numbers.add(4);
-		numbers.add(5);
-
-		log.info("numbers={}", numbers);
-		numbers.remove((Integer) 5);
-		log.info("numbers={}", numbers);
-
-		Integer number = 4;
-		numbers.remove(number);
-		log.info("numbers={}", numbers);
-
-		numbers.remove((Object) 3);
-		log.info("numbers={}", numbers);
 	}
 
 	/**
