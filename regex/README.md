@@ -1,4 +1,4 @@
-# Core Java String Examples
+# Regex
 
 ## Create project using maven
 ```
