@@ -127,4 +127,22 @@ public class UtilDate {
 		log.info("zonedDateTime2: {}", zonedDateTime2);
 	}
 
+	@Test
+	public void before(){
+		Date date1 = new Date(2020, 4, 3);
+		Date date2 = new Date(2020, 4, 2);
+
+		Boolean isDate1BeforeDate2 = date1.before(date2);
+		log.info("date1={}, date2={}, before={}",date1, date2, isDate1BeforeDate2);
+	}
+
+	@Test
+	public void after(){
+		Date date1 = new Date(2020, 4, 3);
+		Date date2 = new Date(2020, 4, 2);
+
+		Boolean isDate1AfterDate2 = date1.after(date2);
+		log.info("date1={}, date2={}, after={}",date1, date2, isDate1AfterDate2);
+	}
+
 }
