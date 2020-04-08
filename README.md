@@ -38,6 +38,9 @@
 * Understanding and Solving Java Memory Problems
 * Understanding the Java Virtual Machine: Class Loading and Reflection
 * Understanding the Java Virtual Machine: Memory Management 
+* Reactive Programming in Java 8 With RxJava
+* Reactive Programming in Java 12 with RxJava 2
+* Programming with Dates and Times in Java 8
 
 ## Others
 * [Java Docs](http://docs.oracle.com/javase/tutorial/index.html)
