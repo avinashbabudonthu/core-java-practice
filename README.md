@@ -10,7 +10,7 @@
 * [Java Util Concurrent Package](java-util-concurrent)
 * [JAXB](jaxb)
 * [Multi Threading Core](multi-threading-practice)
-* * [Reactive Programming](reactive-programming)
+* [Reactive Programming](reactive-programming)
 * [Reflection](reflection)
 * [Regex](regex)
 * [Serialization](serialization)
