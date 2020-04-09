@@ -17,6 +17,9 @@ public class UtilFunctionPractice {
         log.info(biFunction.apply("jim", "jack"));
     }
 
+    /**
+     * This is lazy operation {@see concatAndConvertCase} do not execute until log.info is called
+     */
     @Test
     public void highOrderFunctions() {
         // Function<String, String> function = (input) -> input.toUpperCase(); // same as below line

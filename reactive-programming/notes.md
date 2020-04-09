@@ -32,4 +32,23 @@ public class AppClass{
 }
 ```
 
-## RXJava Observable
+## Reactive programming concepts
+* [Documentation](https://www.reactivemanifesto.org/)
+* Event Driven
+* Scalable
+* Resilient
+* Responsive
+
+## Observer pattern
+* We have `Observable` object
+* we will have one or more `observer` objects that subscribe themselves to observable
+* Now any changes to observable are sent to observers as notifications. These notifications can be synchronous or concurrent
+
+### RXJava use of Observer pattern
+* RXJava also have `Observable<T>`, `Observer<T>`
+* Notice that they are generic
+* notifications from observable to observers are sent concurrently. RXJava handles threading for concurrency
+
+### Reactive programming Resilience
+* Graceful error handling
+* Manager failure
