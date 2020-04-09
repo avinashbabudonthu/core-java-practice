@@ -7,6 +7,7 @@
 * [File IO](file-io)
 * [Generics](generics)
 * [Internationalization](internationalization)
+* [Java 8](java-8)
 * [Java Util Concurrent Package](java-util-concurrent)
 * [JAXB](jaxb)
 * [Multi Threading Core](multi-threading-practice)
