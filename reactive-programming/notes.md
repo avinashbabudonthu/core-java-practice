@@ -7,6 +7,14 @@
 * Making application `Resilient` in load and failure conditions
 * Making application `Responsive`
 
+## What is RXJava
+* Java based extension to ReactiveX
+* Key characteristics of RXJava
+	* extends observer pattern
+	* supports sequences of data/events
+	* provides operators to compose sequences together declaratively
+	* handles threading, synchronization, thread-safety, concurrent data structures internally
+
 ## Functional Programming Pure Functions
 * method1 in below code is pure function because
 	* it is thread safe
