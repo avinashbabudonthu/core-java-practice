@@ -27,8 +27,8 @@ Format Specifier    | Description   | Output
 %s | any type | String value
 %t | Date/Time (incl. long, Calendar, Date and TemporalAccessor) | %t is the prefix for Date/Time conversions
 %x or %xX | integer (incl. byte, short, int, long, bigint) | Hex string
-0 | Zero padding |
-- | Left justify |
+0 | Zero padding | Zero padding
+- | Left justify | Left justify
 , | group |
 space | leave space for positive number |
 + | always show sign |
