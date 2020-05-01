@@ -28,8 +28,8 @@ Format Specifier    | Description   | Output
 %t | Date/Time (incl. long, Calendar, Date and TemporalAccessor) | %t is the prefix for Date/Time conversions
 %x or %xX | integer (incl. byte, short, int, long, bigint) | Hex string
 0 | Zero padding |
-- | Left justify
-, | group
-space | leave space for positive number
-+ | always show sign
-( | enclose negative values in paranthesis
+- | Left justify |
+, | group |
+space | leave space for positive number |
++ | always show sign |
+( | enclose negative values in parenthesis |
