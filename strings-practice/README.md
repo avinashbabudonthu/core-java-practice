@@ -18,7 +18,7 @@ Format Specifier    | Description   | Output
 %b | Any type  | "true" if non-null, "false" if null    
 %c | character | Unicode character
 %d | integer (incl. byte, short, int, long, bigint) | Decimal Integer
-%e | floating point | decimal number in scientific notation
+%e or %eE | floating point | decimal number in scientific notation
 %f | floating point | decimal number
 %g | floating point | decimal number, possibly in scientific notation depending on the precision and value
 %h | any type | Hex String of value from hashCode() method
@@ -26,4 +26,10 @@ Format Specifier    | Description   | Output
 %o | integer (incl. byte, short, int, long, bigint) | Octal number
 %s | any type | String value
 %t | Date/Time (incl. long, Calendar, Date and TemporalAccessor) | %t is the prefix for Date/Time conversions
-%x | integer (incl. byte, short, int, long, bigint) | Hex string
+%x or %xX | integer (incl. byte, short, int, long, bigint) | Hex string
+0 | Zero padding |
+- | Left justify
+, | group
+space | leave space for positive number
++ | always show sign
+( | enclose negative values in paranthesis
