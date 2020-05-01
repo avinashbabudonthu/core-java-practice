@@ -32,4 +32,4 @@ Format Specifier    | Description   | Output
 , | group |
 space | leave space for positive number |
 + | always show sign |
-( | enclose negative values in parenthesis |
+"(" | enclose negative values in parenthesis |
