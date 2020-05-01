@@ -12,11 +12,11 @@ mvn archetype:generate -DgroupId=com.string.practice -DartifactId=strings-practi
 
 ## String formatter
 
-Format Specifier    | Description                                                   | Output
+Format Specifier    | Description   | Output
 --------------------|---------------------------------------------------------------|-------------------------
-%a                  | floating point (except BigDecimal                 | Returns Hex output of floating point number
-%b                  | Any type                                                      | "true" if non-null, "false" if null    
-%c                  | character                                                     | Unicode character
+%a                  | floating point (except BigDecimal) | Returns Hex output of floating point number
+%b                  | Any type  | "true" if non-null, "false" if null    
+%c                  | character | Unicode character
 %d                  | integer (incl. byte, short, int, long, bigint)                | Decimal Integer
 %e                  | floating point                                                | decimal number in scientific notation
 %f	                | floating point                                                | decimal number
