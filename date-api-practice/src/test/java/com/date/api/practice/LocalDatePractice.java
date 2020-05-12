@@ -76,7 +76,7 @@ public class LocalDatePractice {
 	}
 
 	/**
-	 * Get next Saturday of next month
+	 * Get second Saturday of next month
 	 */
 	@Test
 	public void nextMonthSecondSaturday() {
