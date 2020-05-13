@@ -13,13 +13,16 @@ import java.io.LineNumberReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
@@ -28,8 +31,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ReadFile {
 
+	@SneakyThrows
 	@Test
-	public void readFileUsingBufferedReaderAndRelativePath() throws IOException {
+	public void readFileUsingBufferedReaderAndRelativePath() {
 		try (BufferedReader bufferedReader = Files
 				.newBufferedReader(Paths.get("src/main/resources/file1.txt").toAbsolutePath())) {
 
@@ -199,7 +203,6 @@ public class ReadFile {
 
 	/**
 	 * Method to iterate list of files in directories and sub directories
-	 * @param directory
 	 */
 	@Test
 	public void listFilesAndDirectories() {
@@ -288,6 +291,28 @@ public class ReadFile {
 			String line;
 			while (null != (line = lineNumberReader.readLine()))
 				System.out.println(lineNumberReader.getLineNumber() + ": " + line);
+		}
+	}
+
+	@Test
+	public void stringToEBCDIC() {
+		Charset charsetEBCDIC = Charset.forName("CP037");
+		final String word = "Welcome to File IO &$@  �                     ";
+		byte[] bytes = word.getBytes(charsetEBCDIC);
+
+		// [-26, -56, -63, -29, 64, -29, -56, -59, 64, 80, 91, 124, 64, 64, 63, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]
+		System.out.println(Arrays.toString(bytes));
+	}
+
+	@Test
+	public void stringToBytes() {
+		final String word = "Hello File IO &$@  �                     ";
+		byte[] bytes = word.getBytes();
+
+		log.info("word-length={}, bytes-length={}", word.length(), bytes.length);
+		for (int i = 0; i < word.length(); i++) {
+			byte b = (byte) word.charAt(i);
+			log.info("i={}, ch={}, b={}, ch={}", i, word.charAt(i), b, (char) b);
 		}
 	}
 
