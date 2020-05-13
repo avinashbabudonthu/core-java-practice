@@ -351,4 +351,24 @@ public class StringPractice {
 		log.info("sub-string2={}", subString2);
 	}
 
+	@Test
+	public void stringToEBCDIC() {
+		Charset charsetEBCDIC = Charset.forName("CP037");
+		final String word = "Welcome to File IO &$@  �                     ";
+		byte[] bytes = word.getBytes(charsetEBCDIC);
+		log.info(Arrays.toString(bytes));
+	}
+
+	@Test
+	public void stringToBytes() {
+		final String word = "Hello File IO &$@  �                     ";
+		byte[] bytes = word.getBytes();
+
+		log.info("word-length={}, bytes-length={}", word.length(), bytes.length);
+		for (int i = 0; i < word.length(); i++) {
+			byte b = (byte) word.charAt(i);
+			log.info("i={}, ch={}, b={}, ch={}", i, word.charAt(i), b, (char) b);
+		}
+	}
+
 }

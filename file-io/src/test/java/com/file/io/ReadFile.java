@@ -279,7 +279,6 @@ public class ReadFile {
 
 	}
 
-	// new methods to cerebro
 	@Test
 	public void lineNumberReader() throws IOException {
 		URL url = getClass().getClassLoader().getResource("file1.txt");
@@ -291,28 +290,6 @@ public class ReadFile {
 			String line;
 			while (null != (line = lineNumberReader.readLine()))
 				System.out.println(lineNumberReader.getLineNumber() + ": " + line);
-		}
-	}
-
-	@Test
-	public void stringToEBCDIC() {
-		Charset charsetEBCDIC = Charset.forName("CP037");
-		final String word = "Welcome to File IO &$@  �                     ";
-		byte[] bytes = word.getBytes(charsetEBCDIC);
-
-		// [-26, -56, -63, -29, 64, -29, -56, -59, 64, 80, 91, 124, 64, 64, 63, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]
-		System.out.println(Arrays.toString(bytes));
-	}
-
-	@Test
-	public void stringToBytes() {
-		final String word = "Hello File IO &$@  �                     ";
-		byte[] bytes = word.getBytes();
-
-		log.info("word-length={}, bytes-length={}", word.length(), bytes.length);
-		for (int i = 0; i < word.length(); i++) {
-			byte b = (byte) word.charAt(i);
-			log.info("i={}, ch={}, b={}, ch={}", i, word.charAt(i), b, (char) b);
 		}
 	}
 
