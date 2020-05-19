@@ -10,6 +10,12 @@ import java.util.Set;
 public class HashSetPractice {
 
     @Test
+    public void create(){
+        Set<String> set = new HashSet<>();
+        log.info("set={}", set);
+    }
+
+    @Test
     public void add(){
         Set<String> set = new HashSet<>();
         set.add("1");
@@ -18,7 +24,49 @@ public class HashSetPractice {
         set.add("3");
         set.add("2");
         log.info("set={}", set);
-
-
     }
+
+    @Test
+    public void addAll(){
+        Set<String> set1 = new HashSet<>();
+        set1.add("a");
+        set1.add("b");
+        set1.add("c");
+        set1.add("d");
+        log.info("set1={}", set1);
+
+        Set<String> set2 = new HashSet<>();
+        set2.add("e");
+        set2.add("f");
+        set2.add("g");
+        set2.add("h");
+        log.info("set2={}", set2);
+
+        set1.addAll(set2);
+        log.info("after addAll - set1={}", set1);
+    }
+
+    @Test
+    public void remove(){
+        Set<String> set1 = new HashSet<>();
+        set1.add("a");
+        set1.add("b");
+        set1.add("c");
+        set1.add("d");
+        log.info("set1={}", set1);
+
+        set1.remove("c");
+        log.info("after remove set1={}", set1);
+
+        Set<Integer> integerSet = new HashSet<>();
+        integerSet.add(1);
+        integerSet.add(2);
+        integerSet.add(3);
+        integerSet.add(4);
+        log.info("integerSet={}", integerSet);
+
+        integerSet.remove(3);
+        log.info("after remove integerSet={}", integerSet);
+    }
+
 }
