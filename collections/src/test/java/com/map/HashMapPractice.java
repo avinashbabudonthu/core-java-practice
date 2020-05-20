@@ -10,6 +10,12 @@ import java.util.Map;
 public class HashMapPractice {
 
     @Test
+    public void create(){
+        Map<Integer, String> map = new HashMap<>();
+        log.info("map={}", map);
+    }
+
+    @Test
     public void put(){
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "1");
@@ -19,6 +25,34 @@ public class HashMapPractice {
 
         log.info("map={}", map);
     }
+
+    @Test
+    public void get(){
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "one");
+        map.put(2, "two");
+        map.put(3, "three");
+        map.put(4, "four");
+
+        String fourValue = map.get(4);
+        log.info("four-value={}", fourValue);
+    }
+
+    @Test
+    public void getOrDefault(){
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "one");
+        map.put(2, "two");
+        map.put(3, "three");
+        map.put(4, "four");
+
+        String fourValue = map.getOrDefault(4, "unknown");
+        log.info("four-value={}", fourValue);
+
+        String fiveValue = map.getOrDefault(5, "unknown");
+        log.info("five-value={}", fiveValue);
+    }
+
 
     @Test
     public void putAll(){
