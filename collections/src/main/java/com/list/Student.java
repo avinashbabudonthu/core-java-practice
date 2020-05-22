@@ -3,14 +3,12 @@ package com.list;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
 public class Student implements Comparable<Student> {
 
 	private String name;
@@ -21,4 +19,20 @@ public class Student implements Comparable<Student> {
 	public int compareTo(Student that) {
 		return this.grade.compareTo(that.getGrade());
 	}
+
+	public int hashCode() {
+		return name.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object that) {
+		if (null == that) {
+			return false;
+		}
+
+		Student thatStudent = (Student) that;
+
+		return this.name.equalsIgnoreCase(thatStudent.getName());
+	}
+
 }

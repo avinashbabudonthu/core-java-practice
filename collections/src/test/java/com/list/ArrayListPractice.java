@@ -739,4 +739,33 @@ public class ArrayListPractice {
 		Collections.reverse(names);
 		log.info("after, names={}", names);
 	}
+
+	@Test
+	public void intersection() {
+		List<String> list1 = Arrays.asList("a", "b", "c", "d", "e");
+		List<String> list2 = Arrays.asList("f", "g", "h", "a", "b");
+
+		Set<String> result = list1.stream().distinct().filter(list2::contains).collect(Collectors.toSet());
+		log.info("list1={}", list1);
+		log.info("list2={}", list2);
+		log.info("result={}", result);
+
+		// intersection of list of custom objects
+		Student student1 = Student.builder().name("Ava").grade(3.1D).build();
+		Student student2 = Student.builder().name("Amelia").grade(3.2D).build();
+		Student student3 = Student.builder().name("Avery").grade(3.3D).build();
+		Student student4 = Student.builder().name("Aiden").grade(3.4D).build();
+		Student student5 = Student.builder().name("Abigail").grade(3.5D).build();
+		Student student6 = Student.builder().name("Aria").grade(3.6D).build();
+		Student student7 = Student.builder().name("Aaron").grade(3.7D).build();
+		Student student8 = Student.builder().name("Angel").grade(3.8D).build();
+		List<Student> studentList1 = Arrays.asList(student1, student2, student3, student4, student5);
+		List<Student> studentList2 = Arrays.asList(student1, student2, student6, student7, student8);
+
+		Set<Student> commonStudents = studentList1.stream().distinct().filter(studentList2::contains)
+				.collect(Collectors.toSet());
+		log.info("studentList1={}", studentList1);
+		log.info("studentList2={}", studentList2);
+		log.info("commonStudents={}", commonStudents);
+	}
 }
