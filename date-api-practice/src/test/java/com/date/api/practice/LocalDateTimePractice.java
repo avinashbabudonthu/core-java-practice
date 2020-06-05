@@ -3,7 +3,9 @@ package com.date.api.practice;
 import java.sql.Timestamp;
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
@@ -59,6 +61,18 @@ public class LocalDateTimePractice {
 		long time = timestamp.getTime();
 		String timeStampAsString = String.valueOf(time);
 		log.info("timeStampAsString: {}", timeStampAsString);
+	}
+
+	@Test
+	public void localDateTimeToOffsetDateTime() {
+		OffsetDateTime offsetDateTime = OffsetDateTime.of(LocalDateTime.of(2020, 6, 5, 7, 45),
+				ZoneOffset.ofHoursMinutes(7, 45));
+		log.info("offsetDateTime={}", offsetDateTime);
+
+		// method 2
+		LocalDateTime localDateTime = LocalDateTime.now();
+		OffsetDateTime offsetDateTime2 = localDateTime.atOffset(ZoneOffset.ofHoursMinutes(5, 30));
+		log.info("offsetDateTime2={}", offsetDateTime2);
 	}
 
 }

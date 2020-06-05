@@ -1,6 +1,7 @@
 package com.date.api.practice;
 
 import java.time.Clock;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Date;
@@ -36,5 +37,12 @@ public class ZonedDateTimePractice {
 
 		Date date = Date.from(zonedDateTime.toInstant());
 		log.info("convertZonedDateTimeToUtilDate() date: {}", date);
+	}
+
+	@Test
+	public void zonedDateTimeToOffsetDateTime() {
+		ZonedDateTime zonedDateTime = ZonedDateTime.now();
+		OffsetDateTime offsetDateTime1 = zonedDateTime.toOffsetDateTime();
+		System.out.println(offsetDateTime1);
 	}
 }
