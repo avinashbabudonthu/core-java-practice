@@ -21,6 +21,12 @@ import lombok.extern.slf4j.Slf4j;
 public class StringPractice {
 
 	@Test
+	public void createString() {
+		String s1 = new String("Alia");
+		log.info("s1={}", s1);
+	}
+
+	@Test
 	public void getbyteArrayFromString() {
 		String string = "Hello World";
 
