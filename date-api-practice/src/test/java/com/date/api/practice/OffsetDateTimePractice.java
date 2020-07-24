@@ -1,5 +1,6 @@
 package com.date.api.practice;
 
+import java.text.SimpleDateFormat;
 import java.time.Clock;
 import java.time.DayOfWeek;
 import java.time.Instant;
@@ -13,9 +14,11 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import org.junit.Test;
 
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -216,6 +219,16 @@ public class OffsetDateTimePractice {
 
 		// Formatting 'cccc, MMMM dd, yyyy KK:mm a X' pattern
 		System.out.println(dateTime.format(DateTimeFormatter.ofPattern("cccc, MMMM dd, yyyy KK:mm a X")));
+	}
+
+	@SneakyThrows
+	@Test
+	public void convertUtilDateToOffsetDateTime() {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+		String date = "Wed May 20 17:46:34 UTC 2020";
+		Date convertedDate = simpleDateFormat.parse(date);
+		OffsetDateTime offsetDateTime = convertedDate.toInstant().atOffset(ZoneOffset.UTC);
+		log.info("convertedDate={}, offsetDateTime={}", convertedDate, offsetDateTime);
 	}
 
 }
