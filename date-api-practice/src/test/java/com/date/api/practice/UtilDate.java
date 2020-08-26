@@ -15,6 +15,7 @@ import org.junit.Test;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
+@SuppressWarnings("all")
 @Slf4j
 public class UtilDate {
 
@@ -128,21 +129,34 @@ public class UtilDate {
 	}
 
 	@Test
-	public void before(){
+	public void before() {
 		Date date1 = new Date(2020, 4, 3);
 		Date date2 = new Date(2020, 4, 2);
 
 		Boolean isDate1BeforeDate2 = date1.before(date2);
-		log.info("date1={}, date2={}, before={}",date1, date2, isDate1BeforeDate2);
+		log.info("date1={}, date2={}, before={}", date1, date2, isDate1BeforeDate2);
 	}
 
 	@Test
-	public void after(){
+	public void after() {
 		Date date1 = new Date(2020, 4, 3);
 		Date date2 = new Date(2020, 4, 2);
 
 		Boolean isDate1AfterDate2 = date1.after(date2);
-		log.info("date1={}, date2={}, after={}",date1, date2, isDate1AfterDate2);
+		log.info("date1={}, date2={}, after={}", date1, date2, isDate1AfterDate2);
+	}
+
+	@Test
+	public void utilDateToTimeStamp() {
+		Date date1 = new Date();
+		Long timestamp = date1.getTime();
+		log.info("time-stamp={}", timestamp);
+	}
+
+	@Test
+	public void timeStampToUtilDate() {
+		Date date1 = new Date(1598443483219L);
+		log.info("date1={}", date1);
 	}
 
 }

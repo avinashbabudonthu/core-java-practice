@@ -66,4 +66,5 @@ public class DateUtils {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
 		log.info(simpleDateFormat.format(date).toUpperCase());
 	}
+
 }
