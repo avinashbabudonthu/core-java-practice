@@ -67,7 +67,6 @@ public class ConversionFromClassToClass {
 		log.info("result util-date={}", resultUtilDate);
 	}
 
-	// new methods
 	@Test
 	public void xmlGregorianCalendarToGregorianCalendar() {
 		// create XMLGregorianCalendar
