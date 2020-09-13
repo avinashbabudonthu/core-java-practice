@@ -66,4 +66,34 @@ public class ConversionFromClassToClass {
 
 		log.info("result util-date={}", resultUtilDate);
 	}
+
+	// new methods
+	@Test
+	public void xmlGregorianCalendarToGregorianCalendar() {
+		// create XMLGregorianCalendar
+		Date date = new Date();
+		GregorianCalendar gregorianCalendar = new GregorianCalendar();
+		gregorianCalendar.setTime(date);
+		XMLGregorianCalendar xmlGregorianCalendar = null;
+		try {
+			xmlGregorianCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(gregorianCalendar);
+		} catch (Exception e) {
+			log.error("Exception while creating XMLGregorianCalendar", e);
+		}
+
+		GregorianCalendar resultGregorianCalendar = xmlGregorianCalendar.toGregorianCalendar();
+		log.info("xmlGregorianCalendar={}", xmlGregorianCalendar);
+		log.info("resultGregorianCalendar={}", resultGregorianCalendar);
+	}
+
+	@Test
+	public void timeInMillisToGregorian() {
+		Date date = new Date();
+		long timeInMillis = date.getTime();
+		GregorianCalendar gregorianCalendar = new GregorianCalendar();
+		gregorianCalendar.setTimeInMillis(timeInMillis);
+
+		log.info("timeInMillis={}", timeInMillis);
+		log.info("gregorianCalendar={}", gregorianCalendar);
+	}
 }
