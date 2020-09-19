@@ -94,6 +94,9 @@ public class ArraysPractice {
 		System.out.println("Arrays.deepHashCode(array1) : " + Arrays.deepHashCode(array1));
 	}
 
+	/**
+	 * Assigns the specified long/int/double value to each element of the specified array of longs/ints/doubles
+	 */
 	@Test
 	public void fill() {
 		int[] ints = new int[5];
