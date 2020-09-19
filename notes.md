@@ -107,8 +107,8 @@ public final class Student{
 ```
 
 ## Object
-* Instance: Any dynamic memory allocation
-* Object: instance of a class
+* `Instance`: Any dynamic memory allocation
+* `Object`: instance of a class
 * Create object
 ```
 Student studentReference = new Student();
