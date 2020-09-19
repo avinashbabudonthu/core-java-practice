@@ -15,6 +15,61 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ArraysPractice {
 
+	@SuppressWarnings("unused")
+	@Test
+	public void createArray() {
+		// int array
+		int[] intArray = new int[10];
+
+		// float array
+		float[] floatArray = new float[10];
+
+		// double array
+		double[] doubleArray = new double[10];
+
+		// char array
+		char[] charArray = new char[10];
+
+		// String array
+		String[] stringArray = new String[10];
+
+		// custom class array
+		Student[] studentArray = new Student[10];
+	}
+
+	@Test
+	public void assignValuesToArray() {
+		// int array
+		int[] intArray = new int[10];
+		intArray[0] = 0;
+		intArray[1] = 1;
+
+		// float array
+		float[] floatArray = new float[10];
+		floatArray[0] = 1.23f;
+		floatArray[1] = 1.24f;
+
+		// double array
+		double[] doubleArray = new double[10];
+		doubleArray[0] = 1.23;
+		doubleArray[1] = 1.24;
+
+		// char array
+		char[] charArray = new char[10];
+		charArray[0] = 'a';
+		charArray[1] = 'b';
+
+		// String array
+		String[] stringArray = new String[10];
+		stringArray[0] = "jack";
+		stringArray[1] = "jill";
+
+		// custom class array
+		Student[] studentArray = new Student[10];
+		studentArray[0] = new Student();
+		studentArray[1] = new Student();
+	}
+
 	/**
 	 * 1. list does not support operations like add, remove, set
 	 *  because unlike normal list the size of this list is fixed and size equal to the

@@ -403,4 +403,6 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 
 ## Arrays
 * Group of same data type values
+* Fixed size
+* Index start with `0` - zero
 * Refer array examples - [ArraysPractice.java](collections/src/test/java/com/util/ArraysPractice.java)
