@@ -546,6 +546,9 @@ PhantomReference<DigitalCounter> phantom = new PhantomReference<DigitalCounter>(
 ## Annotations
 * Refer [Annotation Notes](annotations/notes.md)
 
+## Generics
+* Refer [Generics Notes](generics/notes.md)
+
 ## File IO
 * stream: continuous flow
 * IO Stream: continuous flow of data
