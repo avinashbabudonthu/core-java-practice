@@ -308,13 +308,13 @@ public class Student extends Person{
 ### Definition
 * Fully unimplemented structure
 * Until Java 8 interface can have
-	* Abstract methods
-	* Constants
+	* Abstract methods (methods without implementation)
+	* Constants (public static final variables)
 * From Java 8 interface can have
 	* Abstract methods
 	* Constants
-	* static methods
-	* default methods
+	* static methods (methods declared with default keyword)
+	* default methods (methods declared with static keyword)
 * Declare interface
 ```
 public interface InterfaceWithMethod {
@@ -437,3 +437,35 @@ for(int i: list){
 	// logic
 }
 ```
+
+## Exception Handling
+* Exception: Exception is an event, which occurs during the execution of a program, that disrupts normal flow of program's instructions
+* Resource: An object that must be closed after the program is finished with it
+* Types of exceptions
+	* CheckedExceptions
+		* Exception classes which extends java.lang.Exception class
+		* These execeptions must be handled with try-catch or throws
+	* UncheckedExceptions/runtime exceptions
+		* Exception classes which extends java.lang.RuntimeException class
+		* We should avoid getting these exceptions
+	* Error
+		* classes which extends java.lang.Error class
+		* Example: java.lang.NoClassDefFoundError, java.io.IOError
+* try-with-resource statement
+	* try-with-resource statement ensures the each resource is closed at the end of the statetement regardless of whether the try statement completes normally or abruptly
+	* Any object which implements java.lang.AutoCloseable or java.io.Closeable can be used as resource
+	* Interface java.io.Closeable extends java.lang.AutoCloseable
+* throws
+	* To remind the compiler that the method can throw an exception
+* throw
+	* Creates an exception object and throws it
+* Advantages of exception
+	* Seperates error handling code from regular code
+	* Propogating errors up to the call stack
+	* Grouping and differentiating error types
+* try block
+	* identifies the code in which exception can occur
+* catch block
+	* block of code known as exception handler
+* finally
+	* block of code that guarantees to execute
