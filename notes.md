@@ -181,7 +181,8 @@ public class Student{
 }
 ```
 * Class with zero argument `private` constructor
-	* Cannot create object out side of class 
+	* Cannot create object out side of class
+	* Cannot have sub class. we can not extend class having private constructor
 ```
 public class Student{
 	
@@ -349,6 +350,8 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 	
 }
 ```
+* Examples
+	* [InterfacesPractice.java](basics/src/test/java/com/interfaces/InterfacesPractice.java)
 
 ## Primitive data types
 * int
@@ -469,3 +472,69 @@ for(int i: list){
 	* block of code known as exception handler
 * finally
 	* block of code that guarantees to execute
+* Examples
+	* [TryWithResource.java](basics/src/test/java/com/exception/TryWithResource.java)
+
+## References
+* Different classes in java.lan.ref package
+	* Reference<T>
+	* WeakReference<T> extends Reference<T>
+	* SoftReference<T> extends Reference<T>
+	* PhantomReference<T> extends Reference<T>
+	* ReferenceQueue<T> extends Object
+* Types of reference variables in Java
+	* Strong reference
+	* Weak reference
+	* Soft reference
+	* Phantom reference
+
+### Strong reference
+* Create strong reference
+```
+String s = "abc";
+```
+
+### Weak reference
+* object is eligible for garbage collection when strong reference is set to null
+* Creating java.lang.ref.WeakReference
+```
+Counter counter = new Counter(); // strong reference
+WeakReference<Counter> weakCounter = new WeakReference<Counter>(counter);//weak reference
+counter = null; // now Counter object is eligible for garbage collection
+```
+* Example
+	* One convenient example of WeakReference is WeakHashMap, which is another implementation of Map interface like HashMap or TreeMap but with one unique feature. WeakHashMap wraps keys as WeakReference which means once strong reference to actual object removed, WeakReference present internally on WeakHashMap doesn't prevent them from being Garbage collected
+
+### Soft reference
+* object is eligible for garbage collection but only be collected when JVM absolutely needs memory
+* Creating java.lang.ref.SoftReference
+```
+Counter prime = new Counter(); // prime holds a strong reference
+SoftReference<Counter> soft = new SoftReference<Counter>(prime) ; //soft has SoftReference to Counter Object created
+prime = null; // now Counter object is eligible for garbage collection but only be collected when JVM absolutely needs memory
+```
+* WeakReference vs SoftReference
+	* Garbage collector can collect an object if only weak references are pointing towards it and they are eagerly collected, on the other hand Objects with SoftReference are collected when JVM absolutely needs memory
+
+### PhantomReference
+* Phantom reference is third kind of reference type available in java.lang.ref package. Phantom reference is represented by java.lang.ref.PhantomReference class. Object which only has Phantom reference pointing them can be collected whenever Garbage Collector likes it
+* Create PhantomReference
+```
+DigitalCounter digit = new DigitalCounter(); // digit reference variable has strong reference
+PhantomReference<DigitalCounter> phantom = new PhantomReference<DigitalCounter>(digit, referenceQueue);
+```
+
+### java.lang.ref.ReferenceQueue
+* one more class called ReferenceQueue which is worth knowing. You can supply a ReferenceQueue instance while creating any WeakReference, SoftReference or PhantomReference as shown in following code
+```
+ReferenceQueue refQueue = new ReferenceQueue(); //reference will be stored in this queue for cleanup
+DigitalCounter digit = new DigitalCounter();
+PhantomReference<DigitalCounter> phantom = new PhantomReference<DigitalCounter>(digit, refQueue);
+```
+* Reference of instance will be appended to ReferenceQueue and you can use it to perform any clean-up by polling ReferenceQueue
+
+### Examples
+	* [ReferencesPractice.java](basics/src/test/java/com/references/ReferencesPractice.java)
+	
+## Annotations
+* Refer [Annotation Notes](annotations/notes.md)

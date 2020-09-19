@@ -13,19 +13,17 @@ import java.io.LineNumberReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.channels.FileChannel;
-import java.nio.charset.Charset;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

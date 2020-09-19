@@ -1,4 +1,4 @@
-# Core Java String Examples
+# Core Java Basics
 
 ## Create project using maven
 ```
