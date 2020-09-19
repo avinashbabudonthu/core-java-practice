@@ -56,12 +56,27 @@ GROUPID
 * Dynamic Polymorphism
 	* Overriding
 	
+### Inheritance
+	* Making the properties of one object available to another object
+### Encapsulation
+	* Binding the data with its related functionalities
+	* Example of encapsulation is `class` where we bind variables and methods
+	
 ## Access specifiers
 * public: accessible every where
 * private: accessible with in the class
 * protected: public with in the same package. Accessible to sub class via inheritance outside the package
 * default: accessible with in the same package
 
+## Key words
+* Abstraction
+	* Hiding the data
+	* We achieve abstraction through encapsulation. Without binding the data we don’t have class. Without class and declaring variables as private we can’t hide the data. Hence without encapsulation we can not have abstraction
+* super
+	* To point the properties of immediate super object of current object
+* Early binding: Process of binding the functionality to method at compile time
+* Late binding (or) Dynamic binding: Process of binding the functionality to method at run time
+	
 ## Access modifiers
 ### Class modifiers
 * abstract
@@ -85,6 +100,15 @@ GROUPID
 	* it is not serialized
 * volatile
 	* the values are liable for change. More in multi threading
+	
+## Package
+* Group of related classes
+* Some java library packages
+	* java.lang - default package
+	* java.util
+* `java.lang` default package
+	* It contains classes used by jvm to execute the byte code
+	* All classes import `java.lang` package by default
 
 ## Class
 ### Definitions
@@ -244,6 +268,7 @@ public class Student{
 	* we cannot declare static variables/methods in anonymous inner classes.
 
 ### Abstract class
+* Partially implemented and partially unimplemented structure
 * Class with `abstract` access modifier
 * Cannot create object of class
 * class can be declared as abstract though class does not have abstract method (method without implementation)
@@ -281,7 +306,76 @@ public class Student extends Person{
 
 ## Interface
 ### Definition
-* fully unimplemented structure
+* Fully unimplemented structure
+* Until Java 8 interface can have
+	* Abstract methods
+	* Constants
+* From Java 8 interface can have
+	* Abstract methods
+	* Constants
+	* static methods
+	* default methods
+* Declare interface
+```
+public interface InterfaceWithMethod {
+	// abstract method
+	public void test();
+	
+	// default method
+	public default void test2(){
+		System.out.println("Hello World"); 
+	}
+	
+	// static method
+	public static void test3(){ 
+		System.out.println("test()");
+	}
+}
+
+public class InterfaceWithMethodImpl implements InterfaceWithMethod {
+
+	@Override
+	public void test() {
+		System.out.println("test().....");
+	}
+	
+	public static void main(String[] args) {
+	   InterfaceWithMethodImpl obj = new InterfaceWithMethodImpl();
+	   obj.test(); 
+	   obj.test2(); // access default methods using object
+	   InterfaceWithDefaultMethod.super.method1(); // access default methods using interface name from implemented class
+	   InterfaceWithMethod.test3();
+	}
+	
+}
+```
+
+## Primitive data types
+* int
+* float
+* double
+* char
+
+## Wrapper classes
+* Converting primitives to objects and vice versa
+* Types
+	* Boxing
+	* Unboxing
+	* Autoboxing
+	* Autounboxing
+* Boxing
+	* Converting primitives to objects
+* Unboxing
+	* Converting objects to primitive data types
+* Autoboxing	
+	* Automatic conversion of primitives to objects
+* Autounboxing
+	* Automatic conversion of objects to primitives
+* Some wrapper classes
+	* Integer
+	* Float
+	* Double
+	* Character
 
 ## Type Casting
 * process of converting the value of one data type to its equivalent value of another data type
@@ -292,4 +386,18 @@ public class Student extends Person{
 	* if jvm do the type casting automatically
 * Explicit type casting
 	* if jvm do the type casting with our specification
-	
+
+## String
+* class in `java.lang` package
+
+### StringBuffer
+* All methods are `synchronized`
+
+### StringBuilder
+* All methods are `non synchronized`
+
+### StringJoiner
+* StringJoiner is used to construct  
+	* Sequence of characters separated by a delimiter 
+	* Optionally starting with a supplied prefix and ending with a supplied suffix
+
