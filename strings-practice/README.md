@@ -1,4 +1,4 @@
-# Core Java String Examples
+# String
 
 ## Create project using maven
 ```
@@ -11,7 +11,7 @@ mvn archetype:generate -DgroupId=com.string.practice -DartifactId=strings-practi
 * [String Joiner Examples](src/test/java/com/string/practice/StringJoinerPractice.java)
 
 ## String formatter
-* Refer below - [StringFormatPractice.java](src/test/java/com/string/practice/StringFormatPractice.java)
+* Refer - [StringFormatPractice.java](src/test/java/com/string/practice/StringFormatPractice.java)
 
 Format Specifier    | Description   | Output
 --------------------|---------------|----------------------
