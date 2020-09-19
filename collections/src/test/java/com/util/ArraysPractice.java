@@ -44,6 +44,8 @@ public class ArraysPractice {
 		intArray[0] = 0;
 		intArray[1] = 1;
 
+		int[] intArray2 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
 		// float array
 		float[] floatArray = new float[10];
 		floatArray[0] = 1.23f;
@@ -68,6 +70,83 @@ public class ArraysPractice {
 		Student[] studentArray = new Student[10];
 		studentArray[0] = new Student();
 		studentArray[1] = new Student();
+	}
+
+	@Test
+	public void arrayLength() {
+		// int array
+		int[] intArray = new int[10];
+		intArray[0] = 0;
+		intArray[1] = 1;
+
+		// String array
+		String[] stringArray = new String[10];
+		stringArray[0] = "jack";
+		stringArray[1] = "jill";
+		stringArray[2] = "john";
+
+		// custom class array
+		Student[] studentArray = new Student[10];
+		studentArray[0] = new Student();
+		studentArray[1] = new Student();
+		studentArray[2] = new Student();
+		studentArray[3] = new Student();
+
+		log.info("int array length={}", intArray.length);
+		log.info("string array length={}", stringArray.length);
+		log.info("student array length={}", studentArray.length);
+	}
+
+	@Test
+	public void iterateArray() {
+		// int array
+		int[] intArray = new int[10];
+		intArray[0] = 1;
+		intArray[1] = 2;
+		intArray[2] = 3;
+		intArray[3] = 4;
+
+		// print array directly
+		System.out.println(intArray);
+
+		// using for loop
+		log.info("using for loop");
+		for (int i = 0; i < intArray.length; i++) {
+			log.info("{}", intArray[i]);
+		}
+
+		// using for each loop
+		log.info("using for each loop");
+		for (int i : intArray) {
+			log.info("{}", i);
+		}
+
+		// using stream from java 8
+		log.info("using java 8 streams");
+		Arrays.stream(intArray).boxed().forEach(i -> log.info("{}", i));
+
+		// custom class array
+		Student[] studentArray = new Student[10];
+		studentArray[0] = new Student();
+		studentArray[1] = new Student();
+		studentArray[2] = new Student();
+		studentArray[3] = new Student();
+
+		// using for loop
+		log.info("using for loop");
+		for (int i = 0; i < intArray.length; i++) {
+			log.info("{}", studentArray[i]);
+		}
+
+		// using for each loop
+		log.info("using for each loop");
+		for (Student student : studentArray) {
+			log.info("{}", student);
+		}
+
+		// using stream from java 8
+		log.info("using java 8 streams");
+		Arrays.stream(studentArray).forEach(i -> log.info("{}", i));
 	}
 
 	/**

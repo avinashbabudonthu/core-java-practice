@@ -406,3 +406,33 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 * Fixed size
 * Index start with `0` - zero
 * Refer array examples - [ArraysPractice.java](collections/src/test/java/com/util/ArraysPractice.java)
+
+## Loops
+* while loop
+```
+int i=0;
+while(i <= 10){
+	// logic
+	i++;
+}
+```
+* do while loop
+```
+int i=0;
+do{
+	// logic
+	i++;
+}while(i <=10);
+```
+* for loop
+```
+for(int i=0;i<10;i++){
+	// logic
+}
+```
+* for each loop
+```
+for(int i: list){
+	// logic
+}
+```
