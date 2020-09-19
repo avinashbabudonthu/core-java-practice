@@ -50,11 +50,11 @@ GROUPID
 
 ## Access modifiers
 ### Class modifiers
-* static: no object creation required
 * abstract: This defines the restriction such that objects cannot be created
 * final: This restricts a class from being inherited.
 * strictfp: it is related to the checking of floating point values irrespective of OS
 ### Variable Modifier
+* static: no object creation required
 * transient: it is not serialized
 * volatile: the values are liable for change. More to come while discussing threads
 * final: cannot be reassigned
