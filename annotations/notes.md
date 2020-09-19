@@ -41,6 +41,17 @@ public class TestClass{
 	* SafeVarargs
 	* SuppressWarnings
 	* FunctionalInterface
+		* Interface which has only one method
+		* We have to use @java.lang.FunctionalInterface annotation to declare functional interface
+		* Examples in java API
+			* java.lang.Runnable { run();}
+			* java.lang.Comparable{ compareTo(T o1); }
+			* java.lang.AutoCloseable { close(); }
+			* java.lang.reflect.InvocationHandler{ invoke(); } (used on dynamic proxies)
+			* java.util.Comparator { compare(T o1, T o2); }
+			* java.util.function.Function
+			* java.util.function.Predicate
+			* java.io.Closeable { close(); }
 * Meta annotations
 	* Annotation that apply to other annotations. 
 	* There 5 meta annotations declared in `java.lang.annotation` package

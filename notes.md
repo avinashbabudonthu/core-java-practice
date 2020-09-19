@@ -350,6 +350,9 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 	
 }
 ```
+* Dis advantages of interfaces
+	* If n classes are implementing an interface then if we need common functionality to be available to all classes then we need either write that in one abstract class and all other classes have to extend that class or we need to implement that method in all classes. 
+	* This issue solved in JDK 8 by providing default methods in interfaces
 * Examples
 	* [InterfacesPractice.java](basics/src/test/java/com/interfaces/InterfacesPractice.java)
 
@@ -538,3 +541,66 @@ PhantomReference<DigitalCounter> phantom = new PhantomReference<DigitalCounter>(
 	
 ## Annotations
 * Refer [Annotation Notes](annotations/notes.md)
+
+## File IO
+* stream: continuous flow
+* IO Stream: continuous flow of data
+* 2 categories in io streams
+	* Byte Streams - Interacts as bindary data
+	* Text Streams - Interacts as unicode characters
+* Base class to read binary data
+	* InputStream
+* Base class to read text data
+	* Reader
+* Read individual byte
+	* End of the stream means read() method returns -1
+```
+int output = InputStream.read()
+```
+* Read individual character
+	* End of the characters means read() method returns -1
+```
+int numberOfCharactersRead = Reader.read()
+```
+* read all bytes that fits into byte array
+```
+InputStream.read(byte[] data)
+```
+* read all characters that fits into char array
+```
+Reader.read(char[] data)
+```
+* Common Stream interfaces
+	* InputStream
+	* OutputStream
+* InputStream implementation classes
+	* FileInputStream
+	* ByteArrayInputStream
+	* PipedInputStream
+* OutputStream implementation classes
+	* FileOutputStream
+	* ByteArrayOutputStream
+	* PipedOutputStream
+* Common character based stream interfaces
+	* Reader
+	* Writer
+* Reader implementations
+	* InputStreamReader
+		* FileReader
+	* StringReader
+	* CharArrayReader
+	* PipedReader
+* Writer implementations
+	* OutputStreamWriter
+		* FileWriter
+	* StringWriter
+	* CharArrayWriter
+	* PipedWriter
+* line break in unix - `\n`
+* line break in windows - ` \r\n`
+* BufferedReader
+	* Read file content
+	* Will read lines based on new line character of underlying OS
+* BufferedWriter
+	* To write content to file
+	* newLine() - adds new line character based on underlying OSnewLine() - adds new line character based on underlying OS
