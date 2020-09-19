@@ -41,7 +41,21 @@ GROUPID
 	* Constants
 * All small seperated with dot
 	* package names
-
+	
+## OOPS concepts
+* Encapsulation
+* Inheritance
+* Polymorphism
+### Polymorphism
+* process of defining multiple functionalities with the same name with in the same class or sub class
+* Types
+	* Static polymorphism
+	* Dynamic polymorphism
+* Static Polymorphism
+	* Overloading
+* Dynamic Polymorphism
+	* Overriding
+	
 ## Access specifiers
 * public: accessible every where
 * private: accessible with in the class
@@ -109,6 +123,14 @@ public final class Student{
 ## Object
 * `Instance`: Any dynamic memory allocation
 * `Object`: instance of a class
+* Create object using `new` keyword
+* `new`
+	* Loads the class to JVM
+	* Executes static initializers
+	* Initialize static fields declared in class (remember static final fields will be initialized at compile time)
+	* Allocates memory for non static members of the class
+	* Loads non static members of the class. Initializes non static members of the class
+	* Executes constructor
 * Create object
 ```
 Student studentReference = new Student();
@@ -119,9 +141,12 @@ Student studentReference = new Student();
 	* `Student`: reference type
 
 ## Constructor
+* Functionality which gets executed automatically by jvm at the time of creating an object
 * No return type
 * Same name as class
 ### Zero argument constructor
+* Default constructor
+* Zero argument constructor provided by java compiler at the time of compilation if class does not define any constructor
 * Class with zero argument `public` constructor
 ```
 public class Student{
@@ -168,6 +193,7 @@ public class Student{
 ## Variables
 ### Instance variables
 * Variables declared inside class
+* non static members of class
 * Not declared as static
 ```
 public class Student{
@@ -179,6 +205,7 @@ public class Student{
 }
 ```
 ### Static variables
+* static members of class
 * Variables declared inside class with `static` access modifier
 * Also called class variables
 ```
@@ -255,3 +282,14 @@ public class Student extends Person{
 ## Interface
 ### Definition
 * fully unimplemented structure
+
+## Type Casting
+* process of converting the value of one data type to its equivalent value of another data type
+* Types of type casting
+	* Implicit type casting
+	* Explicit type casting
+* Implicit type casting
+	* if jvm do the type casting automatically
+* Explicit type casting
+	* if jvm do the type casting with our specification
+	
