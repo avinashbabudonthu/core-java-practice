@@ -401,3 +401,6 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 	* Sequence of characters separated by a delimiter 
 	* Optionally starting with a supplied prefix and ending with a supplied suffix
 
+## Arrays
+* Group of same data type values
+* Refer array examples - [ArraysPractice.java](collections/src/test/java/com/util/ArraysPractice.java)
