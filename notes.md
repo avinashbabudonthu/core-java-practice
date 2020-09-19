@@ -46,6 +46,7 @@ GROUPID
 * Encapsulation
 * Inheritance
 * Polymorphism
+
 ### Polymorphism
 * process of defining multiple functionalities with the same name with in the same class or sub class
 * Types
@@ -57,10 +58,10 @@ GROUPID
 	* Overriding
 	
 ### Inheritance
-	* Making the properties of one object available to another object
+* Making the properties of one object available to another object
 ### Encapsulation
-	* Binding the data with its related functionalities
-	* Example of encapsulation is `class` where we bind variables and methods
+* Binding the data with its related functionalities
+* Example of encapsulation is `class` where we bind variables and methods
 	
 ## Access specifiers
 * public: accessible every where
