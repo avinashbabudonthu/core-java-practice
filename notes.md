@@ -83,16 +83,17 @@ GROUPID
 * abstract
 	* Declared on class, method
 	* Declared on class - Object cannot be created
+	* Can create object of sub class of abstract class
 	* Declared on method - to write method without implementation
 * final
 	* Declared on class, method, variable
 	* Declared on class - restricts a class from being inherited
 	* Declared on method - cannot override method
-	* Declared on values - cannot be reassigned
+	* Declared on variable - cannot be reassigned
 * strictfp
 	* it is related to the checking of floating point values irrespective of OS
 * static: 
-	* Declared on class, method, variable
+	* Declared on inner classes, method, variable
 	* Declared on method, variable - no object creation required to access
 	* non static members can access static members
 	* static members cannot access non static members
@@ -345,7 +346,9 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 	   InterfaceWithMethodImpl obj = new InterfaceWithMethodImpl();
 	   obj.test(); 
 	   obj.test2(); // access default methods using object
-	   InterfaceWithDefaultMethod.super.method1(); // access default methods using interface name from implemented class
+	   
+	   InterfaceWithMethod.super.test2(); // access default methods using interface name from implemented class
+	   
 	   InterfaceWithMethod.test3();
 	}
 	
