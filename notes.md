@@ -50,14 +50,27 @@ GROUPID
 
 ## Access modifiers
 ### Class modifiers
-* abstract: This defines the restriction such that objects cannot be created
-* final: This restricts a class from being inherited.
-* strictfp: it is related to the checking of floating point values irrespective of OS
-### Variable Modifier
-* static: no object creation required
-* transient: it is not serialized
-* volatile: the values are liable for change. More to come while discussing threads
-* final: cannot be reassigned
+* abstract
+	* Declared on class, method
+	* Declared on class - Object cannot be created
+	* Declared on method - to write method without implementation
+* final
+	* Declared on class, method, variable
+	* Declared on class - restricts a class from being inherited
+	* Declared on method - cannot override method
+	* Declared on values - cannot be reassigned
+* strictfp
+	* it is related to the checking of floating point values irrespective of OS
+* static: 
+	* Declared on class, method, variable
+	* Declared on method, variable - no object creation required to access
+	* non static members can access static members
+	* static members cannot access non static members
+* transient
+	* Declared on variable
+	* it is not serialized
+* volatile
+	* the values are liable for change. More in multi threading
 
 ## Class
 ### Definitions
@@ -85,8 +98,123 @@ class Employee{
 	private Date joiningDate;
 }
 ```
+### Final class
+* Class with `final` access modifier
+```
+public final class Student{
 
-### Object
+}
+```
+
+## Object
+* Instance: Any dynamic memory allocation
+* Object: instance of a class
+* Create object
+```
+Student studentReference = new Student();
+```
+* In the above declaration
+	* `new Student()` : object
+	* `studentReference`: reference variable
+	* `Student`: reference type
+
+## Constructor
+* No return type
+* Same name as class
+### Zero argument constructor
+* Class with zero argument `public` constructor
+```
+public class Student{
+	
+	public Student(){
+		// logic
+	}
+}
+```
+* Class with zero argument `private` constructor
+	* Cannot create object out side of class 
+```
+public class Student{
+	
+	private Student(){
+		// logic
+	}
+}
+```
+### Argumented constructor
+* Class with more than one arguments in constructor
+```
+public class Student{
+
+	private String name;
+	private String course;
+	
+	public Student(){
+		// logic
+	}
+	
+	public Student(String studentName){
+		this.name = studentName;
+	}
+	
+	public Student(String studentName, String studentCourse){
+		this.name = studentName;
+		this.course = studentCourse;
+	}
+
+}
+```
+
+## Variables
+### Instance variables
+* Variables declared inside class
+* Not declared as static
+```
+public class Student{
+	
+	// instance variables
+	private String name;
+	private String course;
+	
+}
+```
+### Static variables
+* Variables declared inside class with `static` access modifier
+* Also called class variables
+```
+public class Student{
+	private static int MIN_AGE = 5;
+}
+```
+
+## Methods
+* Method will have
+	* Access specifier
+	* Return type
+	* Method name
+	* Arguments
+* Declared inside class
+```
+public class Student{
+	
+	public String getName(String name){
+		return name;
+	}
+ 
+}
+```
+
+## Nested class
+* Static nested classes
+* non-static nested classes (or) inner classes
+### Inner classes
+* Local Inner classes (Local classes)
+	* classes declared with in a method
+	* classes declared with in a block
+* Anonymous inner classes
+	* classes declared with in a method without a name.
+	* we can declare static final variables in anonymous inner classes.
+	* we cannot declare static variables/methods in anonymous inner classes.
 
 ### Abstract class
 * Class with `abstract` access modifier
@@ -124,5 +252,6 @@ public class Student extends Person{
 }
 ```
 
-### Final class
-* Class with `final` access modifier
+## Interface
+### Definition
+* fully unimplemented structure
