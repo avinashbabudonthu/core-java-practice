@@ -34,3 +34,10 @@ Format Specifier    | Description   | Output
 space | leave space for positive number |
 \+ | always show sign |
 \( | enclose negative values in parenthesis |
+
+## Remove HTML tags from String
+* A String is a final class in Java and it is immutable, it means that we cannot change the object itself, but we can change the reference to the object
+* The HTML tags can be removed from a given string by using replaceAll() method of String class
+* We can remove the HTML tags from a given string by using a regular expression
+* After removing the HTML tags from a string, it will return a string as normal text
+* Refer [StringPractice.java](src/main/java/com/string/practice/StringPractice.java)
