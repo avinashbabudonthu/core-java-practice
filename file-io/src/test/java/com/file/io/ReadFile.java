@@ -13,12 +13,19 @@ import java.io.LineNumberReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.channels.FileChannel;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Scanner;
+import java.util.StringJoiner;
 import java.util.stream.Stream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
@@ -28,6 +35,33 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ReadFile {
+
+	@Test
+	public void readFileUsingScanner() {
+		URL url2 = getClass().getClassLoader().getResource("file1.txt");
+		File file2 = new File(url2.getPath());
+		System.out.println("readContentsOfFile() -> file2.getAbsolutePath(): " + file2.getAbsolutePath());
+		try (Scanner scanner = new Scanner(file2)) {
+			while (scanner.hasNextLine()) {
+				System.out.println(scanner.nextLine());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void readFileUsingBufferedReadWithAbsolutePath() {
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(
+				"E:\\Backup\\JavaPrep\\practiceProjects\\CoreJavaPractice\\src\\main\\resources\\file1.txt"))) {
+			String line = "";
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	@SneakyThrows
 	@Test
@@ -191,11 +225,32 @@ public class ReadFile {
 
 	@Test
 	public void deleteFile() {
-		File file = new File(Paths.get("src/main/resources/file2.txt").toAbsolutePath().toString());
-		if (file.delete()) {
-			log.info("{} deleted", file.getName());
+		File file2 = new File(Paths.get("src/main/resources/file2.txt").toAbsolutePath().toString());
+		if (file2.delete()) {
+			log.info("{} deleted", file2.getName());
 		} else {
-			log.info("{} deletion failed", file.getName());
+			log.info("{} deletion failed", file2.getName());
+		}
+
+		// method 2
+		URL url = getClass().getClassLoader().getResource("file2.txt");
+		File file = new File(url.getPath());
+		File parentDirectory = new File(file.getParent());
+
+		// before file delete
+		System.out.println("--- before delete-----");
+		String[] filesList = parentDirectory.list();
+		for (String fileName : filesList) {
+			System.out.println("fileName: " + fileName);
+		}
+
+		file.delete();
+
+		//after file delete
+		System.out.println("--- after delete-----");
+		filesList = parentDirectory.list();
+		for (String fileName : filesList) {
+			System.out.println("fileName: " + fileName);
 		}
 	}
 
@@ -291,4 +346,156 @@ public class ReadFile {
 		}
 	}
 
+	@Test
+	public void readFileUsingFilesAndStreamJDK8() {
+		final Path path = new File(getClass().getClassLoader().getResource("file1.txt").getPath()).toPath();
+		try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8)) {
+			lines.onClose(() -> System.out.println("Done")).forEach(System.out::println);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Reading Zip file
+	 * @throws IOException 
+	 */
+	@Test
+	public void readZipFile() throws IOException {
+		URL url = getClass().getClassLoader().getResource("my-zip-file.zip");
+		try (ZipFile zipFile = new ZipFile(url.getPath());) {
+
+			// reading all files in a zip file
+			Enumeration<? extends ZipEntry> zipEntries = zipFile.entries();
+			while (zipEntries.hasMoreElements()) {
+				ZipEntry zipEntry = zipEntries.nextElement();
+				if (zipEntry.isDirectory()) {
+					System.out.println("Dir -> " + zipEntry.getName());
+				} else {
+					System.out.println("File -> " + zipEntry.getName());
+				}
+			}
+
+			System.out.println("-----------------------------------------");
+
+			// getting specific file in zip file
+			ZipEntry file1Entry = zipFile.getEntry("my-zip-file/file1.txt");
+			InputStream file1InputStream = zipFile.getInputStream(file1Entry);
+			try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file1InputStream));) {
+				StringBuffer content = new StringBuffer();
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					content.append(line).append("\n");
+				}
+				System.out.println("file1 content: " + content);
+			}
+
+			System.out.println("-----------------------------------------");
+
+			// getting specific file in sub-folder in zip file
+			ZipEntry file4Entry = zipFile.getEntry("my-zip-file/sub-folder/file4.txt");
+			InputStream file4InputStream = zipFile.getInputStream(file4Entry);
+			try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file4InputStream));) {
+				StringBuffer content = new StringBuffer();
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					content.append(line).append("\n");
+				}
+				System.out.println("file4 content: " + content);
+			}
+
+		}
+
+	}
+
+	/**
+	 * Read file by wild card in file name
+	 */
+	@Test
+	public void readFileByWildCard() {
+		// JDK 7
+		try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(
+				Paths.get("E:\\Backup\\JavaPrep\\practiceProjects\\CoreJavaPractice\\src\\main\\resources"),
+				"file1*.txt")) {
+			System.out.println(Files.exists(
+					Paths.get("E:\\Backup\\JavaPrep\\practiceProjects\\CoreJavaPractice\\src\\main\\resources")));
+			dirStream.forEach(path -> System.out.println(path));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * InputStream.read() method
+	 * Reader.read()
+	 * @throws IOException 
+	 */
+	@Test
+	public void readMethod() throws IOException {
+		// InputStream.read()
+		System.out.println("----- reading with java.io.InputStream ---------");
+		try (InputStream inputStream = new FileInputStream(new File(
+				"E:\\Backup\\JavaPrep\\practiceProjects\\CoreJavaPractice\\src\\main\\resources\\file1.txt"))) {
+			int byteVal;
+			StringJoiner stringJoiner = new StringJoiner(",", "[", "]");
+			while ((byteVal = inputStream.read()) != -1) {
+				byte val = (byte) byteVal;
+				stringJoiner.add(String.valueOf(val));
+			}
+			System.out.println(stringJoiner);
+		}
+
+		// java.io.InputStream.read(byte[] data)
+		System.out.println("----- InputStream.read(byte[] data) -----");
+		try (InputStream is = new FileInputStream(new File(
+				"E:\\Backup\\JavaPrep\\practiceProjects\\CoreJavaPractice\\src\\main\\resources\\file1.txt"))) {
+			byte[] data = new byte[10];
+			int noOfBytesRead;
+			while ((noOfBytesRead = is.read(data)) > 0) {
+				StringJoiner stringJoiner = new StringJoiner(",", "[", "]");
+				for (byte byteVal : data) {
+					stringJoiner.add(String.valueOf(byteVal));
+				}
+				System.out.println(stringJoiner);
+			}
+		}
+
+		// java.io.Reader.read() method
+		System.out.println("------ reading with java.io.Reader -----------");
+		try (Reader reader = new FileReader(new File(
+				"E:\\Backup\\JavaPrep\\practiceProjects\\CoreJavaPractice\\src\\main\\resources\\file1.txt"))) {
+			int charVal;
+			StringJoiner stringJoiner = new StringJoiner(",", "[", "]");
+			while ((charVal = reader.read()) != -1) {
+				char val = (char) charVal;
+				stringJoiner.add(String.valueOf(val));
+			}
+			System.out.println(stringJoiner);
+		}
+
+		// java.io.Reader.read(char[] data) method
+		System.out.println("----- Reader.read(byte[] data) -----");
+		try (Reader is = new FileReader(new File(
+				"E:\\Backup\\JavaPrep\\practiceProjects\\CoreJavaPractice\\src\\main\\resources\\file1.txt"))) {
+			char[] data = new char[10];
+			int noOfBytesRead;
+			while ((noOfBytesRead = is.read(data)) > 0) {
+				StringJoiner stringJoiner = new StringJoiner(",", "[", "]");
+				for (char byteVal : data) {
+					stringJoiner.add(String.valueOf(byteVal));
+				}
+				System.out.println(stringJoiner);
+			}
+		}
+	}
+
+	/**
+	 * Execute directly
+	 * Execute with VM argument : -Djava.io.tmpdir=C:\Temp
+	 */
+	@Test
+	public void tempFolder() {
+		String tempDirPath = System.getProperty("java.io.tmpdir");
+		System.out.println("tempDirPath: " + tempDirPath);
+	}
 }

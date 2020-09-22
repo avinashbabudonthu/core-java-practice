@@ -552,6 +552,8 @@ PhantomReference<DigitalCounter> phantom = new PhantomReference<DigitalCounter>(
 ## File IO
 * stream: continuous flow
 * IO Stream: continuous flow of data
+* IO Operation
+	* Any data transfer operation
 * 2 categories in io streams
 	* Byte Streams - Interacts as bindary data
 	* Text Streams - Interacts as unicode characters
