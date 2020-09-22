@@ -377,11 +377,15 @@ public class StringPractice {
 		}
 	}
 
+	/**
+	 * input=<html><head></head><body><b>Welcome to Java</b></body></head></html>
+	 * result=Welcome to Java
+	 */
 	@Test
 	public void removeHTMLFromString() {
 		String input = "<html><head></head><body><b>Welcome to Java</b></body></head></html>";
 		log.info("input={}", input);
 		String result = input.replaceAll("\\<.*?\\>", "");
-		log.info("output={}", result);
+		log.info("result={}", result);
 	}
 }
