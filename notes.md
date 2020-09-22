@@ -619,3 +619,10 @@ Reader.read(char[] data)
 ![picture](file-io/images/reader-classes-hierarchy.jpg)
 * Stream classes hierarchy \
 ![picture](file-io/images/stream-classes-hierarchy.jpg)
+### Examples
+* [CreateFile](file-io/src/test/java/com/file/io/CreateFile.java)
+* [FileIOPractice](file-io/src/test/java/com/file/io/FileIOPractice.java)
+* [ReadFile](file-io/src/test/java/com/file/io/ReadFile.java)
+
+## JVM
+* Refer [JVM Notes](https://github.com/avinashbabudonthu/others/blob/master/jvm/notes.md)
