@@ -1,5 +1,7 @@
 package com.string.practice;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
@@ -13,8 +15,13 @@ import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.input.ReaderInputStream;
 import org.junit.Test;
 
+import com.google.common.io.CharSource;
+
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -387,5 +394,27 @@ public class StringPractice {
 		log.info("input={}", input);
 		String result = input.replaceAll("\\<.*?\\>", "");
 		log.info("result={}", result);
+	}
+
+	@SuppressWarnings("all")
+	@SneakyThrows
+	@Test
+	public void stringToInputStream() {
+		String input = "hello world";
+
+		// using plain java
+		InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+
+		/* 
+		 * using Guava - add dependency
+		 * com.google.guava.guava
+		 */
+		InputStream inputStream2 = new ReaderInputStream(CharSource.wrap(input).openStream());
+
+		/*
+		 * using commons io
+		 */
+		InputStream inputStream3 = IOUtils.toInputStream(input);
+
 	}
 }

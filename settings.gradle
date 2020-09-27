@@ -3,7 +3,6 @@
  */
 
 rootProject.name = 'core-java-practice'
-include(':strings-practice')
 include(':multi-threading-practice')
 include(':date-api-practice')
 include(':file-io')
