@@ -1,6 +1,9 @@
 package com.string.practice;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -17,7 +20,13 @@ import java.util.stream.Stream;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.input.ReaderInputStream;
+import org.apache.tika.exception.TikaException;
+import org.apache.tika.metadata.Metadata;
+import org.apache.tika.parser.ParseContext;
+import org.apache.tika.parser.html.HtmlParser;
+import org.apache.tika.sax.BodyContentHandler;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import com.google.common.io.CharSource;
 
@@ -390,10 +399,26 @@ public class StringPractice {
 	 */
 	@Test
 	public void removeHTMLFromString() {
+		// using core java regex
 		String input = "<html><head></head><body><b>Welcome to Java</b></body></head></html>";
 		log.info("input={}", input);
 		String result = input.replaceAll("\\<.*?\\>", "");
 		log.info("result={}", result);
+
+		// using tika parsers
+		BodyContentHandler handler = new BodyContentHandler();
+		Metadata metadata = new Metadata();
+		ParseContext pcontext = new ParseContext();
+		HtmlParser htmlparser = new HtmlParser();
+
+		try {
+			// input files - input.html, input-2.html
+			FileInputStream inputstream = new FileInputStream(new File("src/main/resources/input.html"));
+			htmlparser.parse(inputstream, handler, metadata, pcontext);
+		} catch (IOException | SAXException | TikaException e) {
+			e.printStackTrace();
+		}
+		log.info("Contents of the document:\n{}", handler.toString());
 	}
 
 	@SuppressWarnings("all")
