@@ -398,19 +398,7 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 	* if jvm do the type casting with our specification
 
 ## String
-* class in `java.lang` package
 * Refer [Strings Notes](strings-practice/notes.md)
-
-### StringBuffer
-* All methods are `synchronized`
-
-### StringBuilder
-* All methods are `non synchronized`
-
-### StringJoiner
-* StringJoiner is used to construct  
-	* Sequence of characters separated by a delimiter 
-	* Optionally starting with a supplied prefix and ending with a supplied suffix
 
 ## Arrays
 * Group of same data type values
@@ -463,8 +451,8 @@ for(int i: list){
 		* Example: java.lang.NoClassDefFoundError, java.io.IOError
 * try-with-resource statement
 	* try-with-resource statement ensures the each resource is closed at the end of the statetement regardless of whether the try statement completes normally or abruptly
-	* Any object which implements java.lang.AutoCloseable or java.io.Closeable can be used as resource
-	* Interface java.io.Closeable extends java.lang.AutoCloseable
+	* Any object which implements `java.lang.AutoCloseable` or `java.io.Closeable` can be used as resource
+	* Interface `java.io.Closeable extends java.lang.AutoCloseable`
 * throws
 	* To remind the compiler that the method can throw an exception
 * throw
@@ -479,7 +467,7 @@ for(int i: list){
 	* block of code known as exception handler
 * finally
 	* block of code that guarantees to execute
-* Examples
+### Examples
 	* [TryWithResource.java](basics/src/test/java/com/exception/TryWithResource.java)
 
 ## References
@@ -624,5 +612,9 @@ Reader.read(char[] data)
 * [FileIOPractice](file-io/src/test/java/com/file/io/FileIOPractice.java)
 * [ReadFile](file-io/src/test/java/com/file/io/ReadFile.java)
 
+## Multi Threading
+* Refer [Multi Threading Notes](multi-threading-practice/notes.md)
+
 ## JVM
 * Refer [JVM Notes](https://github.com/avinashbabudonthu/others/blob/master/jvm/notes.md)
+
