@@ -468,7 +468,7 @@ for(int i: list){
 * finally
 	* block of code that guarantees to execute
 ### Examples
-	* [TryWithResource.java](basics/src/test/java/com/exception/TryWithResource.java)
+* [TryWithResource.java](basics/src/test/java/com/exception/TryWithResource.java)
 
 ## References
 * Different classes in java.lan.ref package
