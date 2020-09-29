@@ -438,7 +438,10 @@ for(int i: list){
 
 ## Exception Handling
 * Exception: Exception is an event, which occurs during the execution of a program, that disrupts normal flow of program's instructions
-* Resource: An object that must be closed after the program is finished with it
+* Advantages of exception
+	* Seperates error handling code from regular code
+	* Propogating errors up to the call stack
+	* Grouping and differentiating error types
 * Types of exceptions
 	* CheckedExceptions
 		* Exception classes which extends java.lang.Exception class
@@ -449,24 +452,30 @@ for(int i: list){
 	* Error
 		* classes which extends java.lang.Error class
 		* Example: java.lang.NoClassDefFoundError, java.io.IOError
-* try-with-resource statement
-	* try-with-resource statement ensures the each resource is closed at the end of the statetement regardless of whether the try statement completes normally or abruptly
-	* Any object which implements `java.lang.AutoCloseable` or `java.io.Closeable` can be used as resource
-	* Interface `java.io.Closeable extends java.lang.AutoCloseable`
-* throws
-	* To remind the compiler that the method can throw an exception
-* throw
-	* Creates an exception object and throws it
-* Advantages of exception
-	* Seperates error handling code from regular code
-	* Propogating errors up to the call stack
-	* Grouping and differentiating error types
+* Exception Hirarchy in Java library\
+![picture](exception-handling/images/Exception-Hierarchy-1.png)
+* Error class hierarchy
+![picture](exception-handling/images/error-class-hierarchy.gif)
+* Exception class hierarchy
+![picture](exception-handling/images/exception-class-hierarchy.gif)
+* RuntimeException class hierarchy
+![picture](exception-handling/images/runtime-exception-hierarchy.jpg)
 * try block
 	* identifies the code in which exception can occur
 * catch block
 	* block of code known as exception handler
 * finally
 	* block of code that guarantees to execute
+* throws
+	* To remind the compiler that the method can throw an exception
+* throw
+	* Creates an exception object and throws it
+* Resource: An object that must be closed after the program is finished with it	
+* try-with-resource statement
+	* try-with-resource statement ensures the each resource is closed at the end of the statetement regardless of whether the try statement completes normally or abruptly
+	* Any object which implements `java.lang.AutoCloseable` or `java.io.Closeable` can be used as resource
+	* Interface `java.io.Closeable extends java.lang.AutoCloseable`
+
 ### Examples
 * [TryWithResource.java](basics/src/test/java/com/exception/TryWithResource.java)
 
