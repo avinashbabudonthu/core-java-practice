@@ -399,7 +399,7 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 
 ## String
 * class in `java.lang` package
-* Refer [strings-practice](strings-practice)
+* Refer [Strings Notes](strings-practice/notes.md)
 
 ### StringBuffer
 * All methods are `synchronized`
