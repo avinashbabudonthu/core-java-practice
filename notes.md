@@ -454,11 +454,11 @@ for(int i: list){
 		* Example: java.lang.NoClassDefFoundError, java.io.IOError
 * Exception Hirarchy in Java library\
 ![picture](exception-handling/images/Exception-Hierarchy-1.png)
-* Error class hierarchy
+* Error class hierarchy\
 ![picture](exception-handling/images/error-class-hierarchy.gif)
-* Exception class hierarchy
+* Exception class hierarchy\
 ![picture](exception-handling/images/exception-class-hierarchy.gif)
-* RuntimeException class hierarchy
+* RuntimeException class hierarchy\
 ![picture](exception-handling/images/runtime-exception-hierarchy.jpg)
 * try block
 	* identifies the code in which exception can occur
