@@ -479,6 +479,15 @@ for(int i: list){
 ### Examples
 * [TryWithResource.java](basics/src/test/java/com/exception/TryWithResource.java)
 
+## Annotations
+* Refer [Annotation Notes](annotations/notes.md)
+
+## Generics
+* Refer [Generics Notes](generics/notes.md)
+
+## Collections
+* Refer [Collections Notes](collections/notes.md)
+
 ## References
 * Different classes in java.lan.ref package
 	* Reference<T>
@@ -539,12 +548,6 @@ PhantomReference<DigitalCounter> phantom = new PhantomReference<DigitalCounter>(
 
 ### Examples
 	* [ReferencesPractice.java](basics/src/test/java/com/references/ReferencesPractice.java)
-	
-## Annotations
-* Refer [Annotation Notes](annotations/notes.md)
-
-## Generics
-* Refer [Generics Notes](generics/notes.md)
 
 ## File IO
 * stream: continuous flow
