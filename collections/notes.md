@@ -70,7 +70,7 @@
 * conversion constructor
 	* constrcutor in collection implementation classes whose argument is java.util.Collection interface
 * Traversing collection
-	* * Aggregate functions
+	* Aggregate functions
 	* foreach
 	* Iterator
 * new aggregate functions
@@ -119,12 +119,12 @@
 * mutually comparable
 	* elements which can be compared each other
 * How to convert array as list?
-```
-java.util.Arrays.asList()
-````
 	* This list does not support operations like add, remove, set because unlike normal list the size of this list is fixed and size equal to the number of elements of array.
 	* The changes to elements to list will be reflected in underlying array
 	* If we perform any add, remove etc operation on this list then java.lang.UpsupportedOperationException will be thrown
+```
+java.util.Arrays.asList()
+````
 * how to create synchronized list?
 	* java.util.Collections.synchronizedList()
 	* Method signature: `public static <T> List<T> synchronizedList(List<T> list);`
@@ -133,6 +133,9 @@ java.util.Arrays.asList()
 List list = Collections.synchronizedList(new ArrayList());
 ```
 * java.lang.Comparable.compareTo method objects
+	* recieving object < specified object ==> negative integer
+	* recieving object == specified object ==> zero
+	* recieving object > specified object ==> positive integer
 ```
 package java.lang;
 public class Comparable<T>{
@@ -141,19 +144,16 @@ public class Comparable<T>{
 recieving object - o
 specified object - on which compareTo is called
 ```
-	* recieving object < specified object ==> negative integer
-	* recieving object == specified object ==> zero
-	* recieving object > specified object ==> positive integer
 * java.util.Comparator.compare method objects
+	* o1 < o2 ==> return negative value
+	* o1 == o2 ==> return zero
+	* o1 >  o2 ==> return positive value
 ```
 package java.util;
 public class Comparator<T>{
  public int compare(T o1, T o2);
 }
 ```
-	* o1 < o2 ==> return negative value
-	* o1 == o2 ==> return zero
-	* o1 >  o2 ==> return positive value
 * Collection new Aggregate functions
 	* Streams, pipelines
 * Pipelines
@@ -169,12 +169,12 @@ roaster.stream().forEach(p -> System.out.println(p.getName()));
 * Source
 	* This could be a collection, an array, a generator function, or an I/O channel
 * zero or more intermediate operations
-```
-double average = roster.stream().filter(p -> p.getGender() == Person.Sex.MALE).mapToInt(Person::getAge).average().getAsDouble();
-```
 	* An intermediate operation, such as filter, produces a new stream.
 	* stream is a sequence of elements. Unlike a collection, it is not a data structure that stores elements. Instead, a stream carries values from a source through a pipeline. This example creates a stream from the collection roster by invoking the method stream().
 	* filter operation returns a new stream that contains elements that match its predicate (this operation's parameter). In this example, the predicate is the lambda expression `e -> e.getGender() == Person.Sex.MALE`. It returns the boolean value `true` if the gender field of object e has the value Person.Sex.MALE. Consequently, the filter operation in this example returns a stream that contains all male members in the collection roster.
+```
+double average = roster.stream().filter(p -> p.getGender() == Person.Sex.MALE).mapToInt(Person::getAge).average().getAsDouble();
+```
 * terminal operation
 	* A terminal operation, such as forEach, produces a non-stream result, such as a primitive value (like a double value), a collection, or in the case of forEach, no value at all. * In this example, the parameter of the forEach operation is the lambda expression `person -> {System.out.println(person.getName());}` which invokes the method getName on the object person. (The Java runtime and compiler infer that the type of the object person is Person.)
 * pre-defined Reduction operations in Java API
@@ -240,7 +240,7 @@ try( Stream< String > lines = Files.lines( path, StandardCharsets.UTF_8 ) ) {
 * List Examples
 	* [ArrayList Examples](src/test/java/com/list/ArrayListPractice.java)
 	* [CopyOnWriteArrayList Exampels](src/test/java/com/list/CopyOnWriteArrayListPractice.java)
-	* [LinkedList Examples](src/test/java/com/listLinkedListPractice.java)
+	* [LinkedList Examples](src/test/java/com/list/LinkedListPractice.java)
 * Set Examples
 	* [ConcurrentSkipListSetPractice Exmaples](src/test/java/com/set/ConcurrentSkipListSetPractice.java)
 	* [CopyOnWriteArraySetPractice Exmaples](src/test/java/com/set/CopyOnWriteArraySetPractice.java)
