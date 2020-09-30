@@ -1,6 +1,20 @@
-## Generics Notes
+# Generics Notes
 
-### Erasure
+## Notes
+* Upper Bounded wild card
+```
+List<? extends Class>
+```
+* Lower Bounded wild card
+```
+List<? super Class>
+```
+* List<?>
+```
+Unbounded wild card
+```
+
+## Erasure
 * After compilation generics will be removed
 ```
 List<string>, List<Integer> , List<List<Integer>> -> List
