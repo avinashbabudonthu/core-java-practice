@@ -9,6 +9,9 @@
   * Multithreading and Concurrency
 * Java Fundamentals - Concurrency with Multithreading [Course]
 
+### Udemy
+* Concurrency, Multithreading and Parallel Computing in Java
+
 ### Others
 * [http://tutorials.jenkov.com/java-concurrency/index.html](http://tutorials.jenkov.com/java-concurrency/index.html)
 * [http://tutorials.jenkov.com/java-util-concurrent/index.html](http://tutorials.jenkov.com/java-util-concurrent/index.html)
