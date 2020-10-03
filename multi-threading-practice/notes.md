@@ -196,6 +196,220 @@
 * When each function call can be executed independently, each function call can be executed on separate CPUs. That means, that an algorithm implemented functionally can be executed in parallel, on multiple CPUs.
 * With Java 7 we got the java.util.concurrent package contains the ForkAndJoinPool which can help you implement something similar to functional parallelism. With Java 8 we got parallel streams which can help you parallelize the iteration of large collections. Keep in mind that there are developers who are critical of the ForkAndJoinPool (you can find a link to criticism in my ForkAndJoinPool tutorial).
 
+## Same-threading
+### Why Single-threaded Systems?
+* You might be wondering why anyone would design single-threaded system today. Single-threaded systems have gained popularity because their concurrency models are much simpler than multi-threaded systems. Single-threaded systems do not share any state (objects / data) with other threads. This enables the single thread to use non-concurrent data structures, and utilize the CPU and CPU caches better.
+* Unfortunately, single-threaded systems do not fully utilize modern CPUs. A modern CPU often comes with 2, 4, 6, 8 more cores. Each core functions as an individual CPU. A single-threaded system can only utilize one of the cores\
+![picture](images/same-threading-0.png)
+* In order to utilize all the cores in the CPU, a single-threaded system can be scaled out to utilize the whole computer.
+	* One Thread Per CPU
+		* Same-threaded systems usually has 1 thread running per CPU in the computer. If a computer contains 4 CPUs, or a CPU with 4 cores, then it would be normal to run 4 instances of the same-threaded system (4 single-threaded systems)
+![picture](images/same-threading-0-1.png)
+### Multi threaded vs Same threaded
+* A same-threaded system looks similar to a traditional multi-threaded system, since a same-threaded system has multiple threads running inside it. But there is a subtle difference.
+* The difference between a same-threaded and a traditional multi-threaded system is that the threads in a same-threaded system do not share state. There is no shared memory which the threads access concurrently. No concurrent data structures\
+![picture](images/same-threading-4.png)
+
+## Thread Communication
+* If the threads in a same-threaded system need to communicate, they do so by message passing. If Thread A wants to send a message to Thread B, Thread A can do so by generating a message (a byte sequence). Thread B can then copy that message (byte sequence) and read it. By copying the message Thread B makes sure that Thread A cannot modify the message while Thread B reads it
+![picture](images/same-threading-5.png)
+
+## Concurrency vs. Parallelism
+### Concurrency
+* Concurrency means that an application is making progress on more than one task at the same time (concurrently). Well, if the computer only has one CPU the application may not make progress on more than one task at exactly the same time, but more than one task is being processed at a time inside the application. It does not completely finish one task before it begins the next. Instead, the CPU switches between the different tasks until the tasks are complete\
+![picture](images/concurrency-vs-parallelism-1.png)
+### Parallelism
+* Parallelism means that an application splits its tasks up into smaller subtasks which can be processed in parallel, for instance on multiple CPUs at the exact same time\
+![picture](images/concurrency-vs-parallelism-2.png)
+
+### Details
+* As you can see, concurrency is related to how an application handles multiple tasks it works on. An application may process one task at at time (sequentially) or work on multiple tasks at the same time (concurrently).
+* Parallelism on the other hand, is related to how an application handles each individual task. An application may process the task serially from start to end, or split the task up into subtasks which can be completed in parallel.
+* As you can see, an application can be concurrent, but not parallel. This means that it processes more than one task at the same time, but the thread is only executing on one task at a time. There is no parallel execution of tasks going in parallel threads / CPUs.
+* An application can also be parallel but not concurrent. This means that the application only works on one task at a time, and this task is broken down into subtasks which can be processed in parallel. However, each task (+ subtask) is completed before the next task is split up and executed in parallel
+
+## Creating and Starting Java Threads
+* Java threads are objects like any other Java objects. Threads are instances of class java.lang.Thread, or instances of subclasses of this class. In addition to being objects, java threads can also execute code
+* Creating and Starting Threads
+```
+Thread thread = new Thread();
+```
+* To start the Java thread you will call its start() method
+```
+thread.start();
+```
+### Thread Subclass
+* The first way to specify what code a thread is to run, is to create a subclass of Thread and override the run() method. The run() method is what is executed by the thread after you call start()
+```
+public class MyThread extends Thread {
+
+	public void run(){
+	   System.out.println("MyThread running");
+	}
+}
+```
+* To create and start the above thread
+```
+MyThread myThread = new MyThread();
+myTread.start();
+```
+* We can also create an anonymous subclass of Thread
+```
+ Thread thread = new Thread(){
+    public void run(){
+      System.out.println("Thread Running");
+    }
+  }
+
+  thread.start();
+```
+### Runnable Interface Implementation
+* The Runnable interface is a standard Java Interface that comes with the Java platform. The Runnable interface only has a single method run()
+```
+public interface Runnable() {
+
+    public void run();
+
+}
+```
+* Three ways to implement the Runnable interface
+	* Create a Java class that implements the Runnable interface
+	* Create an anonymous class that implements the Runnable interface
+	* Create a Java Lambda that implements the Runnable interface
+* Java Class Implements Runnable
+```
+public class MyRunnable implements Runnable {
+
+    public void run(){
+       System.out.println("MyRunnable running");
+    }
+  }
+```
+* Anonymous Implementation of Runnable
+```
+Runnable myRunnable =
+    new Runnable(){
+        public void run(){
+            System.out.println("Runnable running");
+        }
+    }
+```
+* Java Lambda Implementation of Runnable
+```
+Runnable runnable = () -> { System.out.println("Lambda Runnable running"); };
+```
+* Starting a Thread With a Runnable
+```
+Runnable runnable = new MyRunnable(); // or an anonymous class, or lambda...
+
+Thread thread = new Thread(runnable);
+thread.start();
+```
+#### Caution - Calling run() Instead of start()
+* we may not notice anything because the Runnable's run() method is executed like you expected. However, it is NOT executed by the new thread you just created. Instead the run() method is executed by the thread that created the thread. In other words, the thread that executed the above two lines of code. To have the run() method of the MyRunnable instance called by the new created thread, newThread, you MUST call the newThread.start() method
+```
+Thread newThread = new Thread(MyRunnable());
+newThread.run();  //should be start();
+```
+### Thread Names
+* When you create a Java thread you can give it a name. The name can help you distinguish different threads from each other. For instance, if multiple threads write to System.out it can be handy to see which thread wrote the text
+* Sub class of Thread
+```
+Thread thread = new Thread("Thread Name") {
+      public void run(){
+        System.out.println("run by: " + getName());
+      }
+   };
+
+
+thread.start();
+System.out.println(thread.getName());
+```
+* Implements Runnable
+```
+MyRunnable runnable = new MyRunnable();
+Thread thread = new Thread(runnable, "New Thread");
+
+thread.start();
+System.out.println(thread.getName());
+```
+### Thread.currentThread()
+* The Thread.currentThread() method returns a reference to the Thread instance executing currentThread() . This way you can get access to the Java Thread object representing the thread executing a given block of code
+```
+Thread thread = Thread.currentThread();
+```
+* Once you have a reference to the Thread object, you can call methods on it. For instance, you can get the name of the thread currently executing
+```
+String threadName = Thread.currentThread().getName();
+```
+
+### Pause a Thread
+* A thread can pause itself by calling the static method Thread.sleep() . The sleep() takes a number of milliseconds as parameter. The sleep() method will attempt to sleep that number of milliseconds before resuming execution. The Thread sleep() is not 100% precise
+```
+try {
+    Thread.sleep(10L * 1000L);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+```
+
+### Stop a Thread
+* Stopping a Java Thread requires some preparation of your thread implementation code. The Java Thread class contains a stop() method, but it is deprecated. The original stop() method would not provide any guarantees about in what state the thread was stopped. That means, that all Java objects the thread had access to during execution would be left in an unknown state. If other threads in your application also has access to the same objects, your application could fail unexpectedly and unpredictably.
+* Instead of calling the stop() method you will have to implement your thread code so it can be stopped. Here is an example of a class that implements Runnable which contains an extra method called doStop() which signals to the Runnable to stop. The Runnable will check this signal and stop when it is ready to do so
+```
+public class MyRunnable implements Runnable {
+
+    private boolean doStop = false;
+
+    public synchronized void doStop() {
+        this.doStop = true;
+    }
+
+    private synchronized boolean keepRunning() {
+        return this.doStop == false;
+    }
+
+    @Override
+    public void run() {
+        while(keepRunning()) {
+            // keep doing what this thread should do.
+            System.out.println("Running");
+
+            try {
+                Thread.sleep(3L * 1000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+}
+```
+* Notice the doStop() and keepRunning() methods. The doStop() is intended to be called from another thread than the thread executing the MyRunnable's run() method. The keepRunning() method is called internally by the thread executing the MyRunnable's run() method. As long as doStop() has not been called the keepRunning() method will return true - meaning the thread executing the run() method will keep running
+* Example of starting a Java thread that executes an instance of the above MyRunnable class, and stopping it again after a delay
+```
+public class MyRunnableMain {
+
+    public static void main(String[] args) {
+        MyRunnable myRunnable = new MyRunnable();
+
+        Thread thread = new Thread(myRunnable);
+
+        thread.start();
+
+        try {
+            Thread.sleep(10L * 1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        myRunnable.doStop();
+    }
+}
+```
+* This example first creates a MyRunnable instance, then passes that instance to a thread and starts the thread. Then the thread executing the main() method (the main thread) sleeps for 10 seconds, and then calls the doStop() method of the MyRunnable instance. This will cause the thread executing the MyRunnable method to stop, because the keepRunning() will return true after doStop() is called.
+* Please keep in mind that if your Runnable implementation needs more than just the run() method (e.g. a stop() or pause() method too), then you can no longer create your Runnable implementation with a Java lambda expression. A Java lambda can only implement a single method. Instead you must use a custom class, or a custom interface that extends Runnable which has the extra methods, and which is implemented by an anonymous class
+
 # Multi Threading Bullet Points
 * multi tasking types
 	* Process based multi tasking
