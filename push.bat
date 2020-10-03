@@ -1,10 +1,10 @@
-echo off
-echo --------------------------------------------------
-core-java-practice
-echo -------------------------------------------------------
+@echo off
 cd /d %cd%
+echo -----------------------------------------------
+echo %cd%
+echo -----------------------------------------------
 git status
 git add .
-git commit -m "core java practice %date% %time%"
+git commit -m "%date% %time%"
 git push
 pause
