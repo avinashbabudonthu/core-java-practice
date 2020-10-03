@@ -203,7 +203,7 @@
 ![picture](images/same-threading-0.png)
 * In order to utilize all the cores in the CPU, a single-threaded system can be scaled out to utilize the whole computer.
 	* One Thread Per CPU
-		* Same-threaded systems usually has 1 thread running per CPU in the computer. If a computer contains 4 CPUs, or a CPU with 4 cores, then it would be normal to run 4 instances of the same-threaded system (4 single-threaded systems)
+		* Same-threaded systems usually has 1 thread running per CPU in the computer. If a computer contains 4 CPUs, or a CPU with 4 cores, then it would be normal to run 4 instances of the same-threaded system (4 single-threaded systems)\
 ![picture](images/same-threading-0-1.png)
 ### Multi threaded vs Same threaded
 * A same-threaded system looks similar to a traditional multi-threaded system, since a same-threaded system has multiple threads running inside it. But there is a subtle difference.
@@ -211,7 +211,7 @@
 ![picture](images/same-threading-4.png)
 
 ## Thread Communication
-* If the threads in a same-threaded system need to communicate, they do so by message passing. If Thread A wants to send a message to Thread B, Thread A can do so by generating a message (a byte sequence). Thread B can then copy that message (byte sequence) and read it. By copying the message Thread B makes sure that Thread A cannot modify the message while Thread B reads it
+* If the threads in a same-threaded system need to communicate, they do so by message passing. If Thread A wants to send a message to Thread B, Thread A can do so by generating a message (a byte sequence). Thread B can then copy that message (byte sequence) and read it. By copying the message Thread B makes sure that Thread A cannot modify the message while Thread B reads it\
 ![picture](images/same-threading-5.png)
 
 ## Concurrency vs. Parallelism
