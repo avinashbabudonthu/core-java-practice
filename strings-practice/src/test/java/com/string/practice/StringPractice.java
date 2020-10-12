@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.StringJoiner;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -441,5 +442,26 @@ public class StringPractice {
 		 */
 		InputStream inputStream3 = IOUtils.toInputStream(input);
 
+	}
+
+	private static String intToValueKey(int value) {
+		final StringBuilder sb = new StringBuilder(String.valueOf((char) ('A' + (value % 26))));
+		while ((value = (value / 26 - 1)) >= 0) {
+			sb.append((char) ('A' + (value % 26)));
+		}
+		return sb.reverse().toString();
+	}
+
+	@Test
+	public void test() {
+		StringJoiner result = new StringJoiner(",");
+
+		for (int i = 0; i < 130; i++) {
+			String columnIndex = intToValueKey(i);
+			// System.out.println(columnIndex);
+			result.add(columnIndex);
+		}
+
+		System.out.println(result);
 	}
 }
