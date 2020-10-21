@@ -288,6 +288,18 @@ public class ArrayListPractice {
 
 		log.info("unique students list, size={}", uniqueStudentsList.size());
 		uniqueStudentsList.stream().forEach(student -> log.info("{}", student));
+
+		// using java 8 streams
+		List<String> list = new ArrayList<>();
+		list.add("jack");
+		list.add("jack");
+		list.add("jill");
+		list.add("jill");
+		list.add("john");
+		list.add("john");
+		log.info("list={}", list);
+		List<String> listWithoutDuplicates = list.stream().distinct().collect(Collectors.toList());
+		log.info("listWithoutDuplicates={}", listWithoutDuplicates);
 	}
 
 	/**
