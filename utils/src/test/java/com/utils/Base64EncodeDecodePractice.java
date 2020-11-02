@@ -28,7 +28,7 @@ public class Base64EncodeDecodePractice {
 
 	@Test
 	public void decode() {
-		final String testSting = "Let's encode @ password";
+		final String testSting = "admin:admin";
 		String encodedString1 = Base64.getEncoder().encodeToString(testSting.getBytes());
 		String decodedString1 = new String(Base64.getDecoder().decode(encodedString1));
 		log.info("encodedString1={}, decodedString1={}", encodedString1, decodedString1);
@@ -36,6 +36,16 @@ public class Base64EncodeDecodePractice {
 		String encodedString2 = Base64.getEncoder().encodeToString(testSting.getBytes(StandardCharsets.UTF_8));
 		String decodedString2 = new String(Base64.getDecoder().decode(encodedString2), StandardCharsets.UTF_8);
 		log.info("encodedString2={}, decodedString2={}", encodedString2, decodedString2);
+	}
+
+	@Test
+	public void test() {
+		String encodedString = "YWRtaW46YWRtaW4=";
+		String decodedString2 = new String(Base64.getDecoder().decode(encodedString), StandardCharsets.UTF_8);
+		log.info("encodedString2={}, decodedString2={}", encodedString, decodedString2);
+
+		String[] credentials = decodedString2.split(":");
+		log.info("username={}, password={}", credentials[0], credentials[1]);
 	}
 
 }
