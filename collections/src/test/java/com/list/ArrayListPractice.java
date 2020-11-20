@@ -288,6 +288,18 @@ public class ArrayListPractice {
 
 		log.info("unique students list, size={}", uniqueStudentsList.size());
 		uniqueStudentsList.stream().forEach(student -> log.info("{}", student));
+
+		// using java 8 streams
+		List<String> list = new ArrayList<>();
+		list.add("jack");
+		list.add("jack");
+		list.add("jill");
+		list.add("jill");
+		list.add("john");
+		list.add("john");
+		log.info("list={}", list);
+		List<String> listWithoutDuplicates = list.stream().distinct().collect(Collectors.toList());
+		log.info("listWithoutDuplicates={}", listWithoutDuplicates);
 	}
 
 	/**
@@ -729,15 +741,16 @@ public class ArrayListPractice {
 
 	@Test
 	public void reverseList() {
+		// solution 1
 		List<String> names = new ArrayList<>();
 		names.add("jack");
 		names.add("jill");
 		names.add("jim");
 		names.add("jane");
-		log.info("before, names={}", names);
-
+		log.info("before\n names={}", names);
 		Collections.reverse(names);
-		log.info("after, names={}", names);
+		log.info("after\n names={}", names);
+
 	}
 
 	@Test
@@ -767,5 +780,20 @@ public class ArrayListPractice {
 		log.info("studentList1={}", studentList1);
 		log.info("studentList2={}", studentList2);
 		log.info("commonStudents={}", commonStudents);
+	}
+
+	/**
+	 * Sort the list in reverse order
+	 */
+	@Test
+	public void sortListInReverseOrder() {
+		List<String> names2 = new ArrayList<>();
+		names2.add("jack");
+		names2.add("jill");
+		names2.add("jim");
+		names2.add("jane");
+		log.info("before\n names2={}", names2);
+		names2.sort(Collections.reverseOrder());
+		log.info("after\n names2={}", names2);
 	}
 }
