@@ -1,24 +1,3 @@
-# List of Projects
-* [Annotations](annotations)
-* [Basics](basics)
-* [Collections](collections)
-* [Date Time API](date-api-practice)
-* [Enum](enums)
-* [File IO](file-io)
-* [Generics](generics)
-* [Internationalization](internationalization)
-* [Java 8](java-8)
-* [Java Util Concurrent Package](java-util-concurrent)
-* [JAXB](jaxb)
-* [Multi Threading Core](multi-threading-practice)
-* [Reactive Programming](reactive-programming)
-* [Reflection](reflection)
-* [Regex](regex)
-* [Serialization](serialization)
-* [Streams](streams)
-* [Strings](strings-practice)
-* [Utils](utils)
-
 # Materials
 ## Pluralsight
 * Java Fundamentals: The Java Language
@@ -43,6 +22,9 @@
 * Reactive Programming in Java 8 With RxJava
 * Reactive Programming in Java 12 with RxJava 2
 * Programming with Dates and Times in Java 8
+
+## Udemy
+* What's New in Java 9 - Modules and More!
 
 ## Others
 * [Java Docs](http://docs.oracle.com/javase/tutorial/index.html)
