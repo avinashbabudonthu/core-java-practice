@@ -799,6 +799,19 @@ public class ArrayListPractice {
 		log.info("after\n names2={}", names2);
 	}
 
+	/**
+	 * Output: 
+	 sizeOfEachSubList=1
+		[[a]]
+		sizeOfEachSubList=1
+		[[a], [b]]
+		sizeOfEachSubList=1
+		[[a], [b], [c]]
+		sizeOfEachSubList=1
+		[[a], [b], [c], [d]]
+		sizeOfEachSubList=2
+		[[a, b], [c, d], [e]]
+	 */
 	@Test
 	public void splitListToSubLists() {
 		List<String> list1 = new ArrayList<>();
