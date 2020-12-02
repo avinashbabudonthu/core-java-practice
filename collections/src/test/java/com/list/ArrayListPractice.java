@@ -18,6 +18,8 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
+import com.google.common.collect.Lists;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -795,5 +797,45 @@ public class ArrayListPractice {
 		log.info("before\n names2={}", names2);
 		names2.sort(Collections.reverseOrder());
 		log.info("after\n names2={}", names2);
+	}
+
+	@Test
+	public void splitListToSubLists() {
+		List<String> list1 = new ArrayList<>();
+		list1.add("a");
+		splitListToSubLists(list1);
+
+		List<String> list2 = new ArrayList<>();
+		list2.add("a");
+		list2.add("b");
+		splitListToSubLists(list2);
+
+		List<String> list3 = new ArrayList<>();
+		list3.add("a");
+		list3.add("b");
+		list3.add("c");
+		splitListToSubLists(list3);
+
+		List<String> list4 = new ArrayList<>();
+		list4.add("a");
+		list4.add("b");
+		list4.add("c");
+		list4.add("d");
+		splitListToSubLists(list4);
+
+		List<String> list5 = new ArrayList<>();
+		list5.add("a");
+		list5.add("b");
+		list5.add("c");
+		list5.add("d");
+		list5.add("e");
+		splitListToSubLists(list5);
+	}
+
+	private void splitListToSubLists(List<String> list) {
+		int sizeOfEachSubList = (int) Math.ceil((float) list.size() / 4);
+		log.info("sizeOfEachSubList={}", sizeOfEachSubList);
+		List<List<String>> groupedList = Lists.partition(list, sizeOfEachSubList);
+		log.info("{}", groupedList);
 	}
 }
