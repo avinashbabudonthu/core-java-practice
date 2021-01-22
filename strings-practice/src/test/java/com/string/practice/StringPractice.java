@@ -1,12 +1,20 @@
 package com.string.practice;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,8 +22,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 import java.util.StringJoiner;
 import java.util.StringTokenizer;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -29,7 +39,10 @@ import org.apache.tika.sax.BodyContentHandler;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
+import com.google.common.base.Charsets;
+import com.google.common.io.ByteSource;
 import com.google.common.io.CharSource;
+import com.google.common.io.CharStreams;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -453,7 +466,7 @@ public class StringPractice {
 	}
 
 	@Test
-	public void test() {
+	public void generateExcelCellNames() {
 		StringJoiner result = new StringJoiner(",");
 
 		for (int i = 0; i < 130; i++) {
@@ -464,4 +477,101 @@ public class StringPractice {
 
 		System.out.println(result);
 	}
+
+	/**
+	 * References:
+	 * 	https://www.baeldung.com/convert-input-stream-to-string
+	 * 
+	 * @throws IOException
+	 */
+	@Test
+	public void inputStreamToString() throws IOException {
+		log.info("-------------- solution 1 using guava------------------------");
+		String originalString = "hello world";
+		InputStream inputStream = new ByteArrayInputStream(originalString.getBytes());
+		ByteSource byteSource = new ByteSource() {
+			@Override
+			public InputStream openStream() throws IOException {
+				return inputStream;
+			}
+		};
+
+		String result = byteSource.asCharSource(Charsets.UTF_8).read();
+		log.info("result={}", result);
+
+		log.info("--------------- solution 2 using guava ---------------------");
+		String originalString2 = "hello world 2";
+		InputStream inputStream2 = new ByteArrayInputStream(originalString2.getBytes());
+		String result2 = null;
+		try (Reader reader = new InputStreamReader(inputStream2)) {
+			result2 = CharStreams.toString(reader);
+		}
+		log.info("result2={}", result2);
+
+		log.info("--------------- solution 3 using commons io ---------------------");
+		String originalString3 = "hello world 3";
+		InputStream inputStream3 = new ByteArrayInputStream(originalString3.getBytes());
+		String result3 = IOUtils.toString(inputStream3, StandardCharsets.UTF_8.name());
+		log.info("result3={}", result3);
+
+		log.info("--------------- solution 4 using commons io ---------------------");
+		String originalString4 = "hello world 4";
+		InputStream inputStream4 = new ByteArrayInputStream(originalString4.getBytes());
+		StringWriter result4 = new StringWriter();
+		String encoding = StandardCharsets.UTF_8.name();
+		IOUtils.copy(inputStream4, result4, encoding);
+		log.info("result4={}", result4.toString());
+
+		log.info("------------- solution 5 using InputStream -----------------------");
+		String originalString5 = "hello world 5";
+		InputStream inputStream5 = new ByteArrayInputStream(originalString5.getBytes());
+		StringBuilder result5 = new StringBuilder();
+		try (Reader reader = new BufferedReader(
+				new InputStreamReader(inputStream5, Charset.forName(StandardCharsets.UTF_8.name())))) {
+			int i = 0;
+			while ((i = reader.read()) != -1) {
+				result5.append((char) i);
+			}
+		}
+		log.info("result5={}", result5);
+
+		log.info("-------------- solution 6 using java 8 --------------------------------");
+		String originalString6 = "hello world 6";
+		InputStream inputStream6 = new ByteArrayInputStream(originalString6.getBytes());
+		String result6 = new BufferedReader(new InputStreamReader(inputStream6, StandardCharsets.UTF_8.name())).lines()
+				.collect(Collectors.joining("\n"));
+		log.info("result6={}", result6);
+
+		log.info("-------------- solution 7 using java scanner--------------------------------");
+		String originalString7 = "hello world 7";
+		InputStream inputStream7 = new ByteArrayInputStream(originalString7.getBytes());
+		String result7 = null;
+		try (Scanner scanner = new Scanner(inputStream7, StandardCharsets.UTF_8.name())) {
+			result7 = scanner.useDelimiter("\\A").next();
+		}
+		log.info("result7={}", result7);
+
+		log.info("---------------- solution 8 ByteArrayOutputStream ---------------------------");
+		String originalString8 = "hello world 8";
+		InputStream inputStream8 = new ByteArrayInputStream(originalString8.getBytes());
+		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+		int nRead;
+		byte[] data = new byte[1024];
+		while ((nRead = inputStream8.read(data, 0, data.length)) != -1) {
+			byteArrayOutputStream.write(data, 0, nRead);
+		}
+		byteArrayOutputStream.flush();
+		byte[] byteArray = byteArrayOutputStream.toByteArray();
+		String result8 = new String(byteArray, StandardCharsets.UTF_8);
+		log.info("result8={}", result8);
+
+		log.info("---------------- solution 9 java.nio ---------------------------");
+		String originalString9 = "hello world 9";
+		InputStream inputStream9 = new ByteArrayInputStream(originalString9.getBytes());
+		Path tempFile = Files.createTempDirectory("").resolve(UUID.randomUUID().toString() + ".tmp");
+		Files.copy(inputStream9, tempFile, StandardCopyOption.REPLACE_EXISTING);
+		String result9 = new String(Files.readAllBytes(tempFile));
+		log.info("result9={}", result9);
+	}
+
 }
