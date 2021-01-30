@@ -276,4 +276,17 @@ public class ArraysPractice {
 		Arrays.stream(doubles).boxed().forEach(System.out::println);
 	}
 
+	@Test
+	public void deepToString() {
+		Object[] objectArray = { "jack", "john", "jill" };
+
+		log.info("array elements using for loop:");
+		for (Object value : objectArray) {
+			log.info("value={}", value);
+		}
+
+		log.info("string representation of array:");
+		String arrayToString = Arrays.deepToString(objectArray);
+		log.info("arrayToString={}", arrayToString);
+	}
 }
