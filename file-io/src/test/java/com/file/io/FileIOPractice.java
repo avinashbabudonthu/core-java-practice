@@ -11,6 +11,9 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class FileIOPractice {
 
 	/**
@@ -109,6 +112,14 @@ public class FileIOPractice {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+	@Test
+	public void convertPathToFile() {
+		final Path path = new File(getClass().getClassLoader().getResource("file1.txt").getPath()).toPath();
+		log.info("path={}", path);
+
+		File file = path.toFile();
+		log.info("file={}", file.getAbsolutePath());
+	}
+
 }
