@@ -23,7 +23,7 @@
 
 # New features in java compiler
 * Parameter names
-* pom
+	* pom
 ```
 <configuration>
 	<compilerArgument>-parameters</compilerArgument>
@@ -81,7 +81,7 @@ public class ParameterNames {
 		* check mark `Store Information about method parameters (usable via reflection)`
 	* check will preserve method arguments at run time 
 	* uncheck will not preserve method arguments at run time
-* For Maven users the -parameters argument could be added to the compiler using configuration section of the `maven-compiler-plugin`
+* For Maven users the `-parameters` argument could be added to the compiler using configuration section of the `maven-compiler-plugin`
 ```
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
