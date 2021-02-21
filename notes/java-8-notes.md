@@ -2,9 +2,13 @@
 * Default and static methods in interface
 	* [Examples](../java-8/java8/src/main/java/com/interfaces)
 * Functional Interface
+	* [Examples](../java-8/java8/src/main/java/com/functional/interfaces)
 * Lambda expressions (Closures)
+	* [Examples](../java-8/java8/src/main/java/com/lambda/expressions)
 * Method references
+	* [Examples](../java-8/java8/src/main/java/com/method/references)
 * Constructor references
+	* [Examples](../java-8/java8/src/main/java/com/constructor/references)
 * Repeating annotations
 * Type annotations
 * Collection streams
@@ -21,6 +25,8 @@
 * Base64 Nashron javascript engine (jjs)
 * class dependency analyzer(jdeps)
 * Parallel arrays
+* java.util.function package
+	* [Examples](../java-8/java8/src/main/java/com/java/util/function/practice)
 
 # New features in java compiler
 * Parameter names
