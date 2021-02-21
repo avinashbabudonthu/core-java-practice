@@ -1,8 +1,13 @@
-package com.java8.interfaces;
+package com.interfaces;
 
 import org.junit.Test;
 
 public class DefaultStaticMethodsInterfaceTest {
+
+	@Test
+	public void staticMethod1() {
+		DefaultStaticMethodsInterface.staticMethod1();
+	}
 
 	private class DefaultStaticMethodsInterfaceImpl implements DefaultStaticMethodsInterface {
 
@@ -10,11 +15,6 @@ public class DefaultStaticMethodsInterfaceTest {
 			DefaultStaticMethodsInterface.super.defaultMethod1();
 		}
 
-	}
-
-	@Test
-	public void staticMethod1() {
-		DefaultStaticMethodsInterface.staticMethod1();
 	}
 
 	@Test

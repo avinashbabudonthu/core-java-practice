@@ -38,7 +38,7 @@
   <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>
-      <plugin>
+      <!-- <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
@@ -54,6 +54,14 @@
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
         </configuration>
+      </plugin> -->
+      <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-compiler-plugin</artifactId>
+      	<version>3.8.0</version>
+      	<configuration>
+      		<release>11</release>
+      	</configuration>
       </plugin>
     </plugins>
   </build>

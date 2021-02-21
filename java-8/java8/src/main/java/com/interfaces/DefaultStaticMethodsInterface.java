@@ -1,4 +1,4 @@
-package com.java8.interfaces;
+package com.interfaces;
 
 public interface DefaultStaticMethodsInterface {
 

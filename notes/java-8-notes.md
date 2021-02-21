@@ -1,5 +1,6 @@
 # New features list in Java 8
 * Default and static methods in interface
+	* [Examples](../java-8/java8/src/main/java/com/interfaces)
 * Functional Interface
 * Lambda expressions (Closures)
 * Method references

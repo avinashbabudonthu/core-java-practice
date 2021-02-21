@@ -1,4 +1,4 @@
-package com.java8.constructor.references;
+package com.method.references;
 
 @FunctionalInterface
 public interface FunctionalInterface1 {

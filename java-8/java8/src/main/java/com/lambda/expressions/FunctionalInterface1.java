@@ -1,4 +1,4 @@
-package com.java8.lambda.expressions;
+package com.lambda.expressions;
 
 @FunctionalInterface
 public interface FunctionalInterface1 {
