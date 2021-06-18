@@ -574,4 +574,46 @@ public class StringPractice {
 		log.info("result9={}", result9);
 	}
 
+	private String rotate(String input, String direction, int noOfRotations) {
+		int inputStringLength = input.length();
+
+		if (inputStringLength == noOfRotations) {
+			return input;
+		}
+
+		if (noOfRotations != 1 && (inputStringLength > noOfRotations) && (inputStringLength % noOfRotations) == 0) {
+			return input;
+		}
+
+		if (noOfRotations > inputStringLength) {
+			noOfRotations = noOfRotations - inputStringLength;
+		}
+
+		String str1 = "";
+		String str2 = "";
+		if ("L".equalsIgnoreCase(direction)) {
+			str1 = input.substring(0, noOfRotations);
+			str2 = input.substring(noOfRotations);
+		} else {
+			str1 = input.substring(0, (inputStringLength - noOfRotations));
+			str2 = input.substring((inputStringLength - noOfRotations));
+		}
+
+		return str2 + str1;
+	}
+
+	/**
+	 * abcde, left, 2 - cdeab
+	 * abcde, right, deabc
+	 */
+	@Test
+	public void rotateString() {
+		String input = "abcde";
+		String result1 = rotate(input, "L", 10);
+		String result2 = rotate(input, "R", 10);
+
+		System.out.println(result1);
+		System.out.println(result2);
+	}
+
 }
