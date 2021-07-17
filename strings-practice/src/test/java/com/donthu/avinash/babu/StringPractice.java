@@ -1,4 +1,5 @@
-package com.string.practice;
+
+package com.donthu.avinash.babu;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -31,6 +32,7 @@ import java.util.stream.Stream;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.input.ReaderInputStream;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
@@ -52,7 +54,7 @@ public class StringPractice {
 
 	@Test
 	public void createString() {
-		String s1 = new String("Alia");
+		String s1 = new String("jack");
 		log.info("s1={}", s1);
 	}
 
@@ -66,16 +68,18 @@ public class StringPractice {
 		// byteArray1: [B@41a4555e
 		System.out.println("byteArray1: " + byteArray1);
 
-		// Arrays.toString(byteArray1): [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+		// Arrays.toString(byteArray1): [72, 101, 108, 108, 111, 32, 87, 111, 114, 108,
+		// 100]
 		System.out.println("Arrays.toString(byteArray1): " + Arrays.toString(byteArray1));
 
-		//method 2
+		// method 2
 		byte[] byteArray2 = string.getBytes(Charset.forName("UTF-8"));
 
 		// byteArray2: [B@3830f1c0
 		System.out.println("byteArray2: " + byteArray2);
 
-		// Arrays.toString(byteArray2): [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+		// Arrays.toString(byteArray2): [72, 101, 108, 108, 111, 32, 87, 111, 114, 108,
+		// 100]
 		System.out.println("Arrays.toString(byteArray2): " + Arrays.toString(byteArray2));
 
 		// method 3 - from java 7
@@ -84,7 +88,8 @@ public class StringPractice {
 		// byteArray3: [B@39ed3c8d
 		System.out.println("byteArray3: " + byteArray3);
 
-		// Arrays.toString(byteArray3): [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+		// Arrays.toString(byteArray3): [72, 101, 108, 108, 111, 32, 87, 111, 114, 108,
+		// 100]
 		System.out.println("Arrays.toString(byteArray3): " + Arrays.toString(byteArray3));
 	}
 
@@ -93,7 +98,8 @@ public class StringPractice {
 		String str = "abcdefghijklmnopqrstuvwxyz";
 		byte[] strByteArray = str.getBytes();
 
-		// asciValues: [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]
+		// asciValues: [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109,
+		// 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]
 		System.out.println("asciValues: " + Arrays.toString(strByteArray));
 	}
 
@@ -117,12 +123,7 @@ public class StringPractice {
 	@Test
 	public void divideString() {
 		/*
-		 * Hello
-			Java
-			World
-			Welcome
-			to
-			Java
+		 * Hello Java World Welcome to Java
 		 */
 		String str = "Hello-Java-World-Welcome-to-Java";
 		String[] strs = str.split("-");
@@ -132,12 +133,7 @@ public class StringPractice {
 
 		// using StringTokenizer
 		/*
-		 * Hello
-			Java
-			World
-			Welcome
-			to
-			Java
+		 * Hello Java World Welcome to Java
 		 */
 		System.out.println("------- Using StringTokenizer -------- ");
 		StringTokenizer stringTokenizer = new StringTokenizer(str, "-");
@@ -169,14 +165,12 @@ public class StringPractice {
 			charsList.add(c);
 		}
 
-		// [H, e, l, l, o,  , W, o, r, l, d]
+		// [H, e, l, l, o, , W, o, r, l, d]
 		System.out.println(charsList);
 	}
 
 	/**
-	 * Output:
-	 * 	capitalStr: HELLO WORLD
-		lowerStr: hello world
+	 * Output: capitalStr: HELLO WORLD lowerStr: hello world
 	 */
 	@Test
 	public void convertCase() {
@@ -199,9 +193,7 @@ public class StringPractice {
 	}
 
 	/**
-	 * Output:
-	 * 	bcda
-		cdab
+	 * Output: bcda cdab
 	 */
 	@Test
 	public void stringShift() {
@@ -228,10 +220,9 @@ public class StringPractice {
 	}
 
 	/**
-	 * Output:
-	 * 	[wel, elc, lco, com, ome, met, eto, toj, oja, jav, ava]
-		[welc, elco, lcom, come, omet, meto, etoj, toja, ojav, java]
-		[welco, elcom, lcome, comet, ometo, metoj, etoja, tojav, ojava]
+	 * Output: [wel, elc, lco, com, ome, met, eto, toj, oja, jav, ava] [welc, elco,
+	 * lcom, come, omet, meto, etoj, toja, ojav, java] [welco, elcom, lcome, comet,
+	 * ometo, metoj, etoja, tojav, ojava]
 	 */
 	@Test
 	public void printAllSubStringsOfSpecifiedLength() {
@@ -260,9 +251,8 @@ public class StringPractice {
 	}
 
 	/**
-	 * Output:
-	 * 	strList: [Welcome, to, hacker, rank, test]
-		sort by length: [to, rank, test, hacker, Welcome]
+	 * Output: strList: [Welcome, to, hacker, rank, test] sort by length: [to, rank,
+	 * test, hacker, Welcome]
 	 */
 	@Test
 	public void sortStringsInSentnceByLength() {
@@ -286,8 +276,7 @@ public class StringPractice {
 	}
 
 	/**
-	 * Output:
-	 * 	C:\output-2018-02-15T16-20-19.002.txt
+	 * Output: C:\output-2018-02-15T16-20-19.002.txt
 	 */
 	@Test
 	public void replaceAll() {
@@ -297,9 +286,8 @@ public class StringPractice {
 	}
 
 	/**
-	 * Output:
-	 * 	Hello welcome to java String practice examples. Have Fun 
-		Hello welcome to java String practice examples. Have Fun
+	 * Output: Hello welcome to java String practice examples. Have Fun Hello
+	 * welcome to java String practice examples. Have Fun
 	 */
 	@Test
 	public void removeSpacesInString() {
@@ -337,6 +325,9 @@ public class StringPractice {
 		// last-10-characters=qrstuvwxyz
 		String last10Characters = lastNCharactersOfString(alphabets, 10);
 		log.info("last-10-characters={}", last10Characters);
+
+		String last5Characters2 = StringUtils.right(alphabets, 5);
+		log.info("{}", last5Characters2);
 	}
 
 	private String lastNCharactersOfString(String str, int n) {
@@ -371,9 +362,9 @@ public class StringPractice {
 		String alphabets = "abcdefghijklmnopqrstuvwxyz";
 
 		/*
-		 *  5th character to end of String
-		 *  
-		 *  output: sub-string=fghijklmnopqrstuvwxyz
+		 * 5th character to end of String
+		 * 
+		 * output: sub-string=fghijklmnopqrstuvwxyz
 		 */
 		String subString1 = alphabets.substring(5);
 		log.info("sub-string1={}", subString1);
@@ -381,7 +372,7 @@ public class StringPractice {
 		/*
 		 * 5th character to 9th (10-1) character
 		 * 
-		 * output: sub-string2=fghij		
+		 * output: sub-string2=fghij
 		 */
 		String subString2 = alphabets.substring(5, 10);
 		log.info("sub-string2={}", subString2);
@@ -444,9 +435,8 @@ public class StringPractice {
 		// using plain java
 		InputStream inputStream = new ByteArrayInputStream(input.getBytes());
 
-		/* 
-		 * using Guava - add dependency
-		 * com.google.guava.guava
+		/*
+		 * using Guava - add dependency com.google.guava.guava
 		 */
 		InputStream inputStream2 = new ReaderInputStream(CharSource.wrap(input).openStream());
 
@@ -479,8 +469,7 @@ public class StringPractice {
 	}
 
 	/**
-	 * References:
-	 * 	https://www.baeldung.com/convert-input-stream-to-string
+	 * References: https://www.baeldung.com/convert-input-stream-to-string
 	 * 
 	 * @throws IOException
 	 */
@@ -603,8 +592,7 @@ public class StringPractice {
 	}
 
 	/**
-	 * abcde, left, 2 - cdeab
-	 * abcde, right, deabc
+	 * abcde, left, 2 - cdeab abcde, right, deabc
 	 */
 	@Test
 	public void rotateString() {

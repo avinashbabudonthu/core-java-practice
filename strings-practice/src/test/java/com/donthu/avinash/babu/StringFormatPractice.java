@@ -1,4 +1,4 @@
-package com.string.practice;
+package com.donthu.avinash.babu;
 
 import org.junit.Test;
 
