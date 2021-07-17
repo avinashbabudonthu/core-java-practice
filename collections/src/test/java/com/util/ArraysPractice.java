@@ -238,6 +238,12 @@ public class ArraysPractice {
 
 	}
 
+	/*
+	 * Arrays.deepEquals(null, null) : true
+		Arrays.deepEquals(array1, null) : false
+		Arrays.deepEquals(array1, array2) : true
+		Arrays.deepEquals(array1, array3) : false
+	 */
 	@Test
 	public void deepEqualsPractice() {
 		Integer[] array1 = new Integer[] { 1, 2, 3, 4, 5 };
@@ -276,6 +282,14 @@ public class ArraysPractice {
 		Arrays.stream(doubles).boxed().forEach(System.out::println);
 	}
 
+	/*
+	 * array elements using for loop:
+		value=jack
+		value=john
+		value=jill
+		string representation of array:
+		arrayToString=[jack, john, jill]
+	 */
 	@Test
 	public void deepToString() {
 		Object[] objectArray = { "jack", "john", "jill" };
