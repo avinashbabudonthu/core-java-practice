@@ -14,8 +14,8 @@ public class LocalePractice {
 	@Test
 	public void localObjectByCountry() {
 		Locale canadaLocale = Locale.CANADA;
-		System.out.println("canadaLocale: " + canadaLocale + ", Language: " + canadaLocale.getLanguage()
-				+ ", country: " + canadaLocale.getCountry());
+		System.out.println("canadaLocale: " + canadaLocale + ", Language: " + canadaLocale.getLanguage() + ", country: "
+				+ canadaLocale.getCountry());
 
 		Locale canadaFrenchLocale = Locale.CANADA_FRENCH;
 		System.out.println("canadaFrenchLocale: " + canadaFrenchLocale); // fr_CA
@@ -33,7 +33,7 @@ public class LocalePractice {
 		System.out.println("englishLocale: " + englishLocale); // englishLocale: en
 
 		Locale usLocale = new Locale("en", "US");
-		System.out.println("usLocale: " + usLocale); // usLocale: en_US
+		System.out.println("usLocale: " + usLocale.toString()); // usLocale: en_US
 
 		Locale ukEnglishLocale = new Locale("en", "UK");
 		System.out.println("ukEnglishLocale: " + ukEnglishLocale); // ukEnglishLocale: en_UK
@@ -48,6 +48,21 @@ public class LocalePractice {
 		// using forLanguageTag() method
 		Locale usEnglishLocale3 = Locale.forLanguageTag("en-US");
 		System.out.println("usEnglishLocale3: " + usEnglishLocale3); // usEnglishLocale3: en_US
+	}
+
+	@Test
+	public void test() {
+		Locale enUS = new Locale("en", "US");
+		System.out.println(enUS.toString());
+
+		Locale enCA = new Locale("en", "CA");
+		System.out.println(enCA.toString());
+
+		Locale esUS = new Locale("es", "US");
+		System.out.println(esUS.toString());
+
+		Locale frCA = new Locale("fr", "CA");
+		System.out.println(frCA.toString());
 	}
 
 }
