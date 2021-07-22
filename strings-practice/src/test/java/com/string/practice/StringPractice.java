@@ -1,5 +1,5 @@
 
-package com.donthu.avinash.babu;
+package com.string.practice;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
