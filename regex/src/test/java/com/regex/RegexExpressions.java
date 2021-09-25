@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import lombok.extern.slf4j.Slf4j;
@@ -250,6 +251,27 @@ public class RegexExpressions {
 		System.out.println(matcher.find());
 		System.out.println(matcher.group("bandwidth").replaceAll("\\n", ""));
 		System.out.println(matcher.group("limitValue"));
+	}
+
+	@Test
+	public void extractStringInSingleQuotes() {
+		String input = "'hello' world, 'welcome' to core java 'regex'";
+		log.info("input={}", input);
+
+		final String pattern3 = "'([^']*?)'";
+		Pattern pattern = Pattern.compile(pattern3, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(input);
+
+		List<String> list = new ArrayList<>();
+		if (matcher.find()) {
+			list.add(StringUtils.replace(matcher.group(), "'", StringUtils.EMPTY));
+			while (matcher.find()) {
+				list.add(StringUtils.replace(matcher.group(), "'", StringUtils.EMPTY));
+			}
+		} else {
+			log.info("No match");
+		}
+		log.info("single quoted strings list={}", list);
 	}
 
 }
