@@ -256,7 +256,7 @@ public class RegexExpressions {
 	@Test
 	public void extractStringInSingleQuotes() {
 		String input = "'hello' world, 'welcome' to core java 'regex'";
-		log.info("input={}", input);
+		log.info("input={}", input); // input='hello' world, 'welcome' to core java 'regex'
 
 		final String pattern3 = "'([^']*?)'";
 		Pattern pattern = Pattern.compile(pattern3, Pattern.MULTILINE);
@@ -271,7 +271,7 @@ public class RegexExpressions {
 		} else {
 			log.info("No match");
 		}
-		log.info("single quoted strings list={}", list);
+		log.info("single quoted strings list={}", list); // single quoted strings list=[hello, welcome, regex]
 	}
 
 }
