@@ -5,7 +5,6 @@
 rootProject.name = 'core-java-practice'
 include(':multi-threading-practice')
 include(':date-api-practice')
-include(':file-io')
 include(':collections')
 include(':regex')
 include(':streams')
