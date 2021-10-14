@@ -1,4 +1,4 @@
-# Create project using maven
+# Maven command
 ```
 mvn archetype:generate -DgroupId=com.collections -DartifactId=collections -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
