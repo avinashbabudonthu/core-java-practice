@@ -12,6 +12,9 @@ mvn archetype:generate -DgroupId=com.collections -DartifactId=collections -Dvers
 * [Set Hierarchy](images/set-hierarchy.jpg)
 * [Queue Hierarchy](images/queue-hierarchy.jpg)
 * [Queue Methods](images/queue_methods.jpg)
+* [Dequeue Methods](images/dequeu-methods.jpg)
+* [Map Hierarchy](images/map-hierarchy.jpg)
+* [Stream Reduce Methods](images/stream-reduce-method.jpg)
 
 # List Examples
 * [ArrayList](src/test/java/com/list/ArrayListPractice.java)
