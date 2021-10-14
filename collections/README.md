@@ -8,6 +8,8 @@ mvn archetype:generate -DgroupId=com.collections -DartifactId=collections -Dvers
 * [General Implementations](images/collections_general_implementations.jpg)
 * [Detailed Collection Hierarchy](images/detailed-collection-hierarchy-1.jpg)
 * [List Hierarchy](images/list-hierarchy.jpg)
+* [List Methods](images/list-methods.jpg)
+
 
 # List Examples
 * [ArrayList](src/test/java/com/list/ArrayListPractice.java)
