@@ -22,7 +22,7 @@ public class HashSetPractice {
         set.add("1");
         set.add("2");
         set.add("3");
-        set.add("2");
+        set.add("2"); // this value will be ignored because set does not allow duplicates
         log.info("set={}", set);
     }
 
@@ -67,6 +67,27 @@ public class HashSetPractice {
 
         integerSet.remove(3);
         log.info("after remove integerSet={}", integerSet);
+    }
+
+    @Test
+    public void iterate(){
+        Set<String> set1 = new HashSet<>();
+        set1.add("a");
+        set1.add("b");
+        set1.add("c");
+        set1.add("d");
+        set1.add("e");
+        set1.add("f");
+        set1.add("a");
+
+        log.info("{}", "iterate using for each loop");
+        for(String str : set1){
+            log.info("{}", str);
+        }
+
+        log.info("{}", "iterate using jdk8 collection streams");
+        // set1.stream().forEach(value -> System.out.println(value)); // lambda
+        set1.stream().forEach(System.out::println); // method reference
     }
 
 }
