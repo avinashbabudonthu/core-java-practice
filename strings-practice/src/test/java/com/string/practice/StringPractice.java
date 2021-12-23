@@ -184,11 +184,12 @@ public class StringPractice {
 	@Test
 	public void capitalizeFirstChar() {
 		String hello = "hello";
-
 		String result = hello.substring(0, 1).toUpperCase() + hello.substring(1, hello.length());
+		System.out.println(result); // Hello
 
-		// Hello
-		System.out.println(result);
+		// using common-lang3
+		String result2 = StringUtils.capitalize(hello);
+		System.out.println(result2); // Hello
 	}
 
 	/**
