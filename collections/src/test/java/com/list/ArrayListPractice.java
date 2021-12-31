@@ -851,4 +851,17 @@ public class ArrayListPractice {
 		List<List<String>> groupedList = Lists.partition(list, sizeOfEachSubList);
 		log.info("{}", groupedList);
 	}
+
+	@Test
+	public void removeIf() {
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		list.add("d");
+		log.info("list={}", list);
+
+		list.removeIf(value -> "c".equalsIgnoreCase(value));
+		log.info("list={}", list);
+	}
 }
