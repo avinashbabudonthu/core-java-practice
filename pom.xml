@@ -44,7 +44,6 @@
 	</dependencies>
 
 	<modules>
-		<module>strings-practice</module>
 		<module>multi-threading-practice</module>
 		<module>date-api-practice</module>
 		<module>file-io</module>
@@ -52,15 +51,15 @@
 		<module>streams</module>
 		<module>java-util-concurrent</module>
 		<module>utils</module>
-    <module>annotations</module>
-    <module>reflection</module>
-    <module>enums</module>
-    <module>basics</module>
-    <module>internationalization</module>
-    <module>serialization</module>
-    <module>jaxb</module>
-    <module>generics</module>
-  </modules>
+		<module>annotations</module>
+		<module>reflection</module>
+		<module>enums</module>
+		<module>basics</module>
+		<module>internationalization</module>
+		<module>serialization</module>
+		<module>jaxb</module>
+		<module>generics</module>
+	</modules>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
