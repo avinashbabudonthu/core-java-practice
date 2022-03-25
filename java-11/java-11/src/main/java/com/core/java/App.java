@@ -1,4 +1,4 @@
-package com.donthu.avinash.babu;
+package com.core.java;
 
 /**
  * Hello world!
