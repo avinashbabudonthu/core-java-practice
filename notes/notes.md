@@ -614,11 +614,11 @@ Reader.read(char[] data)
 	* To write content to file
 	* newLine() - adds new line character based on underlying OSnewLine() - adds new line character based on underlying OS
 * Basic Stream \
-![picture](file-io/images/basic-streams.jpg)
+![picture](../file-io/images/basic-streams.jpg)
 * Reader classes hierarchy \
-![picture](file-io/images/reader-classes-hierarchy.jpg)
+![picture](../file-io/images/reader-classes-hierarchy.jpg)
 * Stream classes hierarchy \
-![picture](file-io/images/stream-classes-hierarchy.jpg)
+![picture](../file-io/images/stream-classes-hierarchy.jpg)
 ### Examples
 * [CreateFile](file-io/src/test/java/com/file/io/CreateFile.java)
 * [FileIOPractice](file-io/src/test/java/com/file/io/FileIOPractice.java)
