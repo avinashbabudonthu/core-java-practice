@@ -406,7 +406,7 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 * Group of same data type values
 * Fixed size
 * Index start with `0` - zero
-* Refer array examples - [ArraysPractice.java](collections/src/test/java/com/util/ArraysPractice.java)
+* Refer array examples - [ArraysPractice.java](../collections/src/test/java/com/util/ArraysPractice.java)
 
 ## Loops
 * while loop
@@ -479,16 +479,16 @@ for(int i: list){
 	* Interface `java.io.Closeable extends java.lang.AutoCloseable`
 
 ### Examples
-* [TryWithResource.java](basics/src/test/java/com/exception/TryWithResource.java)
+* [TryWithResource.java](../basics/src/test/java/com/exception/TryWithResource.java)
 
 ## Annotations
-* Refer [Annotation Notes](annotations/notes.md)
+* Refer [Annotation Notes](../annotations/notes.md)
 
 ## Generics
-* Refer [Generics Notes](generics/notes.md)
+* Refer [Generics Notes](../generics/notes.md)
 
 ## Collections
-* Refer [Collections Notes](collections/notes.md)
+* Refer [Collections Notes](../collections/notes.md)
 
 ## References
 * Different classes in java.lan.ref package
@@ -549,7 +549,7 @@ PhantomReference<DigitalCounter> phantom = new PhantomReference<DigitalCounter>(
 * Reference of instance will be appended to ReferenceQueue and you can use it to perform any clean-up by polling ReferenceQueue
 
 ### Examples
-	* [ReferencesPractice.java](basics/src/test/java/com/references/ReferencesPractice.java)
+	* [ReferencesPractice.java](../basics/src/test/java/com/references/ReferencesPractice.java)
 
 ## File IO
 * stream: continuous flow
@@ -622,12 +622,12 @@ Reader.read(char[] data)
 * Stream classes hierarchy \
 ![picture](../file-io/images/stream-classes-hierarchy.jpg)
 ### Examples
-* [CreateFile](file-io/src/test/java/com/file/io/CreateFile.java)
-* [FileIOPractice](file-io/src/test/java/com/file/io/FileIOPractice.java)
-* [ReadFile](file-io/src/test/java/com/file/io/ReadFile.java)
+* [CreateFile](../file-io/src/test/java/com/file/io/CreateFile.java)
+* [FileIOPractice](../file-io/src/test/java/com/file/io/FileIOPractice.java)
+* [ReadFile](../file-io/src/test/java/com/file/io/ReadFile.java)
 
 ## Multi Threading
-* Refer [Multi Threading Notes](multi-threading-practice/notes.md)
+* Refer [Multi Threading Notes](../multi-threading-practice/notes.md)
 
 ## JVM
 * Refer [JVM Notes](https://github.com/avinashbabudonthu/others/blob/master/jvm/notes.md)
