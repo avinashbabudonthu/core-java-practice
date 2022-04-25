@@ -47,6 +47,13 @@ GROUPID
 * Inheritance
 * Polymorphism
 
+### Encapsulation
+* Binding the data with its related functionalities
+* Example of encapsulation is `class` where we bind variables and methods
+
+### Inheritance
+* Making the properties of one object available to another object
+
 ### Polymorphism
 * process of defining multiple functionalities with the same name with in the same class or sub class
 * Types
@@ -56,13 +63,7 @@ GROUPID
 	* Overloading
 * Dynamic Polymorphism
 	* Overriding
-	
-### Inheritance
-* Making the properties of one object available to another object
-### Encapsulation
-* Binding the data with its related functionalities
-* Example of encapsulation is `class` where we bind variables and methods
-	
+		
 ## Access specifiers
 * public: accessible every where
 * private: accessible with in the class
