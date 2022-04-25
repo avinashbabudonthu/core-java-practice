@@ -156,7 +156,8 @@ public final class Student{
 	* Executes static initializers
 	* Initialize static fields declared in class (remember static final fields will be initialized at compile time)
 	* Allocates memory for non static members of the class
-	* Loads non static members of the class. Initializes non static members of the class
+	* Loads non static members of the class
+	* Initializes non static members of the class
 	* Executes constructor
 * Create object
 ```
@@ -262,7 +263,7 @@ public class Student{
 ## Nested class
 * Static nested classes
 * non-static nested classes (or) inner classes
-### Inner classes
+### Non static nested class or Inner classes
 * Local Inner classes (Local classes)
 	* classes declared with in a method
 	* classes declared with in a block
@@ -359,7 +360,7 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 	* If n classes are implementing an interface then if we need common functionality to be available to all classes then we need either write that in one abstract class and all other classes have to extend that class or we need to implement that method in all classes. 
 	* This issue solved in JDK 8 by providing default methods in interfaces
 * Examples
-	* [InterfacesPractice.java](basics/src/test/java/com/interfaces/InterfacesPractice.java)
+	* [InterfacesPractice.java](../basics/src/test/java/com/interfaces/InterfacesPractice.java)
 
 ## Primitive data types
 * int
@@ -399,7 +400,7 @@ public class InterfaceWithMethodImpl implements InterfaceWithMethod {
 	* if jvm do the type casting with our specification
 
 ## String
-* Refer [Strings Notes](strings-practice/notes.md)
+* Refer [Strings Notes](../strings-practice/notes.md)
 
 ## Arrays
 * Group of same data type values
