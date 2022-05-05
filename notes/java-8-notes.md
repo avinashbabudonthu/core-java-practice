@@ -43,13 +43,13 @@
 		* jdeps
 
 # New Features in JVM
-* The PermGen space is gone and has been replaced with `Metaspace` 
+* The PermGen space is removed and replaced with `Metaspace` 
 * The JVM options `-XX:PermSize` and `-XX:MaxPermSize` have been replaced by `-XX:MetaSpaceSize` and `-XX:MaxMetaspaceSize` respectively
 
 # FunctionalInterface
 * Interface with only one abstract method
 * Use `@FunctionalInterface` annotation to declare functional interface
-* If we add more than one abstract method to interface which is annotated with @FunctionalInterface, compile error will come
+* If we add more than one abstract method to interface which is annotated with @FunctionalInterface, compilation error will come
 * Even though these 2 interfaces are functional interfaces, these are not annotated with @FunctionalInterface annotation
 	* java.lang.AutoCloseable
 	* java.util.Closeable
@@ -61,8 +61,8 @@ InterfaceName.super.methodName()
 # Parameter names
 * Literally for ages Java developers are inventing different ways to preserve method parameter names in Java byte-code and make them available at runtime (for example, Paranamer library). And finally, Java 8 bakes this demanding feature into the language (using Reflection API and Parameter.getName() method) and the byte-code (using new javac compiler argument -parameters)
 * compile this class 
-	* without using -parameters argument and then run this program, you will see something like that: `Parameter: arg0`
-	* With -parameters argument passed to the compiler the program output will be different (the actual name of the parameter will be shown): `Parameter: args`
+	* without using `-parameters` argument and then run this program, you will see something like that: `Parameter: arg0`
+	* With `-parameters` argument passed to the compiler the program output will be different (the actual name of the parameter will be shown): `Parameter: args`
 ```
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
