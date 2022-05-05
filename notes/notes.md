@@ -624,11 +624,8 @@ Reader.read(char[] data)
 ### Examples
 * [File IO Examples](../file-io/README.md)
 
-## Multi Threading
-* Refer [Multi Threading Notes](../multi-threading-practice/notes.md)
-
-## JVM
-* Refer [JVM Notes](https://github.com/avinashbabudonthu/others/blob/master/jvm/notes.md)
+## [Multi Threading Notes](../multi-threading-practice/notes.md)
+## [JVM Notes](https://github.com/avinashbabudonthu/others/blob/master/jvm/notes.md)
 
 ## Big Decimal
 * The BigDecimal class provides operation for arithmetic, comparison, hashing, rounding, manipulation and format conversion
