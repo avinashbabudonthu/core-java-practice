@@ -614,7 +614,7 @@ Reader.read(char[] data)
 	* Will read lines based on new line character of underlying OS
 * BufferedWriter
 	* To write content to file
-	* newLine() - adds new line character based on underlying OSnewLine() - adds new line character based on underlying OS
+	* newLine() - adds new line character based on underlying OS
 * Basic Stream \
 ![picture](../file-io/images/basic-streams.jpg)
 * Reader classes hierarchy \
