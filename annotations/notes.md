@@ -46,14 +46,15 @@ public class TestClass{
 		* Examples in java API
 			* java.lang.Runnable { run();}
 			* java.lang.Comparable{ compareTo(T o1); }
-			* java.lang.AutoCloseable { close(); }
-			* java.lang.reflect.InvocationHandler{ invoke(); } (used on dynamic proxies)
 			* java.util.Comparator { compare(T o1, T o2); }
+			* java.lang.AutoCloseable { close(); }
+			* java.io.Closeable { close(); }
+			* java.lang.reflect.InvocationHandler{ invoke(); } (used on dynamic proxies)
 			* java.util.function.Function
 			* java.util.function.Predicate
-			* java.io.Closeable { close(); }
+			
 * Meta annotations
-	* Annotation that apply to other annotations. 
+	* Annotation that apply to other annotations
 	* There 5 meta annotations declared in `java.lang.annotation` package
 	* Generally used when defining custom annotations
 	* Annotations in java.lang.annotation package
@@ -65,7 +66,7 @@ public class TestClass{
 		
 ## java.lang.annotation.Documented
 * When applied on specific element, that element should be documented by java doc tool
-* The @Documented annotation is used to signal to the JavaDoc tool that your custom annotation should be visible in the JavaDoc for classes using your custom annotation
+* The `@java.lang.annotation.Documented` annotation is used to signal to the JavaDoc tool that your custom annotation should be visible in the JavaDoc for classes using your custom annotation
 ```
 @java.lang.annotation.Documented
 public @interface MyAnnotation { ... }
@@ -76,7 +77,7 @@ public class MyClass { ... }
 
 ## java.lang.annotation.Inherited
 * Annotation type can be inherited from super class. When user queries for annotation type and that class don’t have annotation then super class will be queried for annotation type
-* The `@Inherited` annotation signals that a custom Java annotation used in a class should be inherited by subclasses inheriting from that class
+* The `@java.lang.annotation.Inherited` annotation signals that a custom Java annotation used in a class should be inherited by subclasses inheriting from that class
 ```
 @java.lang.annotation.Inherited
 public @interface MyAnnotation { ... }
