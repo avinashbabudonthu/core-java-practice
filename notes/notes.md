@@ -622,9 +622,7 @@ Reader.read(char[] data)
 * Stream classes hierarchy \
 ![picture](../file-io/images/stream-classes-hierarchy.jpg)
 ### Examples
-* [CreateFile](../file-io/src/test/java/com/file/io/CreateFile.java)
-* [FileIOPractice](../file-io/src/test/java/com/file/io/FileIOPractice.java)
-* [ReadFile](../file-io/src/test/java/com/file/io/ReadFile.java)
+* [File IO Examples](../file-io/README.md)
 
 ## Multi Threading
 * Refer [Multi Threading Notes](../multi-threading-practice/notes.md)
