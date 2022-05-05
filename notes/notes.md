@@ -491,7 +491,7 @@ for(int i: list){
 * Refer [Collections Notes](../collections/notes.md)
 
 ## References
-* Different classes in java.lan.ref package
+* Different classes in java.lang.ref package
 	* Reference<T>
 	* WeakReference<T> extends Reference<T>
 	* SoftReference<T> extends Reference<T>
