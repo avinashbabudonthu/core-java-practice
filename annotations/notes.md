@@ -42,7 +42,7 @@ public class TestClass{
 	* SuppressWarnings
 	* FunctionalInterface
 		* Interface which has only one method
-		* We have to use @java.lang.FunctionalInterface annotation to declare functional interface
+		* We have to use `@java.lang.FunctionalInterface` annotation to declare functional interface
 		* Examples in java API
 			* java.lang.Runnable { run();}
 			* java.lang.Comparable{ compareTo(T o1); }
@@ -75,7 +75,7 @@ public class MyClass { ... }
 * When generating JavaDoc for the MyClass -> @MyAnnotation is now included in the JavaDoc
 
 ## java.lang.annotation.Inherited
-* Annotation type can be inherited from super class. When user queries for annotation type and that class don’t have annotation then super class will be queried for annotation type
+* Annotation type can be inherited from super class. When user queries for annotation type and that class donâ€™t have annotation then super class will be queried for annotation type
 * The `@Inherited` annotation signals that a custom Java annotation used in a class should be inherited by subclasses inheriting from that class
 ```
 @java.lang.annotation.Inherited
