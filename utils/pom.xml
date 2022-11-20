@@ -5,11 +5,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.core.java.practice</groupId>
-		<artifactId>core-java-practice</artifactId>
-		<version>1.0</version>
-	</parent>
 
 	<groupId>com.utils</groupId>
 	<artifactId>utils</artifactId>
