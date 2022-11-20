@@ -47,7 +47,6 @@
 		<module>multi-threading-practice</module>
 		<module>regex</module>
 		<module>streams</module>
-		<module>java-util-concurrent</module>
 		<module>utils</module>
 		<module>reflection</module>
 		<module>serialization</module>
