@@ -50,7 +50,6 @@
 		<module>java-util-concurrent</module>
 		<module>utils</module>
 		<module>reflection</module>
-		<module>enums</module>
 		<module>serialization</module>
 		<module>jaxb</module>
 	</modules>
