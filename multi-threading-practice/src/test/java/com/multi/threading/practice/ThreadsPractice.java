@@ -22,36 +22,6 @@ import lombok.extern.slf4j.Slf4j;
 public class ThreadsPractice {
 
 	/**
-	 * @see java.util.concurrent.Callable practice
-	 * @see java.util.concurrent.Future practice
-	 * @throws InterruptedException
-	 * @throws ExecutionException
-	 */
-	@Test
-	public void callableFutures() throws InterruptedException, ExecutionException {
-
-		Callable<List<Integer>> callable = new Callable<List<Integer>>() {
-			@Override
-			public List<Integer> call() throws Exception {
-				List<Integer> list = new ArrayList<>();
-				for (int i = 0; i < 10; i++) {
-					list.add(i + 1);
-				}
-				return list;
-			}
-		};
-
-		ExecutorService executorService = Executors.newCachedThreadPool();
-		Future<List<Integer>> resultFutures = executorService.submit(callable);
-		executorService.shutdown();
-		executorService.awaitTermination(1, TimeUnit.DAYS);
-
-		List<Integer> resultList = resultFutures.get();
-
-		log.info("{}", resultList);
-	}
-
-	/**
 	 * Execute multiple callables at a time
 	 * @throws InterruptedException 
 	 * @throws ExecutionException 
